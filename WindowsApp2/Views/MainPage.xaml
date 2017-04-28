@@ -77,7 +77,7 @@
             <TextBlock x:Name="stateTextBox"
                        Margin="359,128,-343,-112"
                        Text="Current Visual State" />
-            <TextBlock x:Name="Error1" Text="{Binding Error, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Margin="189,15,-326,-130" />
+            <TextBlock x:Name="Error1" Tag="" Text="{Binding Error, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Margin="189,15,-326,-130" />
         </RelativePanel>
         <Grid Margin="10,53,-221,-188" x:Name="grid">
             <TextBox MinWidth="150"
@@ -91,7 +91,9 @@
                     <!-- somehow works too: Text="{x:Bind ViewModel.Login, Mode=TwoWay}" -->
                     <!--  enable submit on enter key  -->
                     <Behaviors:KeyBehavior Key="Enter">
-                        <Core:CallMethodAction MethodName="GotoDetailsPage" TargetObject="{Binding}" />
+                        <Core:InvokeCommandAction 
+                            Command="{Binding TryLogin, Source={StaticResource ViewModel2}}"
+                            CommandParameter="{Binding ElementName=page}" />
                     </Behaviors:KeyBehavior>
                     <!--  focus on textbox when page loads  -->
                     <Core:EventTriggerBehavior>
@@ -114,10 +116,33 @@
                     Command="{Binding TryLogin, Source={StaticResource ViewModel2}}" 
                     CommandParameter="{Binding ElementName=page}"
                     Content="Login" Margin="10,93,0,10"
+                    Visibility="Visible"
                     >
-                <!--IsEnabled="{Binding ElementName=Login, Path=Text.Length, Mode=OneWay}"-->
-                <!--click when logged in Click="{x:Bind ViewModel.GotoDetailsPage}" -->
+                <Interactivity:Interaction.Behaviors>
+                    <Core:DataTriggerBehavior Binding="{Binding Text.Length, ElementName=Login, UpdateSourceTrigger=PropertyChanged}" ComparisonCondition="Equal" Value="0">
+                        <Core:ChangePropertyAction TargetObject="{Binding ElementName=submitButton2}" PropertyName="IsEnabled" Value="False" />
+                    </Core:DataTriggerBehavior>
+                    <Core:DataTriggerBehavior Binding="{Binding Text.Length, ElementName=Login, UpdateSourceTrigger=PropertyChanged}" ComparisonCondition="GreaterThan" Value="0">
+                        <Core:ChangePropertyAction TargetObject="{Binding ElementName=submitButton2}" PropertyName="IsEnabled" Value="True" />
+                    </Core:DataTriggerBehavior>
+                    <Core:DataTriggerBehavior Binding="{Binding Password.Length, ElementName=Password, UpdateSourceTrigger=PropertyChanged}" ComparisonCondition="Equal" Value="0">
+                        <Core:ChangePropertyAction TargetObject="{Binding ElementName=submitButton2}" PropertyName="IsEnabled" Value="False" />
+                    </Core:DataTriggerBehavior>
+                    <Core:DataTriggerBehavior Binding="{Binding Password.Length, ElementName=Password, UpdateSourceTrigger=PropertyChanged}" ComparisonCondition="GreaterThan" Value="0">
+                        <Core:ChangePropertyAction TargetObject="{Binding ElementName=submitButton2}" PropertyName="IsEnabled" Value="True" />
+                    </Core:DataTriggerBehavior>
+                    <Core:DataTriggerBehavior Binding="{Binding Tag, ElementName=Error1, UpdateSourceTrigger=PropertyChanged}" ComparisonCondition="Equal" Value="LoggedIn">
+                        <Core:CallMethodAction MethodName="GotoDetailsPage" TargetObject="{Binding}" />
+                    </Core:DataTriggerBehavior>
+                </Interactivity:Interaction.Behaviors>
             </Button>
+            <!--register-->
+            <Button x:Name="LogoutButton"
+                    Command="{Binding LogOut, Source={StaticResource ViewModel2}}" 
+                    CommandParameter="{Binding ElementName=page}"
+                    Content="Log  out" Margin="10,93,0,10" Width="150"
+                    Visibility="Collapsed"
+                    />
         </Grid>
     </RelativePanel>
 </Page>

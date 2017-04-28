@@ -16,7 +16,7 @@
     <PackageRegistrationPath>
     </PackageRegistrationPath>
     <RemoveNonLayoutFiles>true</RemoveNonLayoutFiles>
-    <RegisteredManifestChecksum>734DA001B5F1423E4ED27EBE28BBD27B1AB4E11B8665A19DF4E177F749179B70</RegisteredManifestChecksum>
+    <RegisteredManifestChecksum>0B090B6A6194F3E6CF6F842B928128F0C545DC78374C68B76FFD93421B9D44BC</RegisteredManifestChecksum>
     <RegisteredPackageMoniker>80dcd2a2-d4b4-490e-88fc-e81121a2e14a_1.0.0.0_x86__7npqabcqw1kgm</RegisteredPackageMoniker>
     <RegisteredUserModeAppID>80dcd2a2-d4b4-490e-88fc-e81121a2e14a_7npqabcqw1kgm!App</RegisteredUserModeAppID>
     <RegisteredPackageID>80dcd2a2-d4b4-490e-88fc-e81121a2e14a</RegisteredPackageID>
@@ -28,13 +28,13 @@
     <AppXManifest Include="F:\WindowsApp2\WindowsApp2\bin\x86\Debug\Core\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2017-04-26T19:17:09.837</Modified>
+      <Modified>2017-04-28T00:14:19.613</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="F:\WindowsApp2\WindowsApp2\bin\x86\Debug\WindowsApp2.exe">
       <PackagePath>entrypoint\WindowsApp2.exe</PackagePath>
-      <Modified>2017-04-26T19:17:08.632</Modified>
+      <Modified>2017-04-28T00:14:18.729</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="E:\Users\Marci\.nuget\packages\Microsoft.CSharp\4.0.1\lib\netcore50\Microsoft.CSharp.dll">
       <PackagePath>Microsoft.CSharp.dll</PackagePath>
@@ -552,7 +552,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="F:\WindowsApp2\WindowsApp2\bin\x86\Debug\WindowsApp2.xr.xml">
       <PackagePath>WindowsApp2.xr.xml</PackagePath>
-      <Modified>2017-04-26T19:17:08.283</Modified>
+      <Modified>2017-04-28T00:14:18.398</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="E:\Program Files %28x86%29\Windows Kits\10\UnionMetadata\Windows.winmd">
       <PackagePath>WinMetadata\Windows.winmd</PackagePath>
@@ -593,11 +593,11 @@
     <AppxPackagedFile Include="F:\WindowsApp2\WindowsApp2\bin\x86\Debug\resources.pri">
       <PackagePath>resources.pri</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2017-04-26T19:17:09.257</Modified>
+      <Modified>2017-04-28T00:14:19.187</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="F:\WindowsApp2\WindowsApp2\bin\x86\Debug\Core\WindowsApp2.exe">
       <PackagePath>WindowsApp2.exe</PackagePath>
-      <Modified>2017-04-26T19:17:09.835</Modified>
+      <Modified>2017-04-28T00:14:19.610</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>

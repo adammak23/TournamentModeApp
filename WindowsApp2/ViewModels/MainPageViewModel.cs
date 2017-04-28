@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using Template10.Services.NavigationService;
 using Windows.UI.Xaml.Navigation;
 using WindowsApp2.Models;
-using WindowsApp2.ViewModels.LoginCommands;
+using WindowsApp2.ViewModels.Commands;
 using System.Net.Http;
 
 using Template10.Utils;
@@ -29,7 +29,7 @@ namespace WindowsApp2.ViewModels
             Login = "";
             this.TryLogin = new TryLogin(this);
         }
-
+        
 
         string _Login = "";
         public string Login { get { return _Login; } set { Set(ref _Login, value); } }
@@ -37,7 +37,10 @@ namespace WindowsApp2.ViewModels
         // is htis even needed? xd
         public override async Task OnNavigatedToAsync(object parameter, NavigationMode mode, IDictionary<string, object> suspensionState)
         {
-            Login = (suspensionState.ContainsKey(nameof(Login))) ? suspensionState[nameof(Login)]?.ToString() : parameter?.ToString();
+            if (suspensionState.Any())
+            {
+                Login = suspensionState[nameof(Login)]?.ToString();
+            }
             await Task.CompletedTask;
         }
 
@@ -55,6 +58,10 @@ namespace WindowsApp2.ViewModels
             args.Cancel = false;
             await Task.CompletedTask;
         }
+
+        /// ////////////////////
+
+
         /// /////////////////////////
         public void GotoDetailsPage() =>
             NavigationService.Navigate(typeof(Views.DetailPage), Login);
@@ -68,13 +75,32 @@ namespace WindowsApp2.ViewModels
         public void GotoAbout() =>
             NavigationService.Navigate(typeof(Views.SettingsPage), 2);
 
-        public async void AccessTheWebAsync(Page grid)
+        public void LogOut(Page grid)
         {
             TextBlock block = grid.FindName("Error1") as TextBlock;
             TextBox Login = grid.FindName("Login") as TextBox;
             PasswordBox Password = grid.FindName("Password") as PasswordBox;
-            //Button loginButton = grid.FindName("submitButton2") as Button;
+            Button loginButton = grid.FindName("submitButton2") as Button;
+            Button logoutButton = grid.FindName("LogoutButton") as Button;
+
+            block.Text = "Wylogowano";
+            Login.Opacity = 1;
+            Password.Opacity = 1;
+            loginButton.IsEnabled = true;
+            logoutButton.Visibility = Visibility.Collapsed;
+
+
+
+        }
+        public async void AccessTheWebAsync(Page grid)
+        {
+           
+            TextBlock block = grid.FindName("Error1") as TextBlock;
+            TextBox Login = grid.FindName("Login") as TextBox;
+            PasswordBox Password = grid.FindName("Password") as PasswordBox;
+            Button loginButton = grid.FindName("submitButton2") as Button;
             ProgressBar progressbar = grid.FindName("progressbar") as ProgressBar;
+            Button logoutButton = grid.FindName("LogoutButton") as Button;
 
             block.Text = "Wait...";
             progressbar.IsIndeterminate = true;
@@ -98,10 +124,13 @@ namespace WindowsApp2.ViewModels
             {
                 block.Text = "Successfully logged in as " + Login.Text;
                 UserAccount.LogIn(Login.Text);
+                block.Tag = "LoggedIn";
                 progressbar.IsIndeterminate = false;
-                //loginButton.IsEnabled = false;
+                loginButton.Visibility = Visibility.Collapsed;
+                Login.Visibility = Visibility.Collapsed;
+                Password.Visibility = Visibility.Collapsed;
+                logoutButton.Visibility = Visibility.Visible;
 
-                //NavigationService.Navigate(typeof(Views.DetailPage), Login);
             }
             else
             {

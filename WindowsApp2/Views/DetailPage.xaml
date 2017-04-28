@@ -63,11 +63,10 @@
                       RelativePanel.AlignRightWithPanel="True"
                       RelativePanel.Below="pageHeader"
                       VerticalScrollBarVisibility="Auto">
-            <StackPanel>
-                <TextBlock Style="{StaticResource TitleTextBlockStyle}" Text="You passed:" />
-                <TextBlock Style="{StaticResource SubtitleTextBlockStyle}" Text="{x:Bind ViewModel.Login, Mode=OneWay, FallbackValue=DesigntimeValue}" />
-            </StackPanel>
+            <StackPanel/>
         </ScrollViewer>
+        <TextBlock Style="{StaticResource TitleTextBlockStyle}" Text="Welcome " RenderTransformOrigin="0.64,2.229" Margin="12,62,-15.333,-62" />
+        <TextBlock  Text="{x:Bind ViewModel.Login, Mode=OneWay}" Margin="130,72,-140,-72" />
 
     </RelativePanel>
 </Page>
