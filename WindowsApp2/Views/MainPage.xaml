@@ -57,7 +57,7 @@
                              RelativePanel.AlignLeftWithPanel="True"
                              RelativePanel.AlignRightWithPanel="True"
                              RelativePanel.AlignTopWithPanel="True"
-                             Text="Main Page">
+                             Text="Login Panel">
 
             <!--  secondary commands  -->
             <controls:PageHeader.SecondaryCommands>
@@ -77,7 +77,7 @@
             <TextBlock x:Name="stateTextBox"
                        Margin="359,128,-343,-112"
                        Text="Current Visual State" />
-            <TextBlock x:Name="Error1" Tag="" Text="{Binding Error, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Margin="189,15,-326,-130" />
+            <TextBlock x:Name="Error1" Tag="" Text="{Binding Error, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Margin="194,34,-390,-119" FontSize="20" />
         </RelativePanel>
         <Grid Margin="10,53,-221,-188" x:Name="grid">
             <TextBox MinWidth="150"
@@ -88,7 +88,6 @@
                          Margin="10,10,72,0" Height="32" VerticalAlignment="Top">
                 <!--Text in TextBox only for for DetailsPage binding-->
                 <Interactivity:Interaction.Behaviors>
-                    <!-- somehow works too: Text="{x:Bind ViewModel.Login, Mode=TwoWay}" -->
                     <!--  enable submit on enter key  -->
                     <Behaviors:KeyBehavior Key="Enter">
                         <Core:InvokeCommandAction 
@@ -110,13 +109,21 @@
                      PlaceholderText="Password"
                      MinHeight="30"
                      Password="{Binding Password, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Margin="10,47,72,0" Height="32" VerticalAlignment="Top">
+                <Interactivity:Interaction.Behaviors>
+                    <!--  enable submit on enter key  -->
+                    <Behaviors:KeyBehavior Key="Enter">
+                        <Core:InvokeCommandAction 
+                            Command="{Binding TryLogin, Source={StaticResource ViewModel2}}"
+                            CommandParameter="{Binding ElementName=page}" />
+                    </Behaviors:KeyBehavior>
+                </Interactivity:Interaction.Behaviors>
             </PasswordBox>
             <ProgressBar x:Name="progressbar" IsIndeterminate="False" Margin="10,80,72,45" Foreground="#FF008BFF" Background="Transparent" Height="9"/>
             <Button x:Name="submitButton2"
                     Command="{Binding TryLogin, Source={StaticResource ViewModel2}}" 
                     CommandParameter="{Binding ElementName=page}"
                     Content="Login" Margin="10,93,0,10"
-                    Visibility="Visible"
+                    Visibility="Visible" Width="150"
                     >
                 <Interactivity:Interaction.Behaviors>
                     <Core:DataTriggerBehavior Binding="{Binding Text.Length, ElementName=Login, UpdateSourceTrigger=PropertyChanged}" ComparisonCondition="Equal" Value="0">
@@ -136,13 +143,35 @@
                     </Core:DataTriggerBehavior>
                 </Interactivity:Interaction.Behaviors>
             </Button>
-            <!--register-->
+            <!--log out-->
             <Button x:Name="LogoutButton"
-                    Command="{Binding LogOut, Source={StaticResource ViewModel2}}" 
+                    Command="{Binding TryLogout, Source={StaticResource ViewModel2}}" 
                     CommandParameter="{Binding ElementName=page}"
-                    Content="Log  out" Margin="10,93,0,10" Width="150"
-                    Visibility="Collapsed"
-                    />
+                    Content="Log  out" Margin="10,27,0,76" Width="150"
+                    Visibility="Collapsed"/>
+            <!--~register-->
+            <Button x:Name="RegisterButton"
+                    Command="{Binding TryRegister, Source={StaticResource ViewModel2}}" 
+                    CommandParameter="{Binding ElementName=page}"
+                    Content="Register" Margin="9,131,0,-28"
+                    Visibility="Visible" Width="150">
+                <Interactivity:Interaction.Behaviors>
+                    <Core:DataTriggerBehavior Binding="{Binding Text.Length, ElementName=Login, UpdateSourceTrigger=PropertyChanged}" ComparisonCondition="Equal" Value="0">
+                        <Core:ChangePropertyAction TargetObject="{Binding ElementName=RegisterButton}" PropertyName="IsEnabled" Value="False" />
+                    </Core:DataTriggerBehavior>
+                    <Core:DataTriggerBehavior Binding="{Binding Text.Length, ElementName=Login, UpdateSourceTrigger=PropertyChanged}" ComparisonCondition="GreaterThan" Value="0">
+                        <Core:ChangePropertyAction TargetObject="{Binding ElementName=RegisterButton}" PropertyName="IsEnabled" Value="True" />
+                    </Core:DataTriggerBehavior>
+                    <Core:DataTriggerBehavior Binding="{Binding Password.Length, ElementName=Password, UpdateSourceTrigger=PropertyChanged}" ComparisonCondition="Equal" Value="0">
+                        <Core:ChangePropertyAction TargetObject="{Binding ElementName=RegisterButton}" PropertyName="IsEnabled" Value="False" />
+                    </Core:DataTriggerBehavior>
+                    <Core:DataTriggerBehavior Binding="{Binding Password.Length, ElementName=Password, UpdateSourceTrigger=PropertyChanged}" ComparisonCondition="GreaterThan" Value="0">
+                        <Core:ChangePropertyAction TargetObject="{Binding ElementName=RegisterButton}" PropertyName="IsEnabled" Value="True" />
+                    </Core:DataTriggerBehavior>
+
+                </Interactivity:Interaction.Behaviors>
+            </Button>
+
         </Grid>
     </RelativePanel>
 </Page>

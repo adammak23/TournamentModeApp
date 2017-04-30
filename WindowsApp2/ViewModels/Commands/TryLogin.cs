@@ -24,11 +24,9 @@ namespace WindowsApp2.ViewModels.Commands
         {
             return true;
         }
-
         public void Execute(object parameter)
         {
-            ViewModel.AccessTheWebAsync(parameter as Page);
-           
+            ViewModel.AccessTheWebAsync(parameter as Page);  
         }
     }
 }

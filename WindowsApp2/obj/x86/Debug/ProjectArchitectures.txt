@@ -1,1 +1,1 @@
-F:\WindowsApp2\WindowsApp2\WindowsApp2.csproj;x86
+F:\TournamentApp\WindowsApp2\WindowsApp2.csproj;x86

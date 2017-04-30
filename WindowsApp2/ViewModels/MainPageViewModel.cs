@@ -23,11 +23,14 @@ namespace WindowsApp2.ViewModels
         private static readonly HttpClient client = new HttpClient();
 
         public TryLogin TryLogin { get; set; }
-
+        public TryLogout TryLogout { get; set; }
+        public TryRegister TryRegister { get; set; }
         public MainPageViewModel()
         {
             Login = "";
             this.TryLogin = new TryLogin(this);
+            this.TryLogout = new TryLogout(this);
+            this.TryRegister = new TryRegister(this);
         }
         
 
@@ -75,21 +78,27 @@ namespace WindowsApp2.ViewModels
         public void GotoAbout() =>
             NavigationService.Navigate(typeof(Views.SettingsPage), 2);
 
-        public void LogOut(Page grid)
+        public async void LogOut(Page grid)
         {
             TextBlock block = grid.FindName("Error1") as TextBlock;
             TextBox Login = grid.FindName("Login") as TextBox;
             PasswordBox Password = grid.FindName("Password") as PasswordBox;
             Button loginButton = grid.FindName("submitButton2") as Button;
             Button logoutButton = grid.FindName("LogoutButton") as Button;
+            Button RegisterButon = grid.FindName("RegisterButton") as Button;
+            ProgressBar progressbar = grid.FindName("progressbar") as ProgressBar;
 
-            block.Text = "Wylogowano";
-            Login.Opacity = 1;
-            Password.Opacity = 1;
-            loginButton.IsEnabled = true;
+            progressbar.IsIndeterminate = true;
+            await Task.Delay(2000);
+            progressbar.IsIndeterminate = false;
+            UserAccount.LogOut();
+            block.Text = "You have beed logged out.";
+            block.Tag = "LoggedOut";
+            loginButton.Visibility = Visibility.Visible;
+            Login.Visibility = Visibility.Visible;
+            Password.Visibility = Visibility.Visible;
             logoutButton.Visibility = Visibility.Collapsed;
-
-
+            RegisterButon.Visibility = Visibility.Visible;
 
         }
         public async void AccessTheWebAsync(Page grid)
@@ -98,9 +107,10 @@ namespace WindowsApp2.ViewModels
             TextBlock block = grid.FindName("Error1") as TextBlock;
             TextBox Login = grid.FindName("Login") as TextBox;
             PasswordBox Password = grid.FindName("Password") as PasswordBox;
-            Button loginButton = grid.FindName("submitButton2") as Button;
             ProgressBar progressbar = grid.FindName("progressbar") as ProgressBar;
+            Button loginButton = grid.FindName("submitButton2") as Button;
             Button logoutButton = grid.FindName("LogoutButton") as Button;
+            Button RegisterButon = grid.FindName("RegisterButton") as Button;
 
             block.Text = "Wait...";
             progressbar.IsIndeterminate = true;
@@ -110,33 +120,83 @@ namespace WindowsApp2.ViewModels
                { "post_user", Login.Text },
                { "post_pass", Password.Password }
             };
-
+            
             var content = new FormUrlEncodedContent(values);
-            var response = await client.PostAsync("https://adammak2342.000webhostapp.com/login.php", content);
-            var responseString = await response.Content.ReadAsStringAsync();
+            try
+            {
+                var response = await client.PostAsync("https://adammak2342.000webhostapp.com/login.php", content);
+                var responseString = await response.Content.ReadAsStringAsync();
 
-            if (responseString == "")
-            {
-                progressbar.IsIndeterminate = false;
-                block.Text = "User doesn't exist.";
-            }
-            else if (responseString == "login-SUCCESS")
-            {
-                block.Text = "Successfully logged in as " + Login.Text;
-                UserAccount.LogIn(Login.Text);
-                block.Tag = "LoggedIn";
-                progressbar.IsIndeterminate = false;
-                loginButton.Visibility = Visibility.Collapsed;
-                Login.Visibility = Visibility.Collapsed;
-                Password.Visibility = Visibility.Collapsed;
-                logoutButton.Visibility = Visibility.Visible;
+                if (responseString == "")
+                {
+                    progressbar.IsIndeterminate = false;
+                    block.Text = "User doesn't exist.";
+                }
+                else if (responseString == "login-SUCCESS")
+                {
+                    block.Text = "Logged in as " + Login.Text;
+                    UserAccount.LogIn(Login.Text);
+                    block.Tag = "LoggedIn";
+                    progressbar.IsIndeterminate = false;
+                    loginButton.Visibility = Visibility.Collapsed;
+                    Login.Visibility = Visibility.Collapsed;
+                    Password.Visibility = Visibility.Collapsed;
+                    logoutButton.Visibility = Visibility.Visible;
+                    RegisterButon.Visibility = Visibility.Collapsed;
 
+                }
+                else
+                {
+                    progressbar.IsIndeterminate = false;
+                    block.Text = responseString; // "There is problem with connection";
+                }
             }
-            else
+            catch (HttpRequestException e) { block.Text = e.StackTrace; }
+        }
+        public async void Register(Page grid)
+        {
+            TextBlock block = grid.FindName("Error1") as TextBlock;
+            TextBox Login = grid.FindName("Login") as TextBox;
+            PasswordBox Password = grid.FindName("Password") as PasswordBox;
+            ProgressBar progressbar = grid.FindName("progressbar") as ProgressBar;
+            Button loginButton = grid.FindName("submitButton2") as Button;
+            Button logoutButton = grid.FindName("LogoutButton") as Button;
+            Button RegisterButon = grid.FindName("RegisterButton") as Button;
+
+            block.Text = "Wait...";
+            progressbar.IsIndeterminate = true;
+
+            var values = new Dictionary<string, string>
             {
-                progressbar.IsIndeterminate = false;
-                block.Text = responseString; // "There is problem with connection";
+               { "post_user", Login.Text },
+               { "post_pass", Password.Password }
+            };
+            var content = new FormUrlEncodedContent(values);
+            try
+            {
+                var response = await client.PostAsync("https://adammak2342.000webhostapp.com/register.php", content);
+                var responseString = await response.Content.ReadAsStringAsync();
+
+                    if (responseString == "User has been created!")
+                {
+                    block.Text = "Registered as " + Login.Text;
+                    UserAccount.LogIn(Login.Text);
+                    block.Tag = "LoggedIn";
+                    progressbar.IsIndeterminate = false;
+                    loginButton.Visibility = Visibility.Collapsed;
+                    Login.Visibility = Visibility.Collapsed;
+                    Password.Visibility = Visibility.Collapsed;
+                    logoutButton.Visibility = Visibility.Visible;
+                    RegisterButon.Visibility = Visibility.Collapsed;
+
+                }
+                else
+                {
+                    progressbar.IsIndeterminate = false;
+                    block.Text = responseString; // "There is problem with connection";
+                }
             }
+            catch (HttpRequestException e) { block.Text = e.StackTrace; }
         }
     }
 }

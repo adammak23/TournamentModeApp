@@ -18,7 +18,6 @@ namespace WindowsApp2.ViewModels.Commands
         }
 
         public event EventHandler CanExecuteChanged;
-
         public bool CanExecute(object parameter)
         {
             return true;
@@ -26,7 +25,7 @@ namespace WindowsApp2.ViewModels.Commands
 
         public void Execute(object parameter)
         {
-            this.ViewModel.AccessTheWebAsync(parameter as Page);
+            this.ViewModel.Register(parameter as Page);
         }
     }
 }
