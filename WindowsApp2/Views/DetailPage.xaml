@@ -15,6 +15,9 @@
     <Page.DataContext>
         <vm:DetailPageViewModel x:Name="ViewModel" />
     </Page.DataContext>
+    <Page.Resources>
+        <vm:DetailPageViewModel x:Key="ViewModel2" x:Name="ViewModel2" />
+    </Page.Resources>
 
     <RelativePanel Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
@@ -63,14 +66,60 @@
                       RelativePanel.AlignRightWithPanel="True"
                       RelativePanel.Below="pageHeader"
                       VerticalScrollBarVisibility="Auto">
-            <Ellipse Margin="0,0,0,0" Height="147" Width="147" HorizontalAlignment="Right">
-                <Ellipse.Fill>
-                <ImageBrush ImageSource="{x:Bind ViewModel.SummonerIconImageString}"/>
-                </Ellipse.Fill>
-            </Ellipse>
+
+            <Grid Margin="3,100,0,0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="3*"/>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="1*"/>
+                </Grid.RowDefinitions>
+
+                <TextBlock Text="{x:Bind ViewModel.SoloQ, Mode=OneWay}" Grid.Row="2" VerticalAlignment="Center"/>
+                <TextBlock Text="{x:Bind ViewModel.FlexQ, Mode=OneWay}" Grid.Row="3" VerticalAlignment="Center"/>
+                <TextBlock Text="{x:Bind ViewModel.TT, Mode=OneWay}" Grid.Row="4" VerticalAlignment="Center"/>
+                <Image Source="{x:Bind ViewModel.SummonerIcon}" Height="120" Width="120" VerticalAlignment="Top" HorizontalAlignment="Right" Margin="0,-95,12,0" Grid.Row="0" Grid.Column="1"/>
+                <Image Source="{x:Bind ViewModel.SummonerBorder}" Height="140" Width="140" VerticalAlignment="Top" HorizontalAlignment="Right" Margin="0,-105,2,0" Grid.Row="0" Grid.Column="1"/>
+                <Image Source="{x:Bind ViewModel.SoloQMedal}" Height="100" Width="100" HorizontalAlignment="Right" Margin="0,0,0,0" Grid.Column="0" Grid.Row="2"/>
+                <Image Source="{x:Bind ViewModel.FlexQMedal}" Height="100" Width="100" HorizontalAlignment="Right" Margin="0,0,0,0" Grid.Column="0" Grid.Row="3"/>
+                <Image Source="{x:Bind ViewModel.TTMedal}" Height="100" Width="100" HorizontalAlignment="Right" Margin="0,0,0,0" Grid.Column="0" Grid.Row="4"/>
+
+                <TextBox x:Name="Summoner"
+                         PlaceholderText="Summoner"
+                         HorizontalAlignment="Left"
+                         Grid.Column="0" Grid.Row="5"/>
+                <Button x:Name="submitButton2"
+                    Command="{Binding AddSummoner, Source={StaticResource ViewModel2}}" 
+                    CommandParameter="{Binding ElementName=ThisPage}" Content="Add Summoner"
+                    HorizontalAlignment="Right"
+                    Visibility="Visible" Width="150"
+                    Grid.Column="1" Grid.Row="5"/>
+                <TextBlock x:Name="Error2" Text="" Grid.Row="6" Grid.Column="1" HorizontalAlignment="Right"/>
+                <Button Command="{Binding RefreshSummoner, Source={StaticResource ViewModel2}}" 
+                    CommandParameter="{Binding ElementName=ThisPage}"
+                        Grid.Row="1" Grid.Column="1">
+                    <StackPanel>
+                        <SymbolIcon Symbol="Refresh"/>
+                    </StackPanel>
+                </Button>
+                
+                <TextBlock x:Name="SummonerName" Text="{x:Bind ViewModel.SummonerName, Mode=OneWay}" Grid.Row="1" Grid.Column="1" HorizontalAlignment="Right"/>
+            </Grid>
+
         </ScrollViewer>
         <TextBlock Style="{StaticResource TitleTextBlockStyle}" Text="Welcome, " RenderTransformOrigin="0.64,2.229" Margin="12,62,-15.333,-62" />
-        <TextBlock  Text="{x:Bind ViewModel.Login, Mode=OneWay}" Margin="130,72,-140,-72" />
+        <TextBlock  Text="{x:Bind ViewModel.Username, Mode=OneWay}" Margin="130,72,-205,-72" />
+
+
+
 
     </RelativePanel>
 </Page>

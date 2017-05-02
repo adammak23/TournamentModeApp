@@ -13,6 +13,7 @@ namespace WindowsApp2.Views
         {
             InitializeComponent();
             NavigationCacheMode = Windows.UI.Xaml.Navigation.NavigationCacheMode.Enabled;
+            Views.Shell.HamburgerMenu.IsFullScreen = true;
         }
     }
 }

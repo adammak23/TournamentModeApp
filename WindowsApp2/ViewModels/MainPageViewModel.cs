@@ -8,9 +8,7 @@ using Windows.UI.Xaml.Navigation;
 using WindowsApp2.Models;
 using WindowsApp2.ViewModels.Commands;
 using System.Net.Http;
-
 using Template10.Utils;
-
 using System.Text;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
@@ -27,13 +25,12 @@ namespace WindowsApp2.ViewModels
         public TryRegister TryRegister { get; set; }
         public MainPageViewModel()
         {
+            //ProfileButtonVisibility = "Collapsed";
             Login = "";
             this.TryLogin = new TryLogin(this);
             this.TryLogout = new TryLogout(this);
             this.TryRegister = new TryRegister(this);
         }
-        
-
         string _Login = "";
         public string Login { get { return _Login; } set { Set(ref _Login, value); } }
 
@@ -100,6 +97,7 @@ namespace WindowsApp2.ViewModels
             logoutButton.Visibility = Visibility.Collapsed;
             RegisterButon.Visibility = Visibility.Visible;
 
+            Views.Shell.HamburgerMenu.IsFullScreen = true;
         }
         public async void AccessTheWebAsync(Page grid)
         {
@@ -134,8 +132,8 @@ namespace WindowsApp2.ViewModels
                 }
                 else if (responseString == "login-SUCCESS")
                 {
-                    block.Text = "Logged in as " + Login.Text;
                     UserAccount.LogIn(Login.Text);
+                    block.Text = "Logged in as " + UserAccount.LoggedInUsername;
                     block.Tag = "LoggedIn";
                     progressbar.IsIndeterminate = false;
                     loginButton.Visibility = Visibility.Collapsed;
@@ -144,6 +142,7 @@ namespace WindowsApp2.ViewModels
                     logoutButton.Visibility = Visibility.Visible;
                     RegisterButon.Visibility = Visibility.Collapsed;
 
+                    Views.Shell.HamburgerMenu.IsFullScreen = false;
                 }
                 else
                 {
@@ -189,7 +188,9 @@ namespace WindowsApp2.ViewModels
                     logoutButton.Visibility = Visibility.Visible;
                     RegisterButon.Visibility = Visibility.Collapsed;
 
+                    Views.Shell.HamburgerMenu.IsFullScreen = false;
                 }
+
                 else
                 {
                     progressbar.IsIndeterminate = false;

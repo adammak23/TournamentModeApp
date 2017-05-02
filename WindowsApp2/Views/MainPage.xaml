@@ -15,7 +15,6 @@
     <Page.DataContext>
         <vm:MainPageViewModel x:Name="ViewModel" />
     </Page.DataContext>
-
     <Page.Resources>
         <vml:MainPageViewModel x:Key="ViewModel2" x:Name="ViewModel2" />
     </Page.Resources>
@@ -77,7 +76,7 @@
             <TextBlock x:Name="stateTextBox"
                        Margin="359,128,-343,-112"
                        Text="Current Visual State" />
-            <TextBlock x:Name="Error1" Tag="" Text="{Binding Error, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Margin="194,34,-390,-119" FontSize="20" />
+            <TextBlock x:Name="Error1" Tag="" Margin="194,34,-390,-119" FontSize="20" />
         </RelativePanel>
         <Grid Margin="10,53,-221,-188" x:Name="grid">
             <TextBox MinWidth="150"

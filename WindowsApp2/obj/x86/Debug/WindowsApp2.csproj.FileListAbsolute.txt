@@ -628,7 +628,6 @@ F:\TournamentApp\WindowsApp2\bin\x86\Debug\System.Xml.XDocument.dll
 F:\TournamentApp\WindowsApp2\bin\x86\Debug\System.Xml.XmlDocument.dll
 F:\TournamentApp\WindowsApp2\bin\x86\Debug\System.Xml.XmlSerializer.dll
 F:\TournamentApp\WindowsApp2\bin\x86\Debug\Template10Library.dll
-F:\TournamentApp\WindowsApp2\obj\x86\Debug\WindowsApp2.csprojResolveAssemblyReference.cache
 F:\TournamentApp\WindowsApp2\obj\x86\Debug\App.g.i.cs
 F:\TournamentApp\WindowsApp2\obj\x86\Debug\App.g.cs
 F:\TournamentApp\WindowsApp2\obj\x86\Debug\Views\Busy.g.i.cs
@@ -742,3 +741,12 @@ F:\TournamentApp\WindowsApp2\obj\x86\Debug\Microsoft.Xaml.Interactions.pri.xml
 F:\TournamentApp\WindowsApp2\obj\x86\Debug\Microsoft.Xaml.Interactivity.pri.xml
 F:\TournamentApp\WindowsApp2\obj\x86\Debug\Template10Library.pri.xml
 F:\TournamentApp\WindowsApp2\obj\x86\Debug\ProjectArchitectures.txt
+F:\TournamentApp\WindowsApp2\bin\x86\Debug\System.Net.Http.Extensions.dll
+F:\TournamentApp\WindowsApp2\bin\x86\Debug\System.Net.Http.Primitives.dll
+F:\TournamentApp\WindowsApp2\bin\x86\Debug\RiotSharp.dll
+F:\TournamentApp\WindowsApp2\bin\x86\Debug\System.Reactive.Core.dll
+F:\TournamentApp\WindowsApp2\bin\x86\Debug\System.Reactive.Interfaces.dll
+F:\TournamentApp\WindowsApp2\bin\x86\Debug\System.Reactive.Linq.dll
+F:\TournamentApp\WindowsApp2\obj\x86\Debug\System.Reactive.Core\en-US\System.Reactive.Strings_Core.resw
+F:\TournamentApp\WindowsApp2\obj\x86\Debug\System.Reactive.Linq\en-US\System.Reactive.Strings_Linq.resw
+F:\TournamentApp\WindowsApp2\obj\x86\Debug\WindowsApp2.csprojResolveAssemblyReference.cache

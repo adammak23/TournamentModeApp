@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using RiotSharp;
+
 
 namespace WindowsApp2.Models
 {
@@ -10,7 +12,8 @@ namespace WindowsApp2.Models
     {
         public static string LoggedInUsername;
         public static bool LoggedIn = false;
-
+        public static string Summoner = "No Summoner";
+        private static RiotApi api = Api.GetApi();
         public static void LogIn(string username)
         {
             LoggedInUsername = username;
@@ -21,6 +24,14 @@ namespace WindowsApp2.Models
         {
             LoggedInUsername = "";
             LoggedIn = false;
+        }
+        public static void SetSummoner(string summ)
+        {
+            Summoner = summ;
+        }
+        public static string GetSummoner()
+        {
+            return Summoner;
         }
     }
 }
