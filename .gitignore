@@ -22,6 +22,7 @@ Api.cs
 bld/
 [Bb]in/
 [Oo]bj/
+[Ll]og/
 
 # Visual Studio 2015 cache/options directory
 .vs/
@@ -44,6 +45,12 @@ dlldata.c
 # DNX
 project.lock.json
 artifacts/
+
+# .NET Core
+project.lock.json
+project.fragment.lock.json
+artifacts/
+**/Properties/launchSettings.json
 
 *_i.c
 *_p.c
@@ -82,6 +89,7 @@ ipch/
 *.sdf
 *.cachefile
 *.VC.db
+*.VC.VC.opendb
 
 # Visual Studio profiler
 *.psess
@@ -184,6 +192,7 @@ ClientBin/
 *~
 *.dbmdl
 *.dbproj.schemaview
+*.jfm
 *.pfx
 *.publishsettings
 node_modules/
