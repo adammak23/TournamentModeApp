@@ -12,7 +12,7 @@ namespace WindowsApp2.Models
     {
         public static string LoggedInUsername;
         public static bool LoggedIn = false;
-        public static string Summoner = "No Summoner";
+        public static string Summoner = "No Summoner Connected :(";
         private static RiotApi api = Api.GetApi();
         public static void LogIn(string username)
         {

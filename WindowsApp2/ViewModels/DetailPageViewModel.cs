@@ -19,23 +19,25 @@ using RiotSharp.LeagueEndpoint;
 using System.Net.Http;
 using Windows.UI.Xaml;
 using System.ComponentModel;
+using Windows.UI.Xaml.Media;
 
 namespace WindowsApp2.ViewModels
 {
     [Newtonsoft.Json.JsonArrayAttribute]//not needed?
+    [Windows.UI.Xaml.Data.Bindable]
     public class DetailPageViewModel : ViewModelBase, INotifyPropertyChanged
     {
         public AddSummoner AddSummoner { get; set; }
         public RefreshSummoner RefreshSummoner { get; set; }
+
         public DetailPageViewModel()
         {
-           
-            Refresh();
+            //Refresh();
             Username = UserAccount.LoggedInUsername;
             AddSummoner = new AddSummoner(this);
             RefreshSummoner = new RefreshSummoner(this);
-            GetLeagues();
-            ImageStrings();
+            //GetLeagues();
+            //ImageStrings();
             
         }
         public string Username = "Empty Username";
@@ -48,7 +50,7 @@ namespace WindowsApp2.ViewModels
         public string TT = "3v3: Unranked";
         public string TTMedal = "http://static.lolskill.net/img/tiers/192/unranked.png";
         RiotApi api = Api.GetApi();
-        public string SummonerIcon;
+        public string SummonerIcon = "none";
         public string SummonerBorder = "none";
         public List<League> liga;
         Summoner summoner;
@@ -69,11 +71,12 @@ namespace WindowsApp2.ViewModels
             //http://static.lolskill.net/img/tiers/192/goldIII.png lub https://opgg-static.akamaized.net/images/medals/gold_3.png
             //http://opgg-static.akamaized.net/images/borders2/platinum.png
         }
-        /*
 
+        /*
         public override async Task OnNavigatedToAsync(object parameter, NavigationMode mode, IDictionary<string, object> suspensionState)
         {
-            Login = (suspensionState.ContainsKey(nameof(Login))) ? suspensionState[nameof(Login)]?.ToString() : parameter?.ToString();
+            var value = parameter as string;
+            // TODO: use the parameter somehow
             await Task.CompletedTask;
         }
 
@@ -92,6 +95,7 @@ namespace WindowsApp2.ViewModels
             await Task.CompletedTask;
         }
         */
+
         public static DateTime FromUnixTime(long unixTime)
         {
             var epoch = new DateTime(1970, 1, 1, 0, 0, 0, DateTimeKind.Utc);
@@ -124,34 +128,8 @@ namespace WindowsApp2.ViewModels
             }
             catch (HttpRequestException e) { block.Text = e.StackTrace; }
         }
-        public async void CheckSummonerFromDatabase(Page grid)
-        {
-            TextBlock block = grid.FindName("Error2") as TextBlock;
-            TextBlock Summoner = grid.FindName("SummonerName") as TextBlock;
 
-            block.Text = "Wait...";
-
-            var values = new Dictionary<string, string>
-               {
-                  { "post_user", UserAccount.LoggedInUsername },
-               };
-
-            var content = new FormUrlEncodedContent(values);
-
-            try
-            {
-                HttpClient client = new HttpClient();
-                var response = await client.PostAsync("https://adammak2342.000webhostapp.com/account.php", content);
-                var responseString = await response.Content.ReadAsStringAsync();
-                UserAccount.SetSummoner(responseString);
-                SummonerName = responseString;
-                Summoner.Text = responseString;
-                block.Text = responseString;
-            }
-            catch (HttpRequestException e) { block.Text = e.StackTrace; }
-        }
-
-        public static async void Refresh()
+        public static async Task Refresh()
         {
             var values = new Dictionary<string, string>
                {
@@ -165,34 +143,31 @@ namespace WindowsApp2.ViewModels
                 var response = await client.PostAsync("https://adammak2342.000webhostapp.com/account.php", content);
                 var responseString = await response.Content.ReadAsStringAsync();
                 UserAccount.SetSummoner(responseString);
-                //SummonerName = responseString;
             }
             catch (HttpRequestException e) { }
         }
 
-                public List<League> GetSumm()
+                public async Task GetSumm()
         {
             try
             {
-                Refresh();
+                await Refresh();
                 SummonerName = UserAccount.GetSummoner();
-                System.Diagnostics.Debug.WriteLine();
-                
-                summoner = api.GetSummoner(Region.eune, SummonerName);
+                summoner = api.GetSummoner(Region.eune, UserAccount.GetSummoner());
                 liga = summoner.GetLeagues();
-                
+
             }
             catch (RiotSharpException ex)
             {
                  //Summoner doesnt exist or server error
             }
             catch (Newtonsoft.Json.JsonSerializationException exx) { /*when failed, cannot serialize/deserialize status.failed to string/int64/?*/}
-            return liga;
+            //return liga;
         }
 
-        public List<League> GetLeagues()
+        public async Task GetLeagues()
         {
-            GetSumm();
+            await GetSumm();
 
             if (liga != null)
             {
@@ -214,11 +189,70 @@ namespace WindowsApp2.ViewModels
                 {
                     TT = "3v3: " + liga[2].Tier + " " + liga[2].Entries[0].Division;
                     TTMedal = "https://opgg-static.akamaized.net/images/medals/" + liga[2].Tier.ToString().ToLower() + "_" + RomanToIntConverter(liga[2].Entries[0].Division) + ".png";
-
+                    
                 }
             }
-            return liga;
+            //return liga;
         }
+        public async void CheckSummonerFromDatabase(Page grid)
+        {
+            TextBlock block = grid.FindName("Error2") as TextBlock;
+            TextBlock Summoner = grid.FindName("SummonerName") as TextBlock;
+
+            TextBlock SoloQ = grid.FindName("SoloQ") as TextBlock;
+            TextBlock FlexQ = grid.FindName("FlexQ") as TextBlock;
+            TextBlock TT = grid.FindName("TT") as TextBlock;
+
+            Image SummonerBorder = grid.FindName("SummonerBorder") as Image;
+            Image SummonerIcon = grid.FindName("SummonerIcon") as Image;
+
+            Image SoloQMedal = grid.FindName("SoloQMedal") as Image;
+            Image FlexQMedal = grid.FindName("FlexQMedal") as Image;
+            Image TTMedal = grid.FindName("TTMedal") as Image;
+
+
+            block.Text = "Wait...";
+
+            var values = new Dictionary<string, string>
+               {
+                  { "post_user", UserAccount.LoggedInUsername },
+               };
+
+            var content = new FormUrlEncodedContent(values);
+
+            try
+            {
+                HttpClient client = new HttpClient();
+                await GetLeagues();
+                ImageStrings();
+
+                SoloQ.Text = this.SoloQ;
+                FlexQ.Text = this.FlexQ;
+                TT.Text = this.TT;
+
+                if(this.SummonerBorder!="none")
+                    SummonerBorder.Source = new BitmapImage(new Uri(this.SummonerBorder, UriKind.Absolute));
+                if (this.SummonerIcon != "none")
+                    SummonerIcon.Source = new BitmapImage(new Uri(this.SummonerIcon, UriKind.Absolute));
+
+                SoloQMedal.Source = new BitmapImage(new Uri(this.SoloQMedal, UriKind.Absolute));
+
+                FlexQMedal.Source = new BitmapImage(new Uri(this.FlexQMedal, UriKind.Absolute));
+
+                TTMedal.Source = new BitmapImage(new Uri(this.TTMedal, UriKind.Absolute));
+
+
+                var response = await client.PostAsync("https://adammak2342.000webhostapp.com/account.php", content);
+                var responseString = await response.Content.ReadAsStringAsync();
+                UserAccount.SetSummoner(responseString);
+                SummonerName = responseString;
+                Summoner.Text = responseString;
+                block.Text = "";
+
+            }
+            catch (HttpRequestException e) { block.Text = e.StackTrace; }
+        }
+
     }
 }
 

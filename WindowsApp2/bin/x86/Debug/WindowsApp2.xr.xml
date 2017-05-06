@@ -4,8 +4,8 @@
     <RootInterface FullName="Windows.UI.Xaml.Data.IValueConverter" />
   </Roots.Interfaces>
   <Roots.PropertyPathNames>
-    <RootPropertyPathName Name="RefreshSummoner" />
     <RootPropertyPathName Name="AddSummoner" />
+    <RootPropertyPathName Name="RefreshSummoner" />
     <RootPropertyPathName Name="TryRegister" />
     <RootPropertyPathName Name="Password" />
     <RootPropertyPathName Name="Length" />
@@ -99,6 +99,8 @@
       <RootMethod Name="SetColumn" />
       <RootMethod Name="GetRow" />
       <RootMethod Name="SetRow" />
+      <RootMethod Name="GetColumnSpan" />
+      <RootMethod Name="SetColumnSpan" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.ColumnDefinition">
       <RootProperty Name="Width" />
@@ -119,14 +121,15 @@
       <RootProperty Name="Foreground" />
       <RootProperty Name="Text" />
       <RootProperty Name="Style" />
-      <RootProperty Name="RenderTransformOrigin" />
       <RootProperty Name="HorizontalAlignment" />
-      <RootProperty Name="Tag" />
       <RootProperty Name="FontSize" />
+      <RootProperty Name="Height" />
+      <RootProperty Name="RenderTransformOrigin" />
+      <RootProperty Name="Width" />
+      <RootProperty Name="Tag" />
       <RootProperty Name="Inlines" />
       <RootProperty Name="LineHeight" />
       <RootProperty Name="TextWrapping" />
-      <RootProperty Name="Width" />
       <RootProperty Name="MaxWidth" />
     </RootType>
     <RootType FullName="Microsoft.Xaml.DirectUI.ProxyTypes.BindExtension">
@@ -144,8 +147,9 @@
     <RootType FullName="Windows.UI.Xaml.Controls.RelativePanel">
       <RootProperty Name="Background" />
       <RootProperty Name="Children" />
-      <RootProperty Name="DataContext" />
       <RootProperty Name="HorizontalAlignment" />
+      <RootProperty Name="Margin" />
+      <RootProperty Name="DataContext" />
       <RootMethod Name="GetAlignLeftWithPanel" />
       <RootMethod Name="SetAlignLeftWithPanel" />
       <RootMethod Name="GetAlignRightWithPanel" />
@@ -156,6 +160,8 @@
       <RootMethod Name="SetAlignBottomWithPanel" />
       <RootMethod Name="GetBelow" />
       <RootMethod Name="SetBelow" />
+      <RootMethod Name="GetAlignLeftWith" />
+      <RootMethod Name="SetAlignLeftWith" />
       <RootMethod Name="GetAlignRightWith" />
       <RootMethod Name="SetAlignRightWith" />
       <RootMethod Name="GetAlignBottomWith" />
@@ -200,6 +206,26 @@
       <RootProperty Name="Stretch" />
       <RootEvent Name="ImageOpened" />
     </RootType>
+    <RootType FullName="Windows.UI.Xaml.Controls.Button">
+      <RootProperty Name="Command" />
+      <RootProperty Name="CommandParameter" />
+      <RootProperty Name="Content" />
+      <RootProperty Name="HorizontalAlignment" />
+      <RootProperty Name="Visibility" />
+      <RootProperty Name="Margin" />
+      <RootProperty Name="Width" />
+    </RootType>
+    <RootType FullName="Windows.UI.Xaml.Data.Binding">
+      <RootProperty Name="Source" />
+      <RootProperty Name="ElementName" />
+      <RootProperty Name="UpdateSourceTrigger" />
+      <RootProperty Name="Mode" />
+      <RootProperty Name="Converter" />
+    </RootType>
+    <RootType FullName="Microsoft.Xaml.Interactivity.Interaction">
+      <RootMethod Name="GetBehaviors" />
+      <RootMethod Name="SetBehaviors" />
+    </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.TextBox">
       <RootProperty Name="PlaceholderText" />
       <RootProperty Name="HorizontalAlignment" />
@@ -212,22 +238,6 @@
       <RootProperty Name="Width" />
       <RootProperty Name="Header" />
     </RootType>
-    <RootType FullName="Windows.UI.Xaml.Controls.Button">
-      <RootProperty Name="Command" />
-      <RootProperty Name="CommandParameter" />
-      <RootProperty Name="Content" />
-      <RootProperty Name="HorizontalAlignment" />
-      <RootProperty Name="Visibility" />
-      <RootProperty Name="Width" />
-      <RootProperty Name="Margin" />
-    </RootType>
-    <RootType FullName="Windows.UI.Xaml.Data.Binding">
-      <RootProperty Name="Source" />
-      <RootProperty Name="ElementName" />
-      <RootProperty Name="UpdateSourceTrigger" />
-      <RootProperty Name="Mode" />
-      <RootProperty Name="Converter" />
-    </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.StackPanel">
       <RootProperty Name="Children" />
       <RootProperty Name="Orientation" />
@@ -237,17 +247,20 @@
       <RootProperty Name="Width" />
       <RootProperty Name="Height" />
     </RootType>
+    <RootType FullName="Microsoft.Xaml.Interactions.Core.EventTriggerBehavior">
+      <RootProperty Name="EventName" />
+      <RootProperty Name="Actions" />
+    </RootType>
+    <RootType FullName="Microsoft.Xaml.Interactions.Core.InvokeCommandAction">
+      <RootProperty Name="Command" />
+      <RootProperty Name="CommandParameter" />
+    </RootType>
     <RootType FullName="WindowsApp2.Views.DetailPage" />
     <RootType FullName="WindowsApp2.ViewModels.MainPageViewModel" />
-    <RootType FullName="Microsoft.Xaml.Interactivity.Interaction">
-      <RootMethod Name="GetBehaviors" />
-      <RootMethod Name="SetBehaviors" />
-    </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.PasswordBox">
       <RootProperty Name="MinWidth" />
       <RootProperty Name="PlaceholderText" />
       <RootProperty Name="MinHeight" />
-      <RootProperty Name="Password" />
       <RootProperty Name="Margin" />
       <RootProperty Name="Height" />
       <RootProperty Name="VerticalAlignment" />
@@ -277,14 +290,6 @@
     <RootType FullName="Template10.Behaviors.KeyBehavior">
       <RootProperty Name="Key" />
       <RootProperty Name="Actions" />
-    </RootType>
-    <RootType FullName="Microsoft.Xaml.Interactions.Core.InvokeCommandAction">
-      <RootProperty Name="Command" />
-      <RootProperty Name="CommandParameter" />
-    </RootType>
-    <RootType FullName="Microsoft.Xaml.Interactions.Core.EventTriggerBehavior">
-      <RootProperty Name="Actions" />
-      <RootProperty Name="EventName" />
     </RootType>
     <RootType FullName="Template10.Behaviors.FocusAction" />
     <RootType FullName="Windows.UI.Xaml.Controls.AppBarButton">

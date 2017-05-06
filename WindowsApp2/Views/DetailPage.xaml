@@ -69,8 +69,10 @@
 
             <Grid Margin="3,100,0,0">
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="1*"/>
-                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="5*"/>
+                    <ColumnDefinition Width="1.5*"/>
+                    <ColumnDefinition Width="3*"/>
+                    <ColumnDefinition Width="4.5*"/>
                 </Grid.ColumnDefinitions>
                 <Grid.RowDefinitions>
                     <RowDefinition Height="3*"/>
@@ -83,43 +85,46 @@
                     <RowDefinition Height="1*"/>
                 </Grid.RowDefinitions>
 
-                <TextBlock Text="{x:Bind ViewModel.SoloQ, Mode=OneWay}" Grid.Row="2" VerticalAlignment="Center"/>
-                <TextBlock Text="{x:Bind ViewModel.FlexQ, Mode=OneWay}" Grid.Row="3" VerticalAlignment="Center"/>
-                <TextBlock Text="{x:Bind ViewModel.TT, Mode=OneWay}" Grid.Row="4" VerticalAlignment="Center"/>
-                <Image Source="{x:Bind ViewModel.SummonerIcon}" Height="120" Width="120" VerticalAlignment="Top" HorizontalAlignment="Right" Margin="0,-95,12,0" Grid.Row="0" Grid.Column="1"/>
-                <Image Source="{x:Bind ViewModel.SummonerBorder}" Height="140" Width="140" VerticalAlignment="Top" HorizontalAlignment="Right" Margin="0,-105,2,0" Grid.Row="0" Grid.Column="1"/>
-                <Image Source="{x:Bind ViewModel.SoloQMedal}" Height="100" Width="100" HorizontalAlignment="Right" Margin="0,0,0,0" Grid.Column="0" Grid.Row="2"/>
-                <Image Source="{x:Bind ViewModel.FlexQMedal}" Height="100" Width="100" HorizontalAlignment="Right" Margin="0,0,0,0" Grid.Column="0" Grid.Row="3"/>
-                <Image Source="{x:Bind ViewModel.TTMedal}" Height="100" Width="100" HorizontalAlignment="Right" Margin="0,0,0,0" Grid.Column="0" Grid.Row="4"/>
+                <Image x:Name="SummonerIcon" Source="{x:Bind ViewModel.SummonerIcon}" Height="120" Width="120" VerticalAlignment="Top" HorizontalAlignment="Right" Margin="0,-95,20,0" Grid.Row="0" Grid.Column="3"/>
+                <Image x:Name="SummonerBorder" Source="{x:Bind ViewModel.SummonerBorder}" Height="140" Width="140" VerticalAlignment="Top" HorizontalAlignment="Right" Margin="0,-105,10,0" Grid.Row="0" Grid.Column="3"/>
 
-                <TextBox x:Name="Summoner"
-                         PlaceholderText="Summoner"
-                         HorizontalAlignment="Left"
-                         Grid.Column="0" Grid.Row="5"/>
+                <TextBlock x:Name="SoloQ" Text="{x:Bind ViewModel.SoloQ, Mode=OneWay}" Grid.Row="2" Grid.Column="3" VerticalAlignment="Bottom" HorizontalAlignment="Right" Margin="0,0,5,0"/>
+                <TextBlock x:Name="FlexQ" Text="{x:Bind ViewModel.FlexQ, Mode=OneWay}" Grid.Row="3" Grid.Column="3" VerticalAlignment="Bottom" HorizontalAlignment="Right" Margin="0,0,5,0"/>
+                <TextBlock x:Name="TT" Text="{x:Bind ViewModel.TT, Mode=OneWay}" Grid.Row="4" Grid.Column="3" VerticalAlignment="Bottom" HorizontalAlignment="Right" Margin="0,0,5,0"/>
+
+                <Image x:Name="SoloQMedal" Source="{x:Bind ViewModel.SoloQMedal}" Height="100" Width="100" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,0,0,0" Grid.Column="3" Grid.Row="2"/>
+                <Image x:Name="FlexQMedal" Source="{x:Bind ViewModel.FlexQMedal}" Height="100" Width="100" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,0,0,0" Grid.Column="3" Grid.Row="3"/>
+                <Image x:Name="TTMedal" Source="{x:Bind ViewModel.TTMedal}" Height="100" Width="100" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,0,0,0" Grid.Column="3" Grid.Row="4"/>
+
+
+                <RelativePanel Grid.Row="5" Grid.ColumnSpan="4" HorizontalAlignment="Right" Margin="0,0,122,0">
+                        <Button Command="{Binding RefreshSummoner, Source={StaticResource ViewModel2}}" CommandParameter="{Binding ElementName=ThisPage}"
+                    HorizontalAlignment="Left" Grid.Row="5" Grid.Column="1" RelativePanel.AlignLeftWith="Summoner" Margin="-40,0,0,0">
+                            <StackPanel>
+                                <SymbolIcon Symbol="Refresh"/>
+                            <TextBlock Text="Refresh" Margin="0,-20,0,0" FontSize="5" Height="6" RenderTransformOrigin="0.489,-0.736" Width="16"/>
+                        </StackPanel>
+                            <Interactivity:Interaction.Behaviors>
+                                <Core:EventTriggerBehavior EventName="Loaded">
+                                    <Core:InvokeCommandAction Command="{Binding RefreshSummoner, Source={StaticResource ViewModel2}}" CommandParameter="{Binding ElementName=ThisPage}" />
+                                </Core:EventTriggerBehavior>
+                            </Interactivity:Interaction.Behaviors>
+                        </Button>
+                        <TextBox x:Name="Summoner" PlaceholderText="Summoner" Grid.Column="2" Grid.Row="5" HorizontalAlignment="Center"/>
+                       
+                    </RelativePanel>
                 <Button x:Name="submitButton2"
                     Command="{Binding AddSummoner, Source={StaticResource ViewModel2}}" 
                     CommandParameter="{Binding ElementName=ThisPage}" Content="Add Summoner"
                     HorizontalAlignment="Right"
-                    Visibility="Visible" Width="150"
-                    Grid.Column="1" Grid.Row="5"/>
-                <TextBlock x:Name="Error2" Text="" Grid.Row="6" Grid.Column="1" HorizontalAlignment="Right"/>
-                <Button Command="{Binding RefreshSummoner, Source={StaticResource ViewModel2}}" 
-                    CommandParameter="{Binding ElementName=ThisPage}"
-                        Grid.Row="1" Grid.Column="1">
-                    <StackPanel>
-                        <SymbolIcon Symbol="Refresh"/>
-                    </StackPanel>
-                </Button>
-                
-                <TextBlock x:Name="SummonerName" Text="{x:Bind ViewModel.SummonerName, Mode=OneWay}" Grid.Row="1" Grid.Column="1" HorizontalAlignment="Right"/>
+                    Visibility="Visible" Grid.Column="3" Grid.Row="5"/>
+                <TextBlock x:Name="Error2" Text="" Grid.Row="6" Grid.Column="3" HorizontalAlignment="Right"/>
+                <TextBlock x:Name="SummonerName" Text="{x:Bind ViewModel.SummonerName, Mode=OneWay}" FontSize="30" Grid.Row="0" Grid.Column="3" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,40,12,0"/>
             </Grid>
 
         </ScrollViewer>
-        <TextBlock Style="{StaticResource TitleTextBlockStyle}" Text="Welcome, " RenderTransformOrigin="0.64,2.229" Margin="12,62,-15.333,-62" />
+        <TextBlock Style="{StaticResource TitleTextBlockStyle}" Text="Welcome, " Margin="12,62,-15,-62" />
         <TextBlock  Text="{x:Bind ViewModel.Username, Mode=OneWay}" Margin="130,72,-205,-72" />
-
-
-
 
     </RelativePanel>
 </Page>

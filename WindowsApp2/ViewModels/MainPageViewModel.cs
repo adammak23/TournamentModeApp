@@ -64,7 +64,7 @@ namespace WindowsApp2.ViewModels
 
         /// /////////////////////////
         public void GotoDetailsPage() =>
-            NavigationService.Navigate(typeof(Views.DetailPage), Login);
+            NavigationService.NavigateAsync(typeof(Views.DetailPage), Login);
 
         public void GotoSettings() =>
             NavigationService.Navigate(typeof(Views.SettingsPage), 0);
@@ -147,7 +147,7 @@ namespace WindowsApp2.ViewModels
                 else
                 {
                     progressbar.IsIndeterminate = false;
-                    block.Text = responseString; // "There is problem with connection";
+                    block.Text = responseString;// "There is problem with connection, please try again";
                 }
             }
             catch (HttpRequestException e) { block.Text = e.StackTrace; }

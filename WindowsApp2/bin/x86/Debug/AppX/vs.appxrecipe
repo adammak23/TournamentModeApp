@@ -10,7 +10,7 @@
     <PackageArchitecture>x86</PackageArchitecture>
     <PackageIdentityName>80dcd2a2-d4b4-490e-88fc-e81121a2e14a</PackageIdentityName>
     <PackageIdentityPublisher>CN=Adam</PackageIdentityPublisher>
-    <IntermediateOutputPath>F:\TournamentApp\WindowsApp2\obj\x86\Debug\</IntermediateOutputPath>
+    <IntermediateOutputPath>E:\Users\Marci\OneDrive\WindowsApp2\WindowsApp2\obj\x86\Debug\</IntermediateOutputPath>
     <RemoteDeploymentType>
     </RemoteDeploymentType>
     <PackageRegistrationPath>
@@ -25,16 +25,16 @@
     <JitOptimizationSuppressed>True</JitOptimizationSuppressed>
   </PropertyGroup>
   <ItemGroup>
-    <AppXManifest Include="F:\TournamentApp\WindowsApp2\bin\x86\Debug\Core\AppxManifest.xml">
+    <AppXManifest Include="E:\Users\Marci\OneDrive\WindowsApp2\WindowsApp2\bin\x86\Debug\Core\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2017-05-02T06:06:17.138</Modified>
+      <Modified>2017-05-05T14:43:00.797</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
-    <AppxPackagedFile Include="F:\TournamentApp\WindowsApp2\bin\x86\Debug\WindowsApp2.exe">
+    <AppxPackagedFile Include="E:\Users\Marci\OneDrive\WindowsApp2\WindowsApp2\bin\x86\Debug\WindowsApp2.exe">
       <PackagePath>entrypoint\WindowsApp2.exe</PackagePath>
-      <Modified>2017-05-02T06:06:16.221</Modified>
+      <Modified>2017-05-05T14:42:59.484</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="E:\Users\Marci\.nuget\packages\Microsoft.CSharp\4.0.1\lib\netcore50\Microsoft.CSharp.dll">
       <PackagePath>Microsoft.CSharp.dll</PackagePath>
@@ -532,51 +532,51 @@
       <PackagePath>Template10Library.dll</PackagePath>
       <Modified>2016-10-17T09:42:00.000</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="F:\TournamentApp\WindowsApp2\Help.htm">
+    <AppxPackagedFile Include="E:\Users\Marci\OneDrive\WindowsApp2\WindowsApp2\Help.htm">
       <PackagePath>Help.htm</PackagePath>
       <Modified>2017-04-18T19:22:59.000</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="F:\TournamentApp\WindowsApp2\Properties\Default.rd.xml">
+    <AppxPackagedFile Include="E:\Users\Marci\OneDrive\WindowsApp2\WindowsApp2\Properties\Default.rd.xml">
       <PackagePath>Properties\Default.rd.xml</PackagePath>
       <Modified>2017-04-18T19:22:58.000</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="F:\TournamentApp\WindowsApp2\Assets\LockScreenLogo.scale-200.png">
+    <AppxPackagedFile Include="E:\Users\Marci\OneDrive\WindowsApp2\WindowsApp2\Assets\LockScreenLogo.scale-200.png">
       <PackagePath>Assets\LockScreenLogo.scale-200.png</PackagePath>
       <Modified>2017-04-18T19:22:54.000</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="F:\TournamentApp\WindowsApp2\Assets\SplashScreen.scale-200.png">
+    <AppxPackagedFile Include="E:\Users\Marci\OneDrive\WindowsApp2\WindowsApp2\Assets\SplashScreen.scale-200.png">
       <PackagePath>Assets\SplashScreen.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
       <Modified>2017-04-18T19:22:54.000</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="F:\TournamentApp\WindowsApp2\Assets\Square150x150Logo.scale-200.png">
+    <AppxPackagedFile Include="E:\Users\Marci\OneDrive\WindowsApp2\WindowsApp2\Assets\Square150x150Logo.scale-200.png">
       <PackagePath>Assets\Square150x150Logo.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
       <Modified>2017-04-18T19:22:54.000</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="F:\TournamentApp\WindowsApp2\Assets\Square44x44Logo.scale-200.png">
+    <AppxPackagedFile Include="E:\Users\Marci\OneDrive\WindowsApp2\WindowsApp2\Assets\Square44x44Logo.scale-200.png">
       <PackagePath>Assets\Square44x44Logo.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
       <Modified>2017-04-18T19:22:54.000</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="F:\TournamentApp\WindowsApp2\Assets\Square44x44Logo.targetsize-24_altform-unplated.png">
+    <AppxPackagedFile Include="E:\Users\Marci\OneDrive\WindowsApp2\WindowsApp2\Assets\Square44x44Logo.targetsize-24_altform-unplated.png">
       <PackagePath>Assets\Square44x44Logo.targetsize-24_altform-unplated.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
       <Modified>2017-04-18T19:22:54.000</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="F:\TournamentApp\WindowsApp2\Assets\StoreLogo.png">
+    <AppxPackagedFile Include="E:\Users\Marci\OneDrive\WindowsApp2\WindowsApp2\Assets\StoreLogo.png">
       <PackagePath>Assets\StoreLogo.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
       <Modified>2017-04-18T19:22:54.000</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="F:\TournamentApp\WindowsApp2\Assets\Wide310x150Logo.scale-200.png">
+    <AppxPackagedFile Include="E:\Users\Marci\OneDrive\WindowsApp2\WindowsApp2\Assets\Wide310x150Logo.scale-200.png">
       <PackagePath>Assets\Wide310x150Logo.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
       <Modified>2017-04-18T19:22:54.000</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="F:\TournamentApp\WindowsApp2\bin\x86\Debug\WindowsApp2.xr.xml">
+    <AppxPackagedFile Include="E:\Users\Marci\OneDrive\WindowsApp2\WindowsApp2\bin\x86\Debug\WindowsApp2.xr.xml">
       <PackagePath>WindowsApp2.xr.xml</PackagePath>
-      <Modified>2017-05-02T05:23:40.546</Modified>
+      <Modified>2017-05-05T14:42:59.045</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="E:\Program Files %28x86%29\Windows Kits\10\UnionMetadata\Windows.winmd">
       <PackagePath>WinMetadata\Windows.winmd</PackagePath>
@@ -614,14 +614,14 @@
       <PackagePath>Template10Library\Themes\Resizer.xaml</PackagePath>
       <Modified>2016-10-17T09:42:00.000</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="F:\TournamentApp\WindowsApp2\bin\x86\Debug\resources.pri">
+    <AppxPackagedFile Include="E:\Users\Marci\OneDrive\WindowsApp2\WindowsApp2\bin\x86\Debug\resources.pri">
       <PackagePath>resources.pri</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2017-05-02T06:06:16.670</Modified>
+      <Modified>2017-05-05T14:43:00.253</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="F:\TournamentApp\WindowsApp2\bin\x86\Debug\Core\WindowsApp2.exe">
+    <AppxPackagedFile Include="E:\Users\Marci\OneDrive\WindowsApp2\WindowsApp2\bin\x86\Debug\Core\WindowsApp2.exe">
       <PackagePath>WindowsApp2.exe</PackagePath>
-      <Modified>2017-05-02T06:06:17.136</Modified>
+      <Modified>2017-05-05T14:43:00.794</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>

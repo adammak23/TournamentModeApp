@@ -103,11 +103,7 @@
                     </Core:EventTriggerBehavior>-->
                 </Interactivity:Interaction.Behaviors>
             </TextBox>
-            <PasswordBox MinWidth="150"
-                     x:Name="Password"
-                     PlaceholderText="Password"
-                     MinHeight="30"
-                     Password="{Binding Password, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Margin="10,47,72,0" Height="32" VerticalAlignment="Top">
+            <PasswordBox MinWidth="150" x:Name="Password" PlaceholderText="Password" MinHeight="30" Margin="10,47,72,0" Height="32" VerticalAlignment="Top">
                 <Interactivity:Interaction.Behaviors>
                     <!--  enable submit on enter key  -->
                     <Behaviors:KeyBehavior Key="Enter">
