@@ -1,0 +1,36 @@
+﻿<Page
+    x:Class="WindowsApp2.Views.Tournament"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:WindowsApp2.Views"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:Behaviors="using:Template10.Behaviors"
+    xmlns:Core="using:Microsoft.Xaml.Interactions.Core"
+    xmlns:Interactivity="using:Microsoft.Xaml.Interactivity"
+    xmlns:vm="using:WindowsApp2.ViewModels"
+    mc:Ignorable="d">
+
+    <Page.DataContext>
+        <vm:DetailPageViewModel x:Name="ViewModel" />
+    </Page.DataContext>
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+        <ListView Margin="49,99,44,113">
+            <DataTemplate>
+                <StackPanel>
+                    <TextBlock Text="iksde" FontSize="18"/>
+                    <TextBlock Text="iksdeee" FontSize="12"/>
+                </StackPanel>
+            </DataTemplate>
+        </ListView>
+        <TextBox MinWidth="150"
+                         x:Name="Login"
+                         PlaceholderText="Login"
+                         MinHeight="30"
+                         Text=" tu bedzie {Binding Login, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                         Margin="29,31,51,0" Height="32" VerticalAlignment="Top"/>
+    </Grid>
+
+</Page>

@@ -23,7 +23,7 @@ namespace WindowsApp2.ViewModels.Commands
         }
         public void Execute(object parameter)
         {
-            ViewModel.CheckSummonerFromDatabase(parameter as Page);
+            ViewModel.CheckSummonerFromDatabase();
         }
     }
 }

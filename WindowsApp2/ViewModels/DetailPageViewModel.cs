@@ -30,6 +30,45 @@ namespace WindowsApp2.ViewModels
         public AddSummoner AddSummoner { get; set; }
         public RefreshSummoner RefreshSummoner { get; set; }
 
+        private string summonername;
+        public string Summoner { get { return summonername; } set { summonername = value; RaisePropertyChanged("Summoner"); } }
+
+        private string summonername2 = UserAccount.GetSummoner();
+        public string SummonerName { get { return summonername2; } set { summonername2 = value; RaisePropertyChanged("SummonerName"); } }
+
+        private string soloq = "Solo Queue: Unranked";
+        public string SoloQ { get { return soloq; } set { soloq = value; RaisePropertyChanged("SoloQ"); } }
+
+        private string flexq = "Flex Queue: Unranked";
+        public string FlexQ { get { return flexq; } set { flexq = value; RaisePropertyChanged("FlexQ"); } }
+
+        private string tt = "3v3: Unranked";
+        public string TT { get { return tt; } set { tt = value; RaisePropertyChanged("TT"); } }
+
+        private string summonerborder = "none";
+        public string SummonerBorder { get { return summonerborder; } set { summonerborder = value; RaisePropertyChanged("SummonerBorder"); } }
+
+        private string summonericon = "none";
+        public string SummonerIcon { get { return summonericon; } set { summonericon = value; RaisePropertyChanged("SummonerIcon"); } }
+
+        private string soloqmedal = "http://static.lolskill.net/img/tiers/192/unranked.png";
+        public string SoloQMedal { get { return soloqmedal; } set { soloqmedal = value; RaisePropertyChanged("SoloQMedal"); } }
+
+        private string flexqmedal = "http://static.lolskill.net/img/tiers/192/unranked.png";
+        public string FlexQMedal { get { return flexqmedal; } set { flexqmedal = value; RaisePropertyChanged("FlexQMedal"); } }
+
+        private string ttmedal = "http://static.lolskill.net/img/tiers/192/unranked.png";
+        public string TTMedal { get { return ttmedal; } set { ttmedal = value; RaisePropertyChanged("TTMedal"); } }
+
+
+
+
+
+        private string username = "Empty Username";
+        public string Username { get { return username; } set { username = value; RaisePropertyChanged("Username"); } }
+
+        
+
         public DetailPageViewModel()
         {
             //Refresh();
@@ -38,20 +77,17 @@ namespace WindowsApp2.ViewModels
             RefreshSummoner = new RefreshSummoner(this);
             //GetLeagues();
             //ImageStrings();
-            
+
         }
-        public string Username = "Empty Username";
+        private string errorText;
+        public string ErrorText
+        {
+            get { return errorText; }
+            set { errorText = value; RaisePropertyChanged("ErrorText"); }
+        }
         public string server = "eune";
-        public string SummonerName = UserAccount.GetSummoner();
-        public string SoloQ = "Solo Queue: Unranked";
-        public string SoloQMedal = "http://static.lolskill.net/img/tiers/192/unranked.png";
-        public string FlexQ = "Flex Queue: Unranked";
-        public string FlexQMedal = "http://static.lolskill.net/img/tiers/192/unranked.png";
-        public string TT = "3v3: Unranked";
-        public string TTMedal = "http://static.lolskill.net/img/tiers/192/unranked.png";
-        RiotApi api = Api.GetApi();
-        public string SummonerIcon = "none";
-        public string SummonerBorder = "none";
+        RiotApi api = Api.GetApi(); 
+
         public List<League> liga;
         Summoner summoner;
 
@@ -104,29 +140,28 @@ namespace WindowsApp2.ViewModels
 
         public async void AddingSummoner(Page grid)
         {
-            TextBlock block = grid.FindName("Error2") as TextBlock;
-            TextBox Summoner = grid.FindName("Summoner") as TextBox;
 
-            block.Text = "Wait...";
+            ErrorText = "Wait...";
 
-               var values = new Dictionary<string, string>
+            var values = new Dictionary<string, string>
                {
-                  { "post_user", UserAccount.LoggedInUsername },
-                  { "post_summ", Summoner.Text }
+                  { "post_user", Username },
+                  { "post_summ", Summoner }
                };
 
-               var content = new FormUrlEncodedContent(values);
+            var content = new FormUrlEncodedContent(values);
 
             try
             {
                 HttpClient client = new HttpClient();
                 var response = await client.PostAsync("https://adammak2342.000webhostapp.com/AddSummoner.php", content);
                 var responseString = await response.Content.ReadAsStringAsync();
-                UserAccount.SetSummoner(Summoner.Text);
-                SummonerName = Summoner.Text;
-                block.Text = responseString; 
+                UserAccount.SetSummoner(Summoner);
+                SummonerName = Summoner;
+                CheckSummonerFromDatabase();
+                ErrorText = responseString;
             }
-            catch (HttpRequestException e) { block.Text = e.StackTrace; }
+            catch (HttpRequestException e) { ErrorText = e.StackTrace; }
         }
 
         public static async Task Refresh()
@@ -147,7 +182,7 @@ namespace WindowsApp2.ViewModels
             catch (HttpRequestException e) { }
         }
 
-                public async Task GetSumm()
+        public async Task GetSumm()
         {
             try
             {
@@ -159,7 +194,7 @@ namespace WindowsApp2.ViewModels
             }
             catch (RiotSharpException ex)
             {
-                 //Summoner doesnt exist or server error
+                //Summoner doesnt exist or server error
             }
             catch (Newtonsoft.Json.JsonSerializationException exx) { /*when failed, cannot serialize/deserialize status.failed to string/int64/?*/}
             //return liga;
@@ -176,7 +211,7 @@ namespace WindowsApp2.ViewModels
                     SummonerBorder = "http://opgg-static.akamaized.net/images/borders2/" + liga[0].Tier.ToString().ToLower() + ".png";
                     SoloQ = "Solo Queue: " + liga[0].Tier + " " + liga[0].Entries[0].Division;
                     SoloQMedal = "https://opgg-static.akamaized.net/images/medals/" + liga[0].Tier.ToString().ToLower() + "_" + RomanToIntConverter(liga[0].Entries[0].Division) + ".png";
-                    
+
                 }
                 if (liga.Count >= 2)
                 {
@@ -189,29 +224,15 @@ namespace WindowsApp2.ViewModels
                 {
                     TT = "3v3: " + liga[2].Tier + " " + liga[2].Entries[0].Division;
                     TTMedal = "https://opgg-static.akamaized.net/images/medals/" + liga[2].Tier.ToString().ToLower() + "_" + RomanToIntConverter(liga[2].Entries[0].Division) + ".png";
-                    
+
                 }
             }
             //return liga;
         }
-        public async void CheckSummonerFromDatabase(Page grid)
+        public async void CheckSummonerFromDatabase()
         {
-            TextBlock block = grid.FindName("Error2") as TextBlock;
-            TextBlock Summoner = grid.FindName("SummonerName") as TextBlock;
 
-            TextBlock SoloQ = grid.FindName("SoloQ") as TextBlock;
-            TextBlock FlexQ = grid.FindName("FlexQ") as TextBlock;
-            TextBlock TT = grid.FindName("TT") as TextBlock;
-
-            Image SummonerBorder = grid.FindName("SummonerBorder") as Image;
-            Image SummonerIcon = grid.FindName("SummonerIcon") as Image;
-
-            Image SoloQMedal = grid.FindName("SoloQMedal") as Image;
-            Image FlexQMedal = grid.FindName("FlexQMedal") as Image;
-            Image TTMedal = grid.FindName("TTMedal") as Image;
-
-
-            block.Text = "Wait...";
+            ErrorText = "Wait...";
 
             var values = new Dictionary<string, string>
                {
@@ -226,31 +247,19 @@ namespace WindowsApp2.ViewModels
                 await GetLeagues();
                 ImageStrings();
 
-                SoloQ.Text = this.SoloQ;
-                FlexQ.Text = this.FlexQ;
-                TT.Text = this.TT;
-
-                if(this.SummonerBorder!="none")
-                    SummonerBorder.Source = new BitmapImage(new Uri(this.SummonerBorder, UriKind.Absolute));
-                if (this.SummonerIcon != "none")
-                    SummonerIcon.Source = new BitmapImage(new Uri(this.SummonerIcon, UriKind.Absolute));
-
-                SoloQMedal.Source = new BitmapImage(new Uri(this.SoloQMedal, UriKind.Absolute));
-
-                FlexQMedal.Source = new BitmapImage(new Uri(this.FlexQMedal, UriKind.Absolute));
-
-                TTMedal.Source = new BitmapImage(new Uri(this.TTMedal, UriKind.Absolute));
-
+                SoloQ = this.SoloQ;
+                FlexQ = this.FlexQ;
+                TT = this.TT;
 
                 var response = await client.PostAsync("https://adammak2342.000webhostapp.com/account.php", content);
                 var responseString = await response.Content.ReadAsStringAsync();
                 UserAccount.SetSummoner(responseString);
                 SummonerName = responseString;
-                Summoner.Text = responseString;
-                block.Text = "";
+                Summoner = responseString;
+                ErrorText = "";
 
             }
-            catch (HttpRequestException e) { block.Text = e.StackTrace; }
+            catch (HttpRequestException e) { ErrorText = e.StackTrace; }
         }
 
     }

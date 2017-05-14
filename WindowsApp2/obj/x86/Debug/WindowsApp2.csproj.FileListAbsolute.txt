@@ -747,8 +747,6 @@ F:\TournamentApp\WindowsApp2\bin\x86\Debug\RiotSharp.dll
 F:\TournamentApp\WindowsApp2\bin\x86\Debug\System.Reactive.Core.dll
 F:\TournamentApp\WindowsApp2\bin\x86\Debug\System.Reactive.Interfaces.dll
 F:\TournamentApp\WindowsApp2\bin\x86\Debug\System.Reactive.Linq.dll
-F:\TournamentApp\WindowsApp2\obj\x86\Debug\System.Reactive.Core\en-US\System.Reactive.Strings_Core.resw
-F:\TournamentApp\WindowsApp2\obj\x86\Debug\System.Reactive.Linq\en-US\System.Reactive.Strings_Linq.resw
 F:\TournamentApp\WindowsApp2\obj\x86\Debug\WindowsApp2.csprojResolveAssemblyReference.cache
 C:\Users\Adam\OneDrive\WindowsApp2\WindowsApp2\bin\x86\Debug\App.xbf
 C:\Users\Adam\OneDrive\WindowsApp2\WindowsApp2\bin\x86\Debug\Styles\Custom.xbf
@@ -1262,3 +1260,8 @@ E:\Users\Marci\OneDrive\WindowsApp2\WindowsApp2\obj\x86\Debug\ProjectArchitectur
 E:\Users\Marci\OneDrive\WindowsApp2\WindowsApp2\obj\x86\Debug\System.Reactive.Core\en-US\System.Reactive.Strings_Core.resw
 E:\Users\Marci\OneDrive\WindowsApp2\WindowsApp2\obj\x86\Debug\System.Reactive.Linq\en-US\System.Reactive.Strings_Linq.resw
 E:\Users\Marci\OneDrive\WindowsApp2\WindowsApp2\obj\x86\Debug\WindowsApp2.csprojResolveAssemblyReference.cache
+F:\TournamentApp\WindowsApp2\obj\x86\Debug\Views\Tournament.g.i.cs
+F:\TournamentApp\WindowsApp2\obj\x86\Debug\Views\Tournament.g.cs
+F:\TournamentApp\WindowsApp2\obj\x86\Debug\Views\Tournament.xaml
+F:\TournamentApp\WindowsApp2\obj\x86\Debug\Views\Tournament.xbf
+F:\TournamentApp\WindowsApp2\bin\x86\Debug\Views\Tournament.xbf

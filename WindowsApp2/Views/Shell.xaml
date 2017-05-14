@@ -42,7 +42,18 @@
                                Text="Profile" Width="149" />
                     </StackPanel>
             </Controls:HamburgerButtonInfo>
-        </Controls:HamburgerMenu.PrimaryButtons>
+                <Controls:HamburgerButtonInfo x:Name="TournamentButton" ClearHistory="True" PageType="views:Tournament">
+                    <StackPanel Orientation="Horizontal">
+                        <SymbolIcon Width="48"
+                                Height="48"
+                                Symbol="AllApps" />
+                        <TextBlock Margin="12,0,0,0"
+                               VerticalAlignment="Center"
+                               Text="Tournaments" Width="149" />
+                    </StackPanel>
+                </Controls:HamburgerButtonInfo>
+
+            </Controls:HamburgerMenu.PrimaryButtons>
 
         <Controls:HamburgerMenu.SecondaryButtons>
             <!--  profile button  -->
