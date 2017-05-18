@@ -98,10 +98,13 @@
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
     <Compile Include="Models\Api.cs" />
+    <Compile Include="Models\Tournament.cs" />
     <Compile Include="Models\UserAccount.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\SettingsServices\SettingsService.cs" />
     <Compile Include="ViewModels\Commands\AddSummoner.cs" />
+    <Compile Include="ViewModels\Commands\Command.cs" />
+    <Compile Include="ViewModels\Commands\ParameterCommand.cs" />
     <Compile Include="ViewModels\Commands\RefreshSummoner.cs" />
     <Compile Include="ViewModels\Commands\TryLogout.cs" />
     <Compile Include="ViewModels\Commands\TryLogin.cs" />
@@ -109,6 +112,7 @@
     <Compile Include="ViewModels\MainPageViewModel.cs" />
     <Compile Include="ViewModels\DetailPageViewModel.cs" />
     <Compile Include="ViewModels\SettingsPageViewModel.cs" />
+    <Compile Include="ViewModels\TournamentViewModel.cs" />
     <Compile Include="Views\Tournament.xaml.cs">
       <DependentUpon>Tournament.xaml</DependentUpon>
     </Compile>
@@ -187,6 +191,9 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Themes\" />
   </ItemGroup>
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
     <VisualStudioVersion>14.0</VisualStudioVersion>

@@ -21,9 +21,7 @@ namespace WindowsApp2.ViewModels
     public class MainPageViewModel : ViewModelBase, INotifyPropertyChanged
     {
         private static readonly HttpClient client = new HttpClient();
-
-        public TryLogin TryLogin { get; set; }
-        //public ICommand TryLoginn { get; set; }
+        public ICommand TryLogin { get; set; }
         public TryLogout TryLogout { get; set; }
         public TryRegister TryRegister { get; set; }
         private string errorText;
@@ -61,12 +59,11 @@ namespace WindowsApp2.ViewModels
         {
             //ProfileButtonVisibility = "Collapsed";
             Login = "";
-            this.TryLogin = new TryLogin(this);
+            this.TryLogin = new Command(AccessTheWebAsync);
             this.TryLogout = new TryLogout(this);
             this.TryRegister = new TryRegister(this);
             this.LoginTextBox = new TextBox();
 
-            // this.TryLoginn = new ParameterCommand(AccessTheWebAsync);
         }
         string _Login = "";
         public string Login { get { return _Login; } set { Set(ref _Login, value); } }

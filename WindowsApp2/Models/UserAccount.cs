@@ -13,6 +13,7 @@ namespace WindowsApp2.Models
         public static string LoggedInUsername;
         public static bool LoggedIn = false;
         public static string Summoner = "No Summoner Connected :(";
+        public static string EnrolledTournament = "";
         private static RiotApi api = Api.GetApi();
         public static void LogIn(string username)
         {
@@ -32,6 +33,14 @@ namespace WindowsApp2.Models
         public static string GetSummoner()
         {
             return Summoner;
+        }
+        public static void Enroll(string tournament)
+        {
+            EnrolledTournament = tournament;
+        }
+        public static string GetTournament()
+        {
+            return EnrolledTournament;
         }
     }
 }

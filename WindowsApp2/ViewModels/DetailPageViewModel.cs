@@ -71,12 +71,10 @@ namespace WindowsApp2.ViewModels
 
         public DetailPageViewModel()
         {
-            //Refresh();
+            //Refresh in xaml
             Username = UserAccount.LoggedInUsername;
             AddSummoner = new AddSummoner(this);
             RefreshSummoner = new RefreshSummoner(this);
-            //GetLeagues();
-            //ImageStrings();
 
         }
         private string errorText;

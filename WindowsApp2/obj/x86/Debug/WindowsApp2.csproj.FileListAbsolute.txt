@@ -1265,3 +1265,5 @@ F:\TournamentApp\WindowsApp2\obj\x86\Debug\Views\Tournament.g.cs
 F:\TournamentApp\WindowsApp2\obj\x86\Debug\Views\Tournament.xaml
 F:\TournamentApp\WindowsApp2\obj\x86\Debug\Views\Tournament.xbf
 F:\TournamentApp\WindowsApp2\bin\x86\Debug\Views\Tournament.xbf
+F:\TournamentApp\WindowsApp2\obj\x86\Debug\System.Reactive.Core\en-US\System.Reactive.Strings_Core.resw
+F:\TournamentApp\WindowsApp2\obj\x86\Debug\System.Reactive.Linq\en-US\System.Reactive.Strings_Linq.resw

@@ -11,26 +11,73 @@
     xmlns:vm="using:WindowsApp2.ViewModels"
     mc:Ignorable="d">
 
-    <Page.DataContext>
-        <vm:DetailPageViewModel x:Name="ViewModel" />
-    </Page.DataContext>
-
+    <Page.Resources>
+        <vm:TournamentViewModel x:Key="ViewModel" x:Name="ViewModel" />
+    </Page.Resources>
+    
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-
-        <ListView Margin="49,99,44,113">
-            <DataTemplate>
-                <StackPanel>
-                    <TextBlock Text="iksde" FontSize="18"/>
-                    <TextBlock Text="iksdeee" FontSize="12"/>
-                </StackPanel>
-            </DataTemplate>
+        <TextBlock x:Name="Error1" Text="{Binding ErrorText, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, Source={StaticResource ViewModel}}" Margin="39,20,-235,-105" FontSize="20" />
+        <ListView x:Name="turniejeList" Margin="49,99,44,113">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel>
+                        <TextBlock>
+                           <Run Text="Tournament Name: "/>
+                           <Run Text="{Binding Name}"
+                           FontSize="24" 
+                           FontStyle="Italic" 
+                           FontWeight="SemiBold"
+                           Foreground="#FF383838" />
+                        </TextBlock>
+                        <TextBlock>
+                           <Run Text="Max. number of players: "/>
+                           <Run Text="{Binding NofPlayers}" 
+                           FontSize="24" 
+                           FontStyle="Italic" 
+                           FontWeight="SemiBold"
+                           Foreground="#FF074E89"/>
+                        </TextBlock>
+                        <TextBlock>
+                           <Run Text="Team size: "/>
+                           <Run Text="{Binding TeamSize}" 
+                           FontSize="24" 
+                           FontStyle="Italic" 
+                           FontWeight="SemiBold"
+                           Foreground="#FF00398B"/>
+                        </TextBlock>
+                        <TextBlock>
+                           <Run Text="Mode: "/>
+                           <Run Text="{Binding Mode}" 
+                           FontSize="24" 
+                           FontStyle="Italic" 
+                           FontWeight="SemiBold"
+                           Foreground="#FF1A1A95"/>
+                        </TextBlock>
+                        <TextBlock>
+                           <Run Text="Elimination System: "/>
+                           <Run Text="{Binding EliminationMode}" 
+                           FontSize="24" 
+                           FontStyle="Italic" 
+                           FontWeight="SemiBold"
+                           Foreground="#FF098B6E"/>
+                        </TextBlock>
+                        <TextBlock>
+                           <Run Text="Map: "/>
+                           <Run Text="{Binding Map}" 
+                           FontSize="24" 
+                           FontStyle="Italic" 
+                           FontWeight="SemiBold"
+                           Foreground="#FF266B85"/>
+                        </TextBlock>
+                        <TextBlock Text="{Binding Server}" 
+                           FontSize="16"
+                           Foreground="Black"/>
+                        <Button Command="{Binding Enroll, Source={StaticResource ViewModel}}" Height="33" Width="104" HorizontalAlignment="Left" Content="Enroll" />
+                        <Border Name="Border" BorderBrush="LightGray" BorderThickness="0,0,0,3" Margin="0,5,0,0"/>
+                    </StackPanel>
+                </DataTemplate>
+            </ListView.ItemTemplate>
         </ListView>
-        <TextBox MinWidth="150"
-                         x:Name="Login"
-                         PlaceholderText="Login"
-                         MinHeight="30"
-                         Text=" tu bedzie {Binding Login, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
-                         Margin="29,31,51,0" Height="32" VerticalAlignment="Top"/>
     </Grid>
 
 </Page>

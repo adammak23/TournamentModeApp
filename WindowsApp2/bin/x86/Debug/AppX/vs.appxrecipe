@@ -28,13 +28,13 @@
     <AppXManifest Include="F:\TournamentApp\WindowsApp2\bin\x86\Debug\Core\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2017-05-14T20:25:57.984</Modified>
+      <Modified>2017-05-16T20:00:09.283</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="F:\TournamentApp\WindowsApp2\bin\x86\Debug\WindowsApp2.exe">
       <PackagePath>entrypoint\WindowsApp2.exe</PackagePath>
-      <Modified>2017-05-14T20:25:56.905</Modified>
+      <Modified>2017-05-16T20:00:08.345</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="E:\Users\Marci\.nuget\packages\Microsoft.CSharp\4.0.1\lib\netcore50\Microsoft.CSharp.dll">
       <PackagePath>Microsoft.CSharp.dll</PackagePath>
@@ -576,7 +576,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="F:\TournamentApp\WindowsApp2\bin\x86\Debug\WindowsApp2.xr.xml">
       <PackagePath>WindowsApp2.xr.xml</PackagePath>
-      <Modified>2017-05-14T20:20:06.083</Modified>
+      <Modified>2017-05-16T20:00:07.978</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="E:\Program Files %28x86%29\Windows Kits\10\UnionMetadata\Windows.winmd">
       <PackagePath>WinMetadata\Windows.winmd</PackagePath>
@@ -617,11 +617,11 @@
     <AppxPackagedFile Include="F:\TournamentApp\WindowsApp2\bin\x86\Debug\resources.pri">
       <PackagePath>resources.pri</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2017-05-14T20:25:57.365</Modified>
+      <Modified>2017-05-16T20:00:08.827</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="F:\TournamentApp\WindowsApp2\bin\x86\Debug\Core\WindowsApp2.exe">
       <PackagePath>WindowsApp2.exe</PackagePath>
-      <Modified>2017-05-14T20:25:57.982</Modified>
+      <Modified>2017-05-16T20:00:09.282</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>
