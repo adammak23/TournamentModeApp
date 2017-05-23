@@ -14,20 +14,22 @@
     <Page.Resources>
         <vm:TournamentViewModel x:Key="ViewModel" x:Name="ViewModel" />
     </Page.Resources>
-    
+
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
         <TextBlock x:Name="Error1" Text="{Binding ErrorText, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, Source={StaticResource ViewModel}}" Margin="39,20,-235,-105" FontSize="20" />
+        <TextBlock x:Name="Namee" FontSize="30" Text="{Binding KURDE, ElementName=turniejeList, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+
         <ListView x:Name="turniejeList" Margin="49,99,44,113">
             <ListView.ItemTemplate>
-                <DataTemplate>
+                <DataTemplate x:Name="datatemplate">
                     <StackPanel>
                         <TextBlock>
                            <Run Text="Tournament Name: "/>
-                           <Run Text="{Binding Name}"
+                           <Run x:Name="TournamentName" Text="{Binding Name}"
                            FontSize="24" 
                            FontStyle="Italic" 
                            FontWeight="SemiBold"
-                           Foreground="#FF383838" />
+                           Foreground="#FF383838"/>
                         </TextBlock>
                         <TextBlock>
                            <Run Text="Max. number of players: "/>
@@ -72,12 +74,14 @@
                         <TextBlock Text="{Binding Server}" 
                            FontSize="16"
                            Foreground="Black"/>
-                        <Button Command="{Binding Enroll, Source={StaticResource ViewModel}}" Height="33" Width="104" HorizontalAlignment="Left" Content="Enroll" />
+                        <Button Command="{Binding GetTournaments, Source={StaticResource ViewModel}}" CommandParameter="{Binding TournamentName.Text}" Height="33" Width="104" HorizontalAlignment="Left" Content="Enroll" />
                         <Border Name="Border" BorderBrush="LightGray" BorderThickness="0,0,0,3" Margin="0,5,0,0"/>
                     </StackPanel>
                 </DataTemplate>
             </ListView.ItemTemplate>
+
         </ListView>
+
     </Grid>
 
 </Page>

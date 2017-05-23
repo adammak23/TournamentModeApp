@@ -5,6 +5,8 @@
   </Roots.Interfaces>
   <Roots.PropertyPathNames>
     <RootPropertyPathName Name="GetTournaments" />
+    <RootPropertyPathName Name="TournamentName" />
+    <RootPropertyPathName Name="Text" />
     <RootPropertyPathName Name="Server" />
     <RootPropertyPathName Name="Map" />
     <RootPropertyPathName Name="EliminationMode" />
@@ -30,7 +32,6 @@
     <RootPropertyPathName Name="Password" />
     <RootPropertyPathName Name="Length" />
     <RootPropertyPathName Name="IsEnabled" />
-    <RootPropertyPathName Name="Text" />
     <RootPropertyPathName Name="TryLogout" />
     <RootPropertyPathName Name="LogoutButtonsVisibility" />
     <RootPropertyPathName Name="TryLogin" />
@@ -152,11 +153,11 @@
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.Button">
       <RootProperty Name="Command" />
+      <RootProperty Name="CommandParameter" />
       <RootProperty Name="Height" />
       <RootProperty Name="Width" />
       <RootProperty Name="HorizontalAlignment" />
       <RootProperty Name="Content" />
-      <RootProperty Name="CommandParameter" />
       <RootProperty Name="Visibility" />
       <RootProperty Name="Margin" />
     </RootType>
