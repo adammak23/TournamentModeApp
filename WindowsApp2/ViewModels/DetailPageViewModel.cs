@@ -25,6 +25,7 @@ using System.Windows.Input;
 using RiotSharp.GameEndpoint;
 using Windows.UI.Notifications;
 using RiotSharp.ChampionEndpoint;
+using Windowsapp2.Services;
 
 namespace WindowsApp2.ViewModels
 {
@@ -86,6 +87,10 @@ namespace WindowsApp2.ViewModels
         public string MostPlayedChampion { get { return mostplayedchampion; } set { mostplayedchampion = value; RaisePropertyChanged("MostPlayedChampion"); } }
         public string mostplayedchampionimage="";
         public string MostPlayedChampionImage { get { return mostplayedchampionimage; } set { mostplayedchampionimage = value; RaisePropertyChanged("MostPlayedChampionImage"); } }
+        public ImageSource imagesource;
+        public ImageSource ImageSource { get { return imagesource; } set { imagesource = value; RaisePropertyChanged("ImageSource"); } }
+
+
 
         public List<Game> gry;
         public List<int> listaId;
@@ -100,11 +105,13 @@ namespace WindowsApp2.ViewModels
             Enrolled = "You are not enrolled.";
 
             this.listaId = new List<int>();
-            if (UserAccount.EnrolledTournament!="") Enrolled = "Participant of: "+UserAccount.EnrolledTournament;
+            if (UserAccount.EnrolledTournament!="") Enrolled = "Participant of: "+UserAccount.EnrolledTournament; 
             //this.checktournaments = new Command(CheckTournaments);
             this.AddSummoner = new Command(AddingSummoner);
             this.RefreshSummoner = new Command(CheckSummonerFromDatabase);
             if (Enrolled != "You are not enrolled.") TournamentCode = "EUNE04383-4e59af6f-c21d-482a-8ad1-05e27b3b0f41";
+
+
         }
 
         public string server = "eune";
@@ -177,6 +184,7 @@ namespace WindowsApp2.ViewModels
                 HttpClient client = new HttpClient();
                 var response = await client.PostAsync("https://adammak2342.000webhostapp.com/AddSummoner.php", content);
                 var responseString = await response.Content.ReadAsStringAsync();
+                if (responseString.Contains("<br")) AddingSummoner();
                 UserAccount.SetSummoner(Summoner);
                 SummonerName = Summoner;
                 CheckSummonerFromDatabase();
@@ -198,6 +206,7 @@ namespace WindowsApp2.ViewModels
                 HttpClient client = new HttpClient();
                 var response = await client.PostAsync("https://adammak2342.000webhostapp.com/account.php", content);
                 var responseString = await response.Content.ReadAsStringAsync();
+                if (responseString.Contains("<br")) await Refresh();
                 UserAccount.SetSummoner(responseString);
             }
             catch (HttpRequestException e) { }
@@ -208,7 +217,7 @@ namespace WindowsApp2.ViewModels
             try
             {
                 await Refresh();
-                notification();
+                            Debug.WriteLine(MostPlayedChampion);
                 SummonerName = UserAccount.GetSummoner();
                 summoner = api.GetSummoner(Region.eune, UserAccount.GetSummoner());
                 liga = summoner.GetLeagues();
@@ -220,8 +229,20 @@ namespace WindowsApp2.ViewModels
                 }
                 
                 int id = listaId.GroupBy(i => i).OrderByDescending(g => g.Count()).Take(1).Select(g => g.Key).First();
-                MostPlayedChampion = StaticApi.GetChampion(Region.eune, id).Name +" "+ StaticApi.GetChampion(Region.eune, id).Title;
-                MostPlayedChampionImage = "https://opgg-static.akamaized.net/images/lol/champion/" + StaticApi.GetChampion(Region.eune, id).Key + ".png";
+
+                var champion = StaticApi.GetChampion(Region.eune, id);
+                MostPlayedChampion = champion.Name +" "+champion.Title;
+                MostPlayedChampionImage = "https://opgg-static.akamaized.net/images/lol/champion/" + champion.Key + ".png";
+                Debug.WriteLine(MostPlayedChampion);
+                Debug.WriteLine(MostPlayedChampionImage);
+                Debug.WriteLine("1");
+                Uri imageUri = new Uri(MostPlayedChampionImage.ToString(), UriKind.Absolute);
+                Debug.WriteLine("2");
+                BitmapImage imageBitmap = new BitmapImage(imageUri);
+                Debug.WriteLine("3");
+                //Image myImage = new Image();
+                ImageSource = imageBitmap;
+                Debug.WriteLine(MostPlayedChampion);
 
             }
             catch (RiotSharpException ex)
@@ -286,6 +307,7 @@ namespace WindowsApp2.ViewModels
 
                 var response = await client.PostAsync("https://adammak2342.000webhostapp.com/account.php", content);
                 var responseString = await response.Content.ReadAsStringAsync();
+                if (responseString.Contains("<br")) CheckSummonerFromDatabase();
                 UserAccount.SetSummoner(responseString);
                 SummonerName = responseString;
                 Summoner = responseString;
@@ -310,10 +332,12 @@ namespace WindowsApp2.ViewModels
 
                 var response = await client.PostAsync("https://adammak2342.000webhostapp.com/CheckTournaments.php", content);
                 var responseString = await response.Content.ReadAsStringAsync();
+                if (responseString.Contains("<br")) { Debug.WriteLine("retrying"); await CheckTournaments(); }
                 UserAccount.Enroll(responseString);
 
                 if (UserAccount.EnrolledTournament == "") Enrolled = "You are not enrolled.";
-                if (UserAccount.EnrolledTournament != "") Enrolled = "Participant of: " + UserAccount.EnrolledTournament;
+                if (UserAccount.EnrolledTournament != "") { Enrolled = "Participant of: " + UserAccount.EnrolledTournament; TileService.ShowToastNotification("Reminder", "You are participating in " + UserAccount.EnrolledTournament, 5);
+            }
                 if (Enrolled == "You are not enrolled.") TournamentCode = "";
                 if (Enrolled != "You are not enrolled.") TournamentCode = "EUNE04383-4e59af6f-c21d-482a-8ad1-05e27b3b0f41";
 
@@ -322,45 +346,7 @@ namespace WindowsApp2.ViewModels
             }
             catch (HttpRequestException e) { ErrorText = e.StackTrace; }
         }
-        private void notification()
-        {
-            ShowToastNotification("Nowa rotacja bohaterów", "ka¿dy wtorek", 2);
-        }
-        private void showRotation()
-        {
-            List<Champion> listachampow = api.GetChampions(Region.eune,true);
-            for (int i = 0; i <= listachampow.Count(); i++)
-             Debug.WriteLine(StaticApi.GetChampion(Region.eune, (int)listachampow[i].Id).Name);
-            //ShowToastNotification("Stan powietrza", selectedStation.HumanIndex, 10);
-            UpdateTile("Dzisiejsza rotacja: " );
-        }
-        private void ShowToastNotification(string title, string stringContent, int time)
-        {
-            var ToastNotifier = ToastNotificationManager.CreateToastNotifier();
-            var toastXml = ToastNotificationManager.GetTemplateContent(ToastTemplateType.ToastText04);
-            var toastNodeList = toastXml.GetElementsByTagName("text");
-            toastNodeList.Item(0).AppendChild(toastXml.CreateTextNode(title));
-            toastNodeList.Item(1).AppendChild(toastXml.CreateTextNode(stringContent));
-            var toastNode = toastXml.SelectSingleNode("/toast");
-            var audio = toastXml.CreateElement("audio");
-            audio.SetAttribute("src", "ms-winsoundevent:Notification.SMS");
-
-            var toast = new ToastNotification(toastXml);
-            toast.ExpirationTime = DateTime.Now.AddSeconds(time);
-            ToastNotifier.Show(toast);
-        }
-        public void UpdateTile(string infoString)
-        {
-            TileUpdateManager.CreateTileUpdaterForApplication().Clear();
-            var tileXml =
-                TileUpdateManager.GetTemplateContent(TileTemplateType.TileWide310x150Text01);
-
-            var tileAttributes = tileXml.GetElementsByTagName("text");
-            tileAttributes[0].AppendChild(tileXml.CreateTextNode(infoString));
-            var tileNotification = new TileNotification(tileXml);
-
-            TileUpdateManager.CreateTileUpdaterForApplication().Update(tileNotification);
-        }
+       
     }
 }
 
