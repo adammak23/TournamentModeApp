@@ -16,6 +16,10 @@ using System.ComponentModel;//new
 using System.Diagnostics;
 using System.Windows.Input;
 using Windows.UI.Notifications;
+using RiotSharp.ChampionEndpoint;
+using RiotSharp;
+using Windowsapp2.Services;
+using System.Net.NetworkInformation;
 
 namespace WindowsApp2.ViewModels
 {
@@ -25,7 +29,28 @@ namespace WindowsApp2.ViewModels
         public ICommand TryLogin { get; set; }
         public ICommand TryLogout { get; set; }
         public ICommand TryRegister { get; set; }
-        private string errorText;
+        private string _BusyText = "You have no internet connection...";
+        public string BusyText
+        {
+            get { return _BusyText; }
+            set
+            {
+                Set(ref _BusyText, value);
+                _ShowBusyCommand.RaiseCanExecuteChanged();
+            }
+        }
+
+        DelegateCommand _ShowBusyCommand;
+        public DelegateCommand ShowBusyCommand
+            => _ShowBusyCommand ?? (_ShowBusyCommand = new DelegateCommand(async () =>
+            {
+                Views.Busy.SetBusy(true, _BusyText);
+                await Task.Delay(5000);
+                Views.Busy.SetBusy(false);
+            }, () => !string.IsNullOrEmpty(BusyText)));
+
+
+    private string errorText;
         public string ErrorText
         {
             get { return errorText; }
@@ -51,14 +76,19 @@ namespace WindowsApp2.ViewModels
 
         private string password;
         public string Password { get { return password; } set { password = value; RaisePropertyChanged("Password"); } }
-
-
+        private bool isinternetconnected;
+        public bool isInternetConnected { get { return isinternetconnected; } set { isinternetconnected = value; RaisePropertyChanged("isInternetConnected"); } }
+        RiotApi api = Api.GetApi();
+        StaticRiotApi StaticApi = Api.GetStaticApi();
 
 
 
         public MainPageViewModel()
         {
 
+            TileUpdateManager.CreateTileUpdaterForApplication().EnableNotificationQueue(true);
+            TileService.ShowToastNotification("Nowa rotacja bohaterów", "w najbli¿szy wtorek", 3);
+            showRotation();
             Login = "";
             this.TryLogin = new Command(AccessTheWebAsync);
             this.TryLogout = new Command(LogOut);
@@ -131,6 +161,8 @@ namespace WindowsApp2.ViewModels
         public async void AccessTheWebAsync()
         {
 
+            isInternetConnected = NetworkInterface.GetIsNetworkAvailable();
+            Debug.WriteLine(isInternetConnected);
 
             ErrorText = "Wait...";
             ProgressBar = true;
@@ -168,7 +200,8 @@ namespace WindowsApp2.ViewModels
                 else
                 {
                     ProgressBar = false;
-                    ErrorText = responseString;// "There is problem with connection, please try again";
+                    if (responseString.Contains("<br")) { AccessTheWebAsync(); }
+                    else ErrorText = responseString;
                 }
             }
             catch (HttpRequestException e) { errorText = "httpRequestException" /*e.StackTrace*/; }
@@ -214,6 +247,23 @@ namespace WindowsApp2.ViewModels
             catch (HttpRequestException e) { ErrorText = "HttpRequestException" /*e.StackTrace*/; }
         }
 
+        private void showRotation()
+        {
+            string rotacja = "";
+            try
+            {
+                List<Champion> listachampow = api.GetChampions(Region.eune, true);
+            
+                for (int i = 0; i < listachampow.Count(); i++)
+                {
+                    rotacja += StaticApi.GetChampion(Region.eune, (int)listachampow[i].Id).Name + " ";
+                }
+                TileService.ShowToastNotification("Dzisiejsza rotacja", rotacja, 10);
+                TileService.UpdateTile(rotacja);
+            }
+            catch (RiotSharpException e) { ErrorText = "Coœ posz³o nie tak"; }
+        }
+       
     }
 }
 

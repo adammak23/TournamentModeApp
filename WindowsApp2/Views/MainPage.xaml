@@ -158,10 +158,12 @@
                     <Core:DataTriggerBehavior Binding="{Binding Password.Length, ElementName=Password, UpdateSourceTrigger=PropertyChanged}" ComparisonCondition="GreaterThan" Value="0">
                         <Core:ChangePropertyAction TargetObject="{Binding ElementName=RegisterButton}" PropertyName="IsEnabled" Value="True" />
                     </Core:DataTriggerBehavior>
+                    <Core:DataTriggerBehavior Binding="{Binding isInternetConnected, UpdateSourceTrigger=PropertyChanged, Source={StaticResource ViewModel2}}" ComparisonCondition="Equal" Value="false">
+                        <Core:InvokeCommandAction Command="{x:Bind ViewModel.ShowBusyCommand}"></Core:InvokeCommandAction>
+                    </Core:DataTriggerBehavior>
 
                 </Interactivity:Interaction.Behaviors>
             </Button>
-
         </Grid>
     </RelativePanel>
 </Page>
