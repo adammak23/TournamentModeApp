@@ -82,6 +82,9 @@
     <AppxPackagedFile Include="E:\Users\Marci\.nuget\packages\Newtonsoft.Json\9.0.1\lib\portable-net45+wp80+win8+wpa81\Newtonsoft.Json.dll">
       <PackagePath>Newtonsoft.Json.dll</PackagePath>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="E:\Users\Marci\.nuget\packages\NotificationsExtensions.Win10\14332.0.2\lib\uap10.0\NotificationsExtensions.Win10.dll">
+      <PackagePath>NotificationsExtensions.Win10.dll</PackagePath>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="E:\Users\Marci\.nuget\packages\RiotSharp\2.5.5\lib\portable45-net45+win8+wpa81\RiotSharp.dll">
       <PackagePath>RiotSharp.dll</PackagePath>
     </AppxPackagedFile>

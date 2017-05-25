@@ -1528,3 +1528,6 @@ C:\Users\Adam\Documents\TournamentModeApp\WindowsApp2\obj\x86\Debug\Microsoft.Xa
 C:\Users\Adam\Documents\TournamentModeApp\WindowsApp2\obj\x86\Debug\Template10Library.pri.xml
 C:\Users\Adam\Documents\TournamentModeApp\WindowsApp2\obj\x86\Debug\ProjectArchitectures.txt
 F:\TournamentApp\WindowsApp2\obj\x86\Debug\WindowsApp2.csprojResolveAssemblyReference.cache
+F:\TournamentApp\WindowsApp2\bin\x86\Debug\Core\ForBundle\AppxManifest.xml
+F:\TournamentApp\WindowsApp2\bin\x86\Debug\NotificationsExtensions.Win10.dll
+F:\TournamentApp\WindowsApp2\bin\x86\Debug\NotificationsExtensions.Win10.pdb

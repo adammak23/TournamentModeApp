@@ -156,7 +156,7 @@ namespace WindowsApp2.WindowsApp2_XamlTypeInfo
 
         private void InitTypeTables()
         {
-            _typeNameTable = new string[87];
+            _typeNameTable = new string[89];
             _typeNameTable[0] = "Template10.Common.BootStrapper";
             _typeNameTable[1] = "Windows.UI.Xaml.Application";
             _typeNameTable[2] = "Template10.Common.StateItems";
@@ -223,29 +223,31 @@ namespace WindowsApp2.WindowsApp2_XamlTypeInfo
             _typeNameTable[63] = "Windows.UI.Xaml.Controls.Page";
             _typeNameTable[64] = "WindowsApp2.Views.Busy";
             _typeNameTable[65] = "WindowsApp2.ViewModels.DetailPageViewModel";
-            _typeNameTable[66] = "Microsoft.Xaml.Interactions.Core.InvokeCommandAction";
-            _typeNameTable[67] = "Windows.UI.Xaml.Data.IValueConverter";
-            _typeNameTable[68] = "WindowsApp2.Views.DetailPage";
-            _typeNameTable[69] = "WindowsApp2.ViewModels.MainPageViewModel";
-            _typeNameTable[70] = "Windows.UI.Xaml.Controls.TextBox";
-            _typeNameTable[71] = "Microsoft.Xaml.Interactions.Core.DataTriggerBehavior";
-            _typeNameTable[72] = "Microsoft.Xaml.Interactions.Core.ComparisonConditionType";
-            _typeNameTable[73] = "Microsoft.Xaml.Interactions.Core.CallMethodAction";
-            _typeNameTable[74] = "Template10.Behaviors.KeyBehavior";
-            _typeNameTable[75] = "Windows.System.VirtualKey";
-            _typeNameTable[76] = "Template10.Behaviors.KeyBehavior.Kinds";
-            _typeNameTable[77] = "Template10.Behaviors.FocusAction";
-            _typeNameTable[78] = "WindowsApp2.Views.MainPage";
-            _typeNameTable[79] = "WindowsApp2.ViewModels.SettingsPageViewModel";
-            _typeNameTable[80] = "WindowsApp2.ViewModels.SettingsPartViewModel";
-            _typeNameTable[81] = "WindowsApp2.ViewModels.AboutPartViewModel";
-            _typeNameTable[82] = "Template10.Converters.ValueWhenConverter";
-            _typeNameTable[83] = "WindowsApp2.Views.SettingsPage";
-            _typeNameTable[84] = "Template10.Behaviors.MessageDialogAction";
-            _typeNameTable[85] = "WindowsApp2.Views.Shell";
-            _typeNameTable[86] = "WindowsApp2.Views.Splash";
+            _typeNameTable[66] = "Windows.UI.Xaml.Media.ImageSource";
+            _typeNameTable[67] = "Microsoft.Xaml.Interactions.Core.InvokeCommandAction";
+            _typeNameTable[68] = "Windows.UI.Xaml.Data.IValueConverter";
+            _typeNameTable[69] = "WindowsApp2.Views.DetailPage";
+            _typeNameTable[70] = "WindowsApp2.ViewModels.MainPageViewModel";
+            _typeNameTable[71] = "Template10.Mvvm.DelegateCommand";
+            _typeNameTable[72] = "Windows.UI.Xaml.Controls.TextBox";
+            _typeNameTable[73] = "Microsoft.Xaml.Interactions.Core.DataTriggerBehavior";
+            _typeNameTable[74] = "Microsoft.Xaml.Interactions.Core.ComparisonConditionType";
+            _typeNameTable[75] = "Microsoft.Xaml.Interactions.Core.CallMethodAction";
+            _typeNameTable[76] = "Template10.Behaviors.KeyBehavior";
+            _typeNameTable[77] = "Windows.System.VirtualKey";
+            _typeNameTable[78] = "Template10.Behaviors.KeyBehavior.Kinds";
+            _typeNameTable[79] = "Template10.Behaviors.FocusAction";
+            _typeNameTable[80] = "WindowsApp2.Views.MainPage";
+            _typeNameTable[81] = "WindowsApp2.ViewModels.SettingsPageViewModel";
+            _typeNameTable[82] = "WindowsApp2.ViewModels.SettingsPartViewModel";
+            _typeNameTable[83] = "WindowsApp2.ViewModels.AboutPartViewModel";
+            _typeNameTable[84] = "Template10.Converters.ValueWhenConverter";
+            _typeNameTable[85] = "WindowsApp2.Views.SettingsPage";
+            _typeNameTable[86] = "Template10.Behaviors.MessageDialogAction";
+            _typeNameTable[87] = "WindowsApp2.Views.Shell";
+            _typeNameTable[88] = "WindowsApp2.Views.Splash";
 
-            _typeTable = new global::System.Type[87];
+            _typeTable = new global::System.Type[89];
             _typeTable[0] = typeof(global::Template10.Common.BootStrapper);
             _typeTable[1] = typeof(global::Windows.UI.Xaml.Application);
             _typeTable[2] = typeof(global::Template10.Common.StateItems);
@@ -312,27 +314,29 @@ namespace WindowsApp2.WindowsApp2_XamlTypeInfo
             _typeTable[63] = typeof(global::Windows.UI.Xaml.Controls.Page);
             _typeTable[64] = typeof(global::WindowsApp2.Views.Busy);
             _typeTable[65] = typeof(global::WindowsApp2.ViewModels.DetailPageViewModel);
-            _typeTable[66] = typeof(global::Microsoft.Xaml.Interactions.Core.InvokeCommandAction);
-            _typeTable[67] = typeof(global::Windows.UI.Xaml.Data.IValueConverter);
-            _typeTable[68] = typeof(global::WindowsApp2.Views.DetailPage);
-            _typeTable[69] = typeof(global::WindowsApp2.ViewModels.MainPageViewModel);
-            _typeTable[70] = typeof(global::Windows.UI.Xaml.Controls.TextBox);
-            _typeTable[71] = typeof(global::Microsoft.Xaml.Interactions.Core.DataTriggerBehavior);
-            _typeTable[72] = typeof(global::Microsoft.Xaml.Interactions.Core.ComparisonConditionType);
-            _typeTable[73] = typeof(global::Microsoft.Xaml.Interactions.Core.CallMethodAction);
-            _typeTable[74] = typeof(global::Template10.Behaviors.KeyBehavior);
-            _typeTable[75] = typeof(global::Windows.System.VirtualKey);
-            _typeTable[76] = typeof(global::Template10.Behaviors.KeyBehavior.Kinds);
-            _typeTable[77] = typeof(global::Template10.Behaviors.FocusAction);
-            _typeTable[78] = typeof(global::WindowsApp2.Views.MainPage);
-            _typeTable[79] = typeof(global::WindowsApp2.ViewModels.SettingsPageViewModel);
-            _typeTable[80] = typeof(global::WindowsApp2.ViewModels.SettingsPartViewModel);
-            _typeTable[81] = typeof(global::WindowsApp2.ViewModels.AboutPartViewModel);
-            _typeTable[82] = typeof(global::Template10.Converters.ValueWhenConverter);
-            _typeTable[83] = typeof(global::WindowsApp2.Views.SettingsPage);
-            _typeTable[84] = typeof(global::Template10.Behaviors.MessageDialogAction);
-            _typeTable[85] = typeof(global::WindowsApp2.Views.Shell);
-            _typeTable[86] = typeof(global::WindowsApp2.Views.Splash);
+            _typeTable[66] = typeof(global::Windows.UI.Xaml.Media.ImageSource);
+            _typeTable[67] = typeof(global::Microsoft.Xaml.Interactions.Core.InvokeCommandAction);
+            _typeTable[68] = typeof(global::Windows.UI.Xaml.Data.IValueConverter);
+            _typeTable[69] = typeof(global::WindowsApp2.Views.DetailPage);
+            _typeTable[70] = typeof(global::WindowsApp2.ViewModels.MainPageViewModel);
+            _typeTable[71] = typeof(global::Template10.Mvvm.DelegateCommand);
+            _typeTable[72] = typeof(global::Windows.UI.Xaml.Controls.TextBox);
+            _typeTable[73] = typeof(global::Microsoft.Xaml.Interactions.Core.DataTriggerBehavior);
+            _typeTable[74] = typeof(global::Microsoft.Xaml.Interactions.Core.ComparisonConditionType);
+            _typeTable[75] = typeof(global::Microsoft.Xaml.Interactions.Core.CallMethodAction);
+            _typeTable[76] = typeof(global::Template10.Behaviors.KeyBehavior);
+            _typeTable[77] = typeof(global::Windows.System.VirtualKey);
+            _typeTable[78] = typeof(global::Template10.Behaviors.KeyBehavior.Kinds);
+            _typeTable[79] = typeof(global::Template10.Behaviors.FocusAction);
+            _typeTable[80] = typeof(global::WindowsApp2.Views.MainPage);
+            _typeTable[81] = typeof(global::WindowsApp2.ViewModels.SettingsPageViewModel);
+            _typeTable[82] = typeof(global::WindowsApp2.ViewModels.SettingsPartViewModel);
+            _typeTable[83] = typeof(global::WindowsApp2.ViewModels.AboutPartViewModel);
+            _typeTable[84] = typeof(global::Template10.Converters.ValueWhenConverter);
+            _typeTable[85] = typeof(global::WindowsApp2.Views.SettingsPage);
+            _typeTable[86] = typeof(global::Template10.Behaviors.MessageDialogAction);
+            _typeTable[87] = typeof(global::WindowsApp2.Views.Shell);
+            _typeTable[88] = typeof(global::WindowsApp2.Views.Splash);
         }
 
         private int LookupTypeIndexByName(string typeName)
@@ -384,21 +388,21 @@ namespace WindowsApp2.WindowsApp2_XamlTypeInfo
         private object Activate_62_Tournament() { return new global::WindowsApp2.Views.Tournament(); }
         private object Activate_64_Busy() { return new global::WindowsApp2.Views.Busy(); }
         private object Activate_65_DetailPageViewModel() { return new global::WindowsApp2.ViewModels.DetailPageViewModel(); }
-        private object Activate_66_InvokeCommandAction() { return new global::Microsoft.Xaml.Interactions.Core.InvokeCommandAction(); }
-        private object Activate_68_DetailPage() { return new global::WindowsApp2.Views.DetailPage(); }
-        private object Activate_69_MainPageViewModel() { return new global::WindowsApp2.ViewModels.MainPageViewModel(); }
-        private object Activate_71_DataTriggerBehavior() { return new global::Microsoft.Xaml.Interactions.Core.DataTriggerBehavior(); }
-        private object Activate_73_CallMethodAction() { return new global::Microsoft.Xaml.Interactions.Core.CallMethodAction(); }
-        private object Activate_74_KeyBehavior() { return new global::Template10.Behaviors.KeyBehavior(); }
-        private object Activate_77_FocusAction() { return new global::Template10.Behaviors.FocusAction(); }
-        private object Activate_78_MainPage() { return new global::WindowsApp2.Views.MainPage(); }
-        private object Activate_79_SettingsPageViewModel() { return new global::WindowsApp2.ViewModels.SettingsPageViewModel(); }
-        private object Activate_80_SettingsPartViewModel() { return new global::WindowsApp2.ViewModels.SettingsPartViewModel(); }
-        private object Activate_81_AboutPartViewModel() { return new global::WindowsApp2.ViewModels.AboutPartViewModel(); }
-        private object Activate_82_ValueWhenConverter() { return new global::Template10.Converters.ValueWhenConverter(); }
-        private object Activate_83_SettingsPage() { return new global::WindowsApp2.Views.SettingsPage(); }
-        private object Activate_84_MessageDialogAction() { return new global::Template10.Behaviors.MessageDialogAction(); }
-        private object Activate_85_Shell() { return new global::WindowsApp2.Views.Shell(); }
+        private object Activate_67_InvokeCommandAction() { return new global::Microsoft.Xaml.Interactions.Core.InvokeCommandAction(); }
+        private object Activate_69_DetailPage() { return new global::WindowsApp2.Views.DetailPage(); }
+        private object Activate_70_MainPageViewModel() { return new global::WindowsApp2.ViewModels.MainPageViewModel(); }
+        private object Activate_73_DataTriggerBehavior() { return new global::Microsoft.Xaml.Interactions.Core.DataTriggerBehavior(); }
+        private object Activate_75_CallMethodAction() { return new global::Microsoft.Xaml.Interactions.Core.CallMethodAction(); }
+        private object Activate_76_KeyBehavior() { return new global::Template10.Behaviors.KeyBehavior(); }
+        private object Activate_79_FocusAction() { return new global::Template10.Behaviors.FocusAction(); }
+        private object Activate_80_MainPage() { return new global::WindowsApp2.Views.MainPage(); }
+        private object Activate_81_SettingsPageViewModel() { return new global::WindowsApp2.ViewModels.SettingsPageViewModel(); }
+        private object Activate_82_SettingsPartViewModel() { return new global::WindowsApp2.ViewModels.SettingsPartViewModel(); }
+        private object Activate_83_AboutPartViewModel() { return new global::WindowsApp2.ViewModels.AboutPartViewModel(); }
+        private object Activate_84_ValueWhenConverter() { return new global::Template10.Converters.ValueWhenConverter(); }
+        private object Activate_85_SettingsPage() { return new global::WindowsApp2.Views.SettingsPage(); }
+        private object Activate_86_MessageDialogAction() { return new global::Template10.Behaviors.MessageDialogAction(); }
+        private object Activate_87_Shell() { return new global::WindowsApp2.Views.Shell(); }
         private void MapAdd_2_StateItems(object instance, object key, object item)
         {
             var collection = (global::System.Collections.Generic.IDictionary<global::System.String, global::System.Object>)instance;
@@ -929,14 +933,19 @@ namespace WindowsApp2.WindowsApp2_XamlTypeInfo
                 userType.AddMemberName("Username");
                 userType.AddMemberName("MostPlayedChampion");
                 userType.AddMemberName("MostPlayedChampionImage");
+                userType.AddMemberName("ImageSource");
                 userType.SetIsBindable();
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
-            case 66:   //  Microsoft.Xaml.Interactions.Core.InvokeCommandAction
+            case 66:   //  Windows.UI.Xaml.Media.ImageSource
+                xamlType = new global::WindowsApp2.WindowsApp2_XamlTypeInfo.XamlSystemBaseType(typeName, type);
+                break;
+
+            case 67:   //  Microsoft.Xaml.Interactions.Core.InvokeCommandAction
                 userType = new global::WindowsApp2.WindowsApp2_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.DependencyObject"));
-                userType.Activator = Activate_66_InvokeCommandAction;
+                userType.Activator = Activate_67_InvokeCommandAction;
                 userType.AddMemberName("Command");
                 userType.AddMemberName("CommandParameter");
                 userType.AddMemberName("InputConverter");
@@ -945,23 +954,25 @@ namespace WindowsApp2.WindowsApp2_XamlTypeInfo
                 xamlType = userType;
                 break;
 
-            case 67:   //  Windows.UI.Xaml.Data.IValueConverter
+            case 68:   //  Windows.UI.Xaml.Data.IValueConverter
                 xamlType = new global::WindowsApp2.WindowsApp2_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
-            case 68:   //  WindowsApp2.Views.DetailPage
+            case 69:   //  WindowsApp2.Views.DetailPage
                 userType = new global::WindowsApp2.WindowsApp2_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
-                userType.Activator = Activate_68_DetailPage;
+                userType.Activator = Activate_69_DetailPage;
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
-            case 69:   //  WindowsApp2.ViewModels.MainPageViewModel
+            case 70:   //  WindowsApp2.ViewModels.MainPageViewModel
                 userType = new global::WindowsApp2.WindowsApp2_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Template10.Mvvm.ViewModelBase"));
-                userType.Activator = Activate_69_MainPageViewModel;
+                userType.Activator = Activate_70_MainPageViewModel;
                 userType.AddMemberName("TryLogin");
                 userType.AddMemberName("TryLogout");
                 userType.AddMemberName("TryRegister");
+                userType.AddMemberName("BusyText");
+                userType.AddMemberName("ShowBusyCommand");
                 userType.AddMemberName("ErrorText");
                 userType.AddMemberName("ErrorTag");
                 userType.AddMemberName("LoginTextBox");
@@ -969,18 +980,25 @@ namespace WindowsApp2.WindowsApp2_XamlTypeInfo
                 userType.AddMemberName("LoginButtonsVisibility");
                 userType.AddMemberName("LogoutButtonsVisibility");
                 userType.AddMemberName("Password");
+                userType.AddMemberName("isInternetConnected");
                 userType.AddMemberName("Login");
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
-            case 70:   //  Windows.UI.Xaml.Controls.TextBox
+            case 71:   //  Template10.Mvvm.DelegateCommand
+                userType = new global::WindowsApp2.WindowsApp2_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Object"));
+                userType.SetIsReturnTypeStub();
+                xamlType = userType;
+                break;
+
+            case 72:   //  Windows.UI.Xaml.Controls.TextBox
                 xamlType = new global::WindowsApp2.WindowsApp2_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
-            case 71:   //  Microsoft.Xaml.Interactions.Core.DataTriggerBehavior
+            case 73:   //  Microsoft.Xaml.Interactions.Core.DataTriggerBehavior
                 userType = new global::WindowsApp2.WindowsApp2_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Microsoft.Xaml.Interactivity.Behavior"));
-                userType.Activator = Activate_71_DataTriggerBehavior;
+                userType.Activator = Activate_73_DataTriggerBehavior;
                 userType.SetContentPropertyName("Microsoft.Xaml.Interactions.Core.DataTriggerBehavior.Actions");
                 userType.AddMemberName("Actions");
                 userType.AddMemberName("Binding");
@@ -989,7 +1007,7 @@ namespace WindowsApp2.WindowsApp2_XamlTypeInfo
                 xamlType = userType;
                 break;
 
-            case 72:   //  Microsoft.Xaml.Interactions.Core.ComparisonConditionType
+            case 74:   //  Microsoft.Xaml.Interactions.Core.ComparisonConditionType
                 userType = new global::WindowsApp2.WindowsApp2_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("System.Enum"));
                 userType.AddEnumValue("Equal", global::Microsoft.Xaml.Interactions.Core.ComparisonConditionType.Equal);
                 userType.AddEnumValue("NotEqual", global::Microsoft.Xaml.Interactions.Core.ComparisonConditionType.NotEqual);
@@ -1000,17 +1018,17 @@ namespace WindowsApp2.WindowsApp2_XamlTypeInfo
                 xamlType = userType;
                 break;
 
-            case 73:   //  Microsoft.Xaml.Interactions.Core.CallMethodAction
+            case 75:   //  Microsoft.Xaml.Interactions.Core.CallMethodAction
                 userType = new global::WindowsApp2.WindowsApp2_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.DependencyObject"));
-                userType.Activator = Activate_73_CallMethodAction;
+                userType.Activator = Activate_75_CallMethodAction;
                 userType.AddMemberName("MethodName");
                 userType.AddMemberName("TargetObject");
                 xamlType = userType;
                 break;
 
-            case 74:   //  Template10.Behaviors.KeyBehavior
+            case 76:   //  Template10.Behaviors.KeyBehavior
                 userType = new global::WindowsApp2.WindowsApp2_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.DependencyObject"));
-                userType.Activator = Activate_74_KeyBehavior;
+                userType.Activator = Activate_76_KeyBehavior;
                 userType.SetContentPropertyName("Template10.Behaviors.KeyBehavior.Actions");
                 userType.AddMemberName("Actions");
                 userType.AddMemberName("Key");
@@ -1022,7 +1040,7 @@ namespace WindowsApp2.WindowsApp2_XamlTypeInfo
                 xamlType = userType;
                 break;
 
-            case 75:   //  Windows.System.VirtualKey
+            case 77:   //  Windows.System.VirtualKey
                 userType = new global::WindowsApp2.WindowsApp2_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("System.Enum"));
                 userType.AddEnumValue("None", global::Windows.System.VirtualKey.None);
                 userType.AddEnumValue("LeftButton", global::Windows.System.VirtualKey.LeftButton);
@@ -1197,53 +1215,53 @@ namespace WindowsApp2.WindowsApp2_XamlTypeInfo
                 xamlType = userType;
                 break;
 
-            case 76:   //  Template10.Behaviors.KeyBehavior.Kinds
+            case 78:   //  Template10.Behaviors.KeyBehavior.Kinds
                 userType = new global::WindowsApp2.WindowsApp2_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("System.Enum"));
                 userType.AddEnumValue("KeyUp", global::Template10.Behaviors.KeyBehavior.Kinds.KeyUp);
                 userType.AddEnumValue("KeyDown", global::Template10.Behaviors.KeyBehavior.Kinds.KeyDown);
                 xamlType = userType;
                 break;
 
-            case 77:   //  Template10.Behaviors.FocusAction
+            case 79:   //  Template10.Behaviors.FocusAction
                 userType = new global::WindowsApp2.WindowsApp2_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.DependencyObject"));
-                userType.Activator = Activate_77_FocusAction;
+                userType.Activator = Activate_79_FocusAction;
                 userType.AddMemberName("TargetObject");
                 xamlType = userType;
                 break;
 
-            case 78:   //  WindowsApp2.Views.MainPage
+            case 80:   //  WindowsApp2.Views.MainPage
                 userType = new global::WindowsApp2.WindowsApp2_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
-                userType.Activator = Activate_78_MainPage;
+                userType.Activator = Activate_80_MainPage;
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
-            case 79:   //  WindowsApp2.ViewModels.SettingsPageViewModel
+            case 81:   //  WindowsApp2.ViewModels.SettingsPageViewModel
                 userType = new global::WindowsApp2.WindowsApp2_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Template10.Mvvm.ViewModelBase"));
-                userType.Activator = Activate_79_SettingsPageViewModel;
+                userType.Activator = Activate_81_SettingsPageViewModel;
                 userType.AddMemberName("SettingsPartViewModel");
                 userType.AddMemberName("AboutPartViewModel");
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
-            case 80:   //  WindowsApp2.ViewModels.SettingsPartViewModel
+            case 82:   //  WindowsApp2.ViewModels.SettingsPartViewModel
                 userType = new global::WindowsApp2.WindowsApp2_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Template10.Mvvm.ViewModelBase"));
                 userType.SetIsReturnTypeStub();
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
-            case 81:   //  WindowsApp2.ViewModels.AboutPartViewModel
+            case 83:   //  WindowsApp2.ViewModels.AboutPartViewModel
                 userType = new global::WindowsApp2.WindowsApp2_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Template10.Mvvm.ViewModelBase"));
                 userType.SetIsReturnTypeStub();
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
-            case 82:   //  Template10.Converters.ValueWhenConverter
+            case 84:   //  Template10.Converters.ValueWhenConverter
                 userType = new global::WindowsApp2.WindowsApp2_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Object"));
-                userType.Activator = Activate_82_ValueWhenConverter;
+                userType.Activator = Activate_84_ValueWhenConverter;
                 userType.AddMemberName("When");
                 userType.AddMemberName("Value");
                 userType.AddMemberName("Otherwise");
@@ -1252,30 +1270,30 @@ namespace WindowsApp2.WindowsApp2_XamlTypeInfo
                 xamlType = userType;
                 break;
 
-            case 83:   //  WindowsApp2.Views.SettingsPage
+            case 85:   //  WindowsApp2.Views.SettingsPage
                 userType = new global::WindowsApp2.WindowsApp2_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
-                userType.Activator = Activate_83_SettingsPage;
+                userType.Activator = Activate_85_SettingsPage;
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
-            case 84:   //  Template10.Behaviors.MessageDialogAction
+            case 86:   //  Template10.Behaviors.MessageDialogAction
                 userType = new global::WindowsApp2.WindowsApp2_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.DependencyObject"));
-                userType.Activator = Activate_84_MessageDialogAction;
+                userType.Activator = Activate_86_MessageDialogAction;
                 userType.AddMemberName("Title");
                 userType.AddMemberName("Content");
                 userType.AddMemberName("OkText");
                 xamlType = userType;
                 break;
 
-            case 85:   //  WindowsApp2.Views.Shell
+            case 87:   //  WindowsApp2.Views.Shell
                 userType = new global::WindowsApp2.WindowsApp2_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
-                userType.Activator = Activate_85_Shell;
+                userType.Activator = Activate_87_Shell;
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
-            case 86:   //  WindowsApp2.Views.Splash
+            case 88:   //  WindowsApp2.Views.Splash
                 userType = new global::WindowsApp2.WindowsApp2_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.UserControl"));
                 userType.SetIsLocalType();
                 xamlType = userType;
@@ -2457,377 +2475,412 @@ namespace WindowsApp2.WindowsApp2_XamlTypeInfo
             var that = (global::WindowsApp2.ViewModels.DetailPageViewModel)instance;
             that.MostPlayedChampionImage = (global::System.String)Value;
         }
-        private object get_116_InvokeCommandAction_Command(object instance)
+        private object get_116_DetailPageViewModel_ImageSource(object instance)
+        {
+            var that = (global::WindowsApp2.ViewModels.DetailPageViewModel)instance;
+            return that.ImageSource;
+        }
+        private void set_116_DetailPageViewModel_ImageSource(object instance, object Value)
+        {
+            var that = (global::WindowsApp2.ViewModels.DetailPageViewModel)instance;
+            that.ImageSource = (global::Windows.UI.Xaml.Media.ImageSource)Value;
+        }
+        private object get_117_InvokeCommandAction_Command(object instance)
         {
             var that = (global::Microsoft.Xaml.Interactions.Core.InvokeCommandAction)instance;
             return that.Command;
         }
-        private void set_116_InvokeCommandAction_Command(object instance, object Value)
+        private void set_117_InvokeCommandAction_Command(object instance, object Value)
         {
             var that = (global::Microsoft.Xaml.Interactions.Core.InvokeCommandAction)instance;
             that.Command = (global::System.Windows.Input.ICommand)Value;
         }
-        private object get_117_InvokeCommandAction_CommandParameter(object instance)
+        private object get_118_InvokeCommandAction_CommandParameter(object instance)
         {
             var that = (global::Microsoft.Xaml.Interactions.Core.InvokeCommandAction)instance;
             return that.CommandParameter;
         }
-        private void set_117_InvokeCommandAction_CommandParameter(object instance, object Value)
+        private void set_118_InvokeCommandAction_CommandParameter(object instance, object Value)
         {
             var that = (global::Microsoft.Xaml.Interactions.Core.InvokeCommandAction)instance;
             that.CommandParameter = (global::System.Object)Value;
         }
-        private object get_118_InvokeCommandAction_InputConverter(object instance)
+        private object get_119_InvokeCommandAction_InputConverter(object instance)
         {
             var that = (global::Microsoft.Xaml.Interactions.Core.InvokeCommandAction)instance;
             return that.InputConverter;
         }
-        private void set_118_InvokeCommandAction_InputConverter(object instance, object Value)
+        private void set_119_InvokeCommandAction_InputConverter(object instance, object Value)
         {
             var that = (global::Microsoft.Xaml.Interactions.Core.InvokeCommandAction)instance;
             that.InputConverter = (global::Windows.UI.Xaml.Data.IValueConverter)Value;
         }
-        private object get_119_InvokeCommandAction_InputConverterParameter(object instance)
+        private object get_120_InvokeCommandAction_InputConverterParameter(object instance)
         {
             var that = (global::Microsoft.Xaml.Interactions.Core.InvokeCommandAction)instance;
             return that.InputConverterParameter;
         }
-        private void set_119_InvokeCommandAction_InputConverterParameter(object instance, object Value)
+        private void set_120_InvokeCommandAction_InputConverterParameter(object instance, object Value)
         {
             var that = (global::Microsoft.Xaml.Interactions.Core.InvokeCommandAction)instance;
             that.InputConverterParameter = (global::System.Object)Value;
         }
-        private object get_120_InvokeCommandAction_InputConverterLanguage(object instance)
+        private object get_121_InvokeCommandAction_InputConverterLanguage(object instance)
         {
             var that = (global::Microsoft.Xaml.Interactions.Core.InvokeCommandAction)instance;
             return that.InputConverterLanguage;
         }
-        private void set_120_InvokeCommandAction_InputConverterLanguage(object instance, object Value)
+        private void set_121_InvokeCommandAction_InputConverterLanguage(object instance, object Value)
         {
             var that = (global::Microsoft.Xaml.Interactions.Core.InvokeCommandAction)instance;
             that.InputConverterLanguage = (global::System.String)Value;
         }
-        private object get_121_MainPageViewModel_TryLogin(object instance)
+        private object get_122_MainPageViewModel_TryLogin(object instance)
         {
             var that = (global::WindowsApp2.ViewModels.MainPageViewModel)instance;
             return that.TryLogin;
         }
-        private void set_121_MainPageViewModel_TryLogin(object instance, object Value)
+        private void set_122_MainPageViewModel_TryLogin(object instance, object Value)
         {
             var that = (global::WindowsApp2.ViewModels.MainPageViewModel)instance;
             that.TryLogin = (global::System.Windows.Input.ICommand)Value;
         }
-        private object get_122_MainPageViewModel_TryLogout(object instance)
+        private object get_123_MainPageViewModel_TryLogout(object instance)
         {
             var that = (global::WindowsApp2.ViewModels.MainPageViewModel)instance;
             return that.TryLogout;
         }
-        private void set_122_MainPageViewModel_TryLogout(object instance, object Value)
+        private void set_123_MainPageViewModel_TryLogout(object instance, object Value)
         {
             var that = (global::WindowsApp2.ViewModels.MainPageViewModel)instance;
             that.TryLogout = (global::System.Windows.Input.ICommand)Value;
         }
-        private object get_123_MainPageViewModel_TryRegister(object instance)
+        private object get_124_MainPageViewModel_TryRegister(object instance)
         {
             var that = (global::WindowsApp2.ViewModels.MainPageViewModel)instance;
             return that.TryRegister;
         }
-        private void set_123_MainPageViewModel_TryRegister(object instance, object Value)
+        private void set_124_MainPageViewModel_TryRegister(object instance, object Value)
         {
             var that = (global::WindowsApp2.ViewModels.MainPageViewModel)instance;
             that.TryRegister = (global::System.Windows.Input.ICommand)Value;
         }
-        private object get_124_MainPageViewModel_ErrorText(object instance)
+        private object get_125_MainPageViewModel_BusyText(object instance)
+        {
+            var that = (global::WindowsApp2.ViewModels.MainPageViewModel)instance;
+            return that.BusyText;
+        }
+        private void set_125_MainPageViewModel_BusyText(object instance, object Value)
+        {
+            var that = (global::WindowsApp2.ViewModels.MainPageViewModel)instance;
+            that.BusyText = (global::System.String)Value;
+        }
+        private object get_126_MainPageViewModel_ShowBusyCommand(object instance)
+        {
+            var that = (global::WindowsApp2.ViewModels.MainPageViewModel)instance;
+            return that.ShowBusyCommand;
+        }
+        private object get_127_MainPageViewModel_ErrorText(object instance)
         {
             var that = (global::WindowsApp2.ViewModels.MainPageViewModel)instance;
             return that.ErrorText;
         }
-        private void set_124_MainPageViewModel_ErrorText(object instance, object Value)
+        private void set_127_MainPageViewModel_ErrorText(object instance, object Value)
         {
             var that = (global::WindowsApp2.ViewModels.MainPageViewModel)instance;
             that.ErrorText = (global::System.String)Value;
         }
-        private object get_125_MainPageViewModel_ErrorTag(object instance)
+        private object get_128_MainPageViewModel_ErrorTag(object instance)
         {
             var that = (global::WindowsApp2.ViewModels.MainPageViewModel)instance;
             return that.ErrorTag;
         }
-        private void set_125_MainPageViewModel_ErrorTag(object instance, object Value)
+        private void set_128_MainPageViewModel_ErrorTag(object instance, object Value)
         {
             var that = (global::WindowsApp2.ViewModels.MainPageViewModel)instance;
             that.ErrorTag = (global::System.String)Value;
         }
-        private object get_126_MainPageViewModel_LoginTextBox(object instance)
+        private object get_129_MainPageViewModel_LoginTextBox(object instance)
         {
             var that = (global::WindowsApp2.ViewModels.MainPageViewModel)instance;
             return that.LoginTextBox;
         }
-        private void set_126_MainPageViewModel_LoginTextBox(object instance, object Value)
+        private void set_129_MainPageViewModel_LoginTextBox(object instance, object Value)
         {
             var that = (global::WindowsApp2.ViewModels.MainPageViewModel)instance;
             that.LoginTextBox = (global::Windows.UI.Xaml.Controls.TextBox)Value;
         }
-        private object get_127_MainPageViewModel_ProgressBar(object instance)
+        private object get_130_MainPageViewModel_ProgressBar(object instance)
         {
             var that = (global::WindowsApp2.ViewModels.MainPageViewModel)instance;
             return that.ProgressBar;
         }
-        private void set_127_MainPageViewModel_ProgressBar(object instance, object Value)
+        private void set_130_MainPageViewModel_ProgressBar(object instance, object Value)
         {
             var that = (global::WindowsApp2.ViewModels.MainPageViewModel)instance;
             that.ProgressBar = (global::System.Boolean)Value;
         }
-        private object get_128_MainPageViewModel_LoginButtonsVisibility(object instance)
+        private object get_131_MainPageViewModel_LoginButtonsVisibility(object instance)
         {
             var that = (global::WindowsApp2.ViewModels.MainPageViewModel)instance;
             return that.LoginButtonsVisibility;
         }
-        private void set_128_MainPageViewModel_LoginButtonsVisibility(object instance, object Value)
+        private void set_131_MainPageViewModel_LoginButtonsVisibility(object instance, object Value)
         {
             var that = (global::WindowsApp2.ViewModels.MainPageViewModel)instance;
             that.LoginButtonsVisibility = (global::Windows.UI.Xaml.Visibility)Value;
         }
-        private object get_129_MainPageViewModel_LogoutButtonsVisibility(object instance)
+        private object get_132_MainPageViewModel_LogoutButtonsVisibility(object instance)
         {
             var that = (global::WindowsApp2.ViewModels.MainPageViewModel)instance;
             return that.LogoutButtonsVisibility;
         }
-        private void set_129_MainPageViewModel_LogoutButtonsVisibility(object instance, object Value)
+        private void set_132_MainPageViewModel_LogoutButtonsVisibility(object instance, object Value)
         {
             var that = (global::WindowsApp2.ViewModels.MainPageViewModel)instance;
             that.LogoutButtonsVisibility = (global::Windows.UI.Xaml.Visibility)Value;
         }
-        private object get_130_MainPageViewModel_Password(object instance)
+        private object get_133_MainPageViewModel_Password(object instance)
         {
             var that = (global::WindowsApp2.ViewModels.MainPageViewModel)instance;
             return that.Password;
         }
-        private void set_130_MainPageViewModel_Password(object instance, object Value)
+        private void set_133_MainPageViewModel_Password(object instance, object Value)
         {
             var that = (global::WindowsApp2.ViewModels.MainPageViewModel)instance;
             that.Password = (global::System.String)Value;
         }
-        private object get_131_MainPageViewModel_Login(object instance)
+        private object get_134_MainPageViewModel_isInternetConnected(object instance)
+        {
+            var that = (global::WindowsApp2.ViewModels.MainPageViewModel)instance;
+            return that.isInternetConnected;
+        }
+        private void set_134_MainPageViewModel_isInternetConnected(object instance, object Value)
+        {
+            var that = (global::WindowsApp2.ViewModels.MainPageViewModel)instance;
+            that.isInternetConnected = (global::System.Boolean)Value;
+        }
+        private object get_135_MainPageViewModel_Login(object instance)
         {
             var that = (global::WindowsApp2.ViewModels.MainPageViewModel)instance;
             return that.Login;
         }
-        private void set_131_MainPageViewModel_Login(object instance, object Value)
+        private void set_135_MainPageViewModel_Login(object instance, object Value)
         {
             var that = (global::WindowsApp2.ViewModels.MainPageViewModel)instance;
             that.Login = (global::System.String)Value;
         }
-        private object get_132_DataTriggerBehavior_Actions(object instance)
+        private object get_136_DataTriggerBehavior_Actions(object instance)
         {
             var that = (global::Microsoft.Xaml.Interactions.Core.DataTriggerBehavior)instance;
             return that.Actions;
         }
-        private object get_133_DataTriggerBehavior_Binding(object instance)
+        private object get_137_DataTriggerBehavior_Binding(object instance)
         {
             var that = (global::Microsoft.Xaml.Interactions.Core.DataTriggerBehavior)instance;
             return that.Binding;
         }
-        private void set_133_DataTriggerBehavior_Binding(object instance, object Value)
+        private void set_137_DataTriggerBehavior_Binding(object instance, object Value)
         {
             var that = (global::Microsoft.Xaml.Interactions.Core.DataTriggerBehavior)instance;
             that.Binding = (global::System.Object)Value;
         }
-        private object get_134_DataTriggerBehavior_ComparisonCondition(object instance)
+        private object get_138_DataTriggerBehavior_ComparisonCondition(object instance)
         {
             var that = (global::Microsoft.Xaml.Interactions.Core.DataTriggerBehavior)instance;
             return that.ComparisonCondition;
         }
-        private void set_134_DataTriggerBehavior_ComparisonCondition(object instance, object Value)
+        private void set_138_DataTriggerBehavior_ComparisonCondition(object instance, object Value)
         {
             var that = (global::Microsoft.Xaml.Interactions.Core.DataTriggerBehavior)instance;
             that.ComparisonCondition = (global::Microsoft.Xaml.Interactions.Core.ComparisonConditionType)Value;
         }
-        private object get_135_DataTriggerBehavior_Value(object instance)
+        private object get_139_DataTriggerBehavior_Value(object instance)
         {
             var that = (global::Microsoft.Xaml.Interactions.Core.DataTriggerBehavior)instance;
             return that.Value;
         }
-        private void set_135_DataTriggerBehavior_Value(object instance, object Value)
+        private void set_139_DataTriggerBehavior_Value(object instance, object Value)
         {
             var that = (global::Microsoft.Xaml.Interactions.Core.DataTriggerBehavior)instance;
             that.Value = (global::System.Object)Value;
         }
-        private object get_136_CallMethodAction_MethodName(object instance)
+        private object get_140_CallMethodAction_MethodName(object instance)
         {
             var that = (global::Microsoft.Xaml.Interactions.Core.CallMethodAction)instance;
             return that.MethodName;
         }
-        private void set_136_CallMethodAction_MethodName(object instance, object Value)
+        private void set_140_CallMethodAction_MethodName(object instance, object Value)
         {
             var that = (global::Microsoft.Xaml.Interactions.Core.CallMethodAction)instance;
             that.MethodName = (global::System.String)Value;
         }
-        private object get_137_CallMethodAction_TargetObject(object instance)
+        private object get_141_CallMethodAction_TargetObject(object instance)
         {
             var that = (global::Microsoft.Xaml.Interactions.Core.CallMethodAction)instance;
             return that.TargetObject;
         }
-        private void set_137_CallMethodAction_TargetObject(object instance, object Value)
+        private void set_141_CallMethodAction_TargetObject(object instance, object Value)
         {
             var that = (global::Microsoft.Xaml.Interactions.Core.CallMethodAction)instance;
             that.TargetObject = (global::System.Object)Value;
         }
-        private object get_138_KeyBehavior_Actions(object instance)
+        private object get_142_KeyBehavior_Actions(object instance)
         {
             var that = (global::Template10.Behaviors.KeyBehavior)instance;
             return that.Actions;
         }
-        private object get_139_KeyBehavior_Key(object instance)
+        private object get_143_KeyBehavior_Key(object instance)
         {
             var that = (global::Template10.Behaviors.KeyBehavior)instance;
             return that.Key;
         }
-        private void set_139_KeyBehavior_Key(object instance, object Value)
+        private void set_143_KeyBehavior_Key(object instance, object Value)
         {
             var that = (global::Template10.Behaviors.KeyBehavior)instance;
             that.Key = (global::Windows.System.VirtualKey)Value;
         }
-        private object get_140_KeyBehavior_AssociatedObject(object instance)
+        private object get_144_KeyBehavior_AssociatedObject(object instance)
         {
             var that = (global::Template10.Behaviors.KeyBehavior)instance;
             return that.AssociatedObject;
         }
-        private object get_141_KeyBehavior_AndControl(object instance)
+        private object get_145_KeyBehavior_AndControl(object instance)
         {
             var that = (global::Template10.Behaviors.KeyBehavior)instance;
             return that.AndControl;
         }
-        private void set_141_KeyBehavior_AndControl(object instance, object Value)
+        private void set_145_KeyBehavior_AndControl(object instance, object Value)
         {
             var that = (global::Template10.Behaviors.KeyBehavior)instance;
             that.AndControl = (global::System.Boolean)Value;
         }
-        private object get_142_KeyBehavior_AndAlt(object instance)
+        private object get_146_KeyBehavior_AndAlt(object instance)
         {
             var that = (global::Template10.Behaviors.KeyBehavior)instance;
             return that.AndAlt;
         }
-        private void set_142_KeyBehavior_AndAlt(object instance, object Value)
+        private void set_146_KeyBehavior_AndAlt(object instance, object Value)
         {
             var that = (global::Template10.Behaviors.KeyBehavior)instance;
             that.AndAlt = (global::System.Boolean)Value;
         }
-        private object get_143_KeyBehavior_AndShift(object instance)
+        private object get_147_KeyBehavior_AndShift(object instance)
         {
             var that = (global::Template10.Behaviors.KeyBehavior)instance;
             return that.AndShift;
         }
-        private void set_143_KeyBehavior_AndShift(object instance, object Value)
+        private void set_147_KeyBehavior_AndShift(object instance, object Value)
         {
             var that = (global::Template10.Behaviors.KeyBehavior)instance;
             that.AndShift = (global::System.Boolean)Value;
         }
-        private object get_144_KeyBehavior_Event(object instance)
+        private object get_148_KeyBehavior_Event(object instance)
         {
             var that = (global::Template10.Behaviors.KeyBehavior)instance;
             return that.Event;
         }
-        private void set_144_KeyBehavior_Event(object instance, object Value)
+        private void set_148_KeyBehavior_Event(object instance, object Value)
         {
             var that = (global::Template10.Behaviors.KeyBehavior)instance;
             that.Event = (global::Template10.Behaviors.KeyBehavior.Kinds)Value;
         }
-        private object get_145_FocusAction_TargetObject(object instance)
+        private object get_149_FocusAction_TargetObject(object instance)
         {
             var that = (global::Template10.Behaviors.FocusAction)instance;
             return that.TargetObject;
         }
-        private void set_145_FocusAction_TargetObject(object instance, object Value)
+        private void set_149_FocusAction_TargetObject(object instance, object Value)
         {
             var that = (global::Template10.Behaviors.FocusAction)instance;
             that.TargetObject = (global::Windows.UI.Xaml.Controls.Control)Value;
         }
-        private object get_146_SettingsPageViewModel_SettingsPartViewModel(object instance)
+        private object get_150_SettingsPageViewModel_SettingsPartViewModel(object instance)
         {
             var that = (global::WindowsApp2.ViewModels.SettingsPageViewModel)instance;
             return that.SettingsPartViewModel;
         }
-        private object get_147_SettingsPageViewModel_AboutPartViewModel(object instance)
+        private object get_151_SettingsPageViewModel_AboutPartViewModel(object instance)
         {
             var that = (global::WindowsApp2.ViewModels.SettingsPageViewModel)instance;
             return that.AboutPartViewModel;
         }
-        private object get_148_ValueWhenConverter_When(object instance)
+        private object get_152_ValueWhenConverter_When(object instance)
         {
             var that = (global::Template10.Converters.ValueWhenConverter)instance;
             return that.When;
         }
-        private void set_148_ValueWhenConverter_When(object instance, object Value)
+        private void set_152_ValueWhenConverter_When(object instance, object Value)
         {
             var that = (global::Template10.Converters.ValueWhenConverter)instance;
             that.When = (global::System.Object)Value;
         }
-        private object get_149_ValueWhenConverter_Value(object instance)
+        private object get_153_ValueWhenConverter_Value(object instance)
         {
             var that = (global::Template10.Converters.ValueWhenConverter)instance;
             return that.Value;
         }
-        private void set_149_ValueWhenConverter_Value(object instance, object Value)
+        private void set_153_ValueWhenConverter_Value(object instance, object Value)
         {
             var that = (global::Template10.Converters.ValueWhenConverter)instance;
             that.Value = (global::System.Object)Value;
         }
-        private object get_150_ValueWhenConverter_Otherwise(object instance)
+        private object get_154_ValueWhenConverter_Otherwise(object instance)
         {
             var that = (global::Template10.Converters.ValueWhenConverter)instance;
             return that.Otherwise;
         }
-        private void set_150_ValueWhenConverter_Otherwise(object instance, object Value)
+        private void set_154_ValueWhenConverter_Otherwise(object instance, object Value)
         {
             var that = (global::Template10.Converters.ValueWhenConverter)instance;
             that.Otherwise = (global::System.Object)Value;
         }
-        private object get_151_ValueWhenConverter_OtherwiseValueBack(object instance)
+        private object get_155_ValueWhenConverter_OtherwiseValueBack(object instance)
         {
             var that = (global::Template10.Converters.ValueWhenConverter)instance;
             return that.OtherwiseValueBack;
         }
-        private void set_151_ValueWhenConverter_OtherwiseValueBack(object instance, object Value)
+        private void set_155_ValueWhenConverter_OtherwiseValueBack(object instance, object Value)
         {
             var that = (global::Template10.Converters.ValueWhenConverter)instance;
             that.OtherwiseValueBack = (global::System.Object)Value;
         }
-        private object get_152_ValueWhenConverter_Debug(object instance)
+        private object get_156_ValueWhenConverter_Debug(object instance)
         {
             var that = (global::Template10.Converters.ValueWhenConverter)instance;
             return that.Debug;
         }
-        private void set_152_ValueWhenConverter_Debug(object instance, object Value)
+        private void set_156_ValueWhenConverter_Debug(object instance, object Value)
         {
             var that = (global::Template10.Converters.ValueWhenConverter)instance;
             that.Debug = (global::System.Boolean)Value;
         }
-        private object get_153_MessageDialogAction_Title(object instance)
+        private object get_157_MessageDialogAction_Title(object instance)
         {
             var that = (global::Template10.Behaviors.MessageDialogAction)instance;
             return that.Title;
         }
-        private void set_153_MessageDialogAction_Title(object instance, object Value)
+        private void set_157_MessageDialogAction_Title(object instance, object Value)
         {
             var that = (global::Template10.Behaviors.MessageDialogAction)instance;
             that.Title = (global::System.String)Value;
         }
-        private object get_154_MessageDialogAction_Content(object instance)
+        private object get_158_MessageDialogAction_Content(object instance)
         {
             var that = (global::Template10.Behaviors.MessageDialogAction)instance;
             return that.Content;
         }
-        private void set_154_MessageDialogAction_Content(object instance, object Value)
+        private void set_158_MessageDialogAction_Content(object instance, object Value)
         {
             var that = (global::Template10.Behaviors.MessageDialogAction)instance;
             that.Content = (global::System.String)Value;
         }
-        private object get_155_MessageDialogAction_OkText(object instance)
+        private object get_159_MessageDialogAction_OkText(object instance)
         {
             var that = (global::Template10.Behaviors.MessageDialogAction)instance;
             return that.OkText;
         }
-        private void set_155_MessageDialogAction_OkText(object instance, object Value)
+        private void set_159_MessageDialogAction_OkText(object instance, object Value)
         {
             var that = (global::Template10.Behaviors.MessageDialogAction)instance;
             that.OkText = (global::System.String)Value;
@@ -3609,261 +3662,285 @@ namespace WindowsApp2.WindowsApp2_XamlTypeInfo
                 xamlMember.Getter = get_115_DetailPageViewModel_MostPlayedChampionImage;
                 xamlMember.Setter = set_115_DetailPageViewModel_MostPlayedChampionImage;
                 break;
+            case "WindowsApp2.ViewModels.DetailPageViewModel.ImageSource":
+                userType = (global::WindowsApp2.WindowsApp2_XamlTypeInfo.XamlUserType)GetXamlTypeByName("WindowsApp2.ViewModels.DetailPageViewModel");
+                xamlMember = new global::WindowsApp2.WindowsApp2_XamlTypeInfo.XamlMember(this, "ImageSource", "Windows.UI.Xaml.Media.ImageSource");
+                xamlMember.Getter = get_116_DetailPageViewModel_ImageSource;
+                xamlMember.Setter = set_116_DetailPageViewModel_ImageSource;
+                break;
             case "Microsoft.Xaml.Interactions.Core.InvokeCommandAction.Command":
                 userType = (global::WindowsApp2.WindowsApp2_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.Xaml.Interactions.Core.InvokeCommandAction");
                 xamlMember = new global::WindowsApp2.WindowsApp2_XamlTypeInfo.XamlMember(this, "Command", "System.Windows.Input.ICommand");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_116_InvokeCommandAction_Command;
-                xamlMember.Setter = set_116_InvokeCommandAction_Command;
+                xamlMember.Getter = get_117_InvokeCommandAction_Command;
+                xamlMember.Setter = set_117_InvokeCommandAction_Command;
                 break;
             case "Microsoft.Xaml.Interactions.Core.InvokeCommandAction.CommandParameter":
                 userType = (global::WindowsApp2.WindowsApp2_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.Xaml.Interactions.Core.InvokeCommandAction");
                 xamlMember = new global::WindowsApp2.WindowsApp2_XamlTypeInfo.XamlMember(this, "CommandParameter", "Object");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_117_InvokeCommandAction_CommandParameter;
-                xamlMember.Setter = set_117_InvokeCommandAction_CommandParameter;
+                xamlMember.Getter = get_118_InvokeCommandAction_CommandParameter;
+                xamlMember.Setter = set_118_InvokeCommandAction_CommandParameter;
                 break;
             case "Microsoft.Xaml.Interactions.Core.InvokeCommandAction.InputConverter":
                 userType = (global::WindowsApp2.WindowsApp2_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.Xaml.Interactions.Core.InvokeCommandAction");
                 xamlMember = new global::WindowsApp2.WindowsApp2_XamlTypeInfo.XamlMember(this, "InputConverter", "Windows.UI.Xaml.Data.IValueConverter");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_118_InvokeCommandAction_InputConverter;
-                xamlMember.Setter = set_118_InvokeCommandAction_InputConverter;
+                xamlMember.Getter = get_119_InvokeCommandAction_InputConverter;
+                xamlMember.Setter = set_119_InvokeCommandAction_InputConverter;
                 break;
             case "Microsoft.Xaml.Interactions.Core.InvokeCommandAction.InputConverterParameter":
                 userType = (global::WindowsApp2.WindowsApp2_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.Xaml.Interactions.Core.InvokeCommandAction");
                 xamlMember = new global::WindowsApp2.WindowsApp2_XamlTypeInfo.XamlMember(this, "InputConverterParameter", "Object");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_119_InvokeCommandAction_InputConverterParameter;
-                xamlMember.Setter = set_119_InvokeCommandAction_InputConverterParameter;
+                xamlMember.Getter = get_120_InvokeCommandAction_InputConverterParameter;
+                xamlMember.Setter = set_120_InvokeCommandAction_InputConverterParameter;
                 break;
             case "Microsoft.Xaml.Interactions.Core.InvokeCommandAction.InputConverterLanguage":
                 userType = (global::WindowsApp2.WindowsApp2_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.Xaml.Interactions.Core.InvokeCommandAction");
                 xamlMember = new global::WindowsApp2.WindowsApp2_XamlTypeInfo.XamlMember(this, "InputConverterLanguage", "String");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_120_InvokeCommandAction_InputConverterLanguage;
-                xamlMember.Setter = set_120_InvokeCommandAction_InputConverterLanguage;
+                xamlMember.Getter = get_121_InvokeCommandAction_InputConverterLanguage;
+                xamlMember.Setter = set_121_InvokeCommandAction_InputConverterLanguage;
                 break;
             case "WindowsApp2.ViewModels.MainPageViewModel.TryLogin":
                 userType = (global::WindowsApp2.WindowsApp2_XamlTypeInfo.XamlUserType)GetXamlTypeByName("WindowsApp2.ViewModels.MainPageViewModel");
                 xamlMember = new global::WindowsApp2.WindowsApp2_XamlTypeInfo.XamlMember(this, "TryLogin", "System.Windows.Input.ICommand");
-                xamlMember.Getter = get_121_MainPageViewModel_TryLogin;
-                xamlMember.Setter = set_121_MainPageViewModel_TryLogin;
+                xamlMember.Getter = get_122_MainPageViewModel_TryLogin;
+                xamlMember.Setter = set_122_MainPageViewModel_TryLogin;
                 break;
             case "WindowsApp2.ViewModels.MainPageViewModel.TryLogout":
                 userType = (global::WindowsApp2.WindowsApp2_XamlTypeInfo.XamlUserType)GetXamlTypeByName("WindowsApp2.ViewModels.MainPageViewModel");
                 xamlMember = new global::WindowsApp2.WindowsApp2_XamlTypeInfo.XamlMember(this, "TryLogout", "System.Windows.Input.ICommand");
-                xamlMember.Getter = get_122_MainPageViewModel_TryLogout;
-                xamlMember.Setter = set_122_MainPageViewModel_TryLogout;
+                xamlMember.Getter = get_123_MainPageViewModel_TryLogout;
+                xamlMember.Setter = set_123_MainPageViewModel_TryLogout;
                 break;
             case "WindowsApp2.ViewModels.MainPageViewModel.TryRegister":
                 userType = (global::WindowsApp2.WindowsApp2_XamlTypeInfo.XamlUserType)GetXamlTypeByName("WindowsApp2.ViewModels.MainPageViewModel");
                 xamlMember = new global::WindowsApp2.WindowsApp2_XamlTypeInfo.XamlMember(this, "TryRegister", "System.Windows.Input.ICommand");
-                xamlMember.Getter = get_123_MainPageViewModel_TryRegister;
-                xamlMember.Setter = set_123_MainPageViewModel_TryRegister;
+                xamlMember.Getter = get_124_MainPageViewModel_TryRegister;
+                xamlMember.Setter = set_124_MainPageViewModel_TryRegister;
+                break;
+            case "WindowsApp2.ViewModels.MainPageViewModel.BusyText":
+                userType = (global::WindowsApp2.WindowsApp2_XamlTypeInfo.XamlUserType)GetXamlTypeByName("WindowsApp2.ViewModels.MainPageViewModel");
+                xamlMember = new global::WindowsApp2.WindowsApp2_XamlTypeInfo.XamlMember(this, "BusyText", "String");
+                xamlMember.Getter = get_125_MainPageViewModel_BusyText;
+                xamlMember.Setter = set_125_MainPageViewModel_BusyText;
+                break;
+            case "WindowsApp2.ViewModels.MainPageViewModel.ShowBusyCommand":
+                userType = (global::WindowsApp2.WindowsApp2_XamlTypeInfo.XamlUserType)GetXamlTypeByName("WindowsApp2.ViewModels.MainPageViewModel");
+                xamlMember = new global::WindowsApp2.WindowsApp2_XamlTypeInfo.XamlMember(this, "ShowBusyCommand", "Template10.Mvvm.DelegateCommand");
+                xamlMember.Getter = get_126_MainPageViewModel_ShowBusyCommand;
+                xamlMember.SetIsReadOnly();
                 break;
             case "WindowsApp2.ViewModels.MainPageViewModel.ErrorText":
                 userType = (global::WindowsApp2.WindowsApp2_XamlTypeInfo.XamlUserType)GetXamlTypeByName("WindowsApp2.ViewModels.MainPageViewModel");
                 xamlMember = new global::WindowsApp2.WindowsApp2_XamlTypeInfo.XamlMember(this, "ErrorText", "String");
-                xamlMember.Getter = get_124_MainPageViewModel_ErrorText;
-                xamlMember.Setter = set_124_MainPageViewModel_ErrorText;
+                xamlMember.Getter = get_127_MainPageViewModel_ErrorText;
+                xamlMember.Setter = set_127_MainPageViewModel_ErrorText;
                 break;
             case "WindowsApp2.ViewModels.MainPageViewModel.ErrorTag":
                 userType = (global::WindowsApp2.WindowsApp2_XamlTypeInfo.XamlUserType)GetXamlTypeByName("WindowsApp2.ViewModels.MainPageViewModel");
                 xamlMember = new global::WindowsApp2.WindowsApp2_XamlTypeInfo.XamlMember(this, "ErrorTag", "String");
-                xamlMember.Getter = get_125_MainPageViewModel_ErrorTag;
-                xamlMember.Setter = set_125_MainPageViewModel_ErrorTag;
+                xamlMember.Getter = get_128_MainPageViewModel_ErrorTag;
+                xamlMember.Setter = set_128_MainPageViewModel_ErrorTag;
                 break;
             case "WindowsApp2.ViewModels.MainPageViewModel.LoginTextBox":
                 userType = (global::WindowsApp2.WindowsApp2_XamlTypeInfo.XamlUserType)GetXamlTypeByName("WindowsApp2.ViewModels.MainPageViewModel");
                 xamlMember = new global::WindowsApp2.WindowsApp2_XamlTypeInfo.XamlMember(this, "LoginTextBox", "Windows.UI.Xaml.Controls.TextBox");
-                xamlMember.Getter = get_126_MainPageViewModel_LoginTextBox;
-                xamlMember.Setter = set_126_MainPageViewModel_LoginTextBox;
+                xamlMember.Getter = get_129_MainPageViewModel_LoginTextBox;
+                xamlMember.Setter = set_129_MainPageViewModel_LoginTextBox;
                 break;
             case "WindowsApp2.ViewModels.MainPageViewModel.ProgressBar":
                 userType = (global::WindowsApp2.WindowsApp2_XamlTypeInfo.XamlUserType)GetXamlTypeByName("WindowsApp2.ViewModels.MainPageViewModel");
                 xamlMember = new global::WindowsApp2.WindowsApp2_XamlTypeInfo.XamlMember(this, "ProgressBar", "Boolean");
-                xamlMember.Getter = get_127_MainPageViewModel_ProgressBar;
-                xamlMember.Setter = set_127_MainPageViewModel_ProgressBar;
+                xamlMember.Getter = get_130_MainPageViewModel_ProgressBar;
+                xamlMember.Setter = set_130_MainPageViewModel_ProgressBar;
                 break;
             case "WindowsApp2.ViewModels.MainPageViewModel.LoginButtonsVisibility":
                 userType = (global::WindowsApp2.WindowsApp2_XamlTypeInfo.XamlUserType)GetXamlTypeByName("WindowsApp2.ViewModels.MainPageViewModel");
                 xamlMember = new global::WindowsApp2.WindowsApp2_XamlTypeInfo.XamlMember(this, "LoginButtonsVisibility", "Windows.UI.Xaml.Visibility");
-                xamlMember.Getter = get_128_MainPageViewModel_LoginButtonsVisibility;
-                xamlMember.Setter = set_128_MainPageViewModel_LoginButtonsVisibility;
+                xamlMember.Getter = get_131_MainPageViewModel_LoginButtonsVisibility;
+                xamlMember.Setter = set_131_MainPageViewModel_LoginButtonsVisibility;
                 break;
             case "WindowsApp2.ViewModels.MainPageViewModel.LogoutButtonsVisibility":
                 userType = (global::WindowsApp2.WindowsApp2_XamlTypeInfo.XamlUserType)GetXamlTypeByName("WindowsApp2.ViewModels.MainPageViewModel");
                 xamlMember = new global::WindowsApp2.WindowsApp2_XamlTypeInfo.XamlMember(this, "LogoutButtonsVisibility", "Windows.UI.Xaml.Visibility");
-                xamlMember.Getter = get_129_MainPageViewModel_LogoutButtonsVisibility;
-                xamlMember.Setter = set_129_MainPageViewModel_LogoutButtonsVisibility;
+                xamlMember.Getter = get_132_MainPageViewModel_LogoutButtonsVisibility;
+                xamlMember.Setter = set_132_MainPageViewModel_LogoutButtonsVisibility;
                 break;
             case "WindowsApp2.ViewModels.MainPageViewModel.Password":
                 userType = (global::WindowsApp2.WindowsApp2_XamlTypeInfo.XamlUserType)GetXamlTypeByName("WindowsApp2.ViewModels.MainPageViewModel");
                 xamlMember = new global::WindowsApp2.WindowsApp2_XamlTypeInfo.XamlMember(this, "Password", "String");
-                xamlMember.Getter = get_130_MainPageViewModel_Password;
-                xamlMember.Setter = set_130_MainPageViewModel_Password;
+                xamlMember.Getter = get_133_MainPageViewModel_Password;
+                xamlMember.Setter = set_133_MainPageViewModel_Password;
+                break;
+            case "WindowsApp2.ViewModels.MainPageViewModel.isInternetConnected":
+                userType = (global::WindowsApp2.WindowsApp2_XamlTypeInfo.XamlUserType)GetXamlTypeByName("WindowsApp2.ViewModels.MainPageViewModel");
+                xamlMember = new global::WindowsApp2.WindowsApp2_XamlTypeInfo.XamlMember(this, "isInternetConnected", "Boolean");
+                xamlMember.Getter = get_134_MainPageViewModel_isInternetConnected;
+                xamlMember.Setter = set_134_MainPageViewModel_isInternetConnected;
                 break;
             case "WindowsApp2.ViewModels.MainPageViewModel.Login":
                 userType = (global::WindowsApp2.WindowsApp2_XamlTypeInfo.XamlUserType)GetXamlTypeByName("WindowsApp2.ViewModels.MainPageViewModel");
                 xamlMember = new global::WindowsApp2.WindowsApp2_XamlTypeInfo.XamlMember(this, "Login", "String");
-                xamlMember.Getter = get_131_MainPageViewModel_Login;
-                xamlMember.Setter = set_131_MainPageViewModel_Login;
+                xamlMember.Getter = get_135_MainPageViewModel_Login;
+                xamlMember.Setter = set_135_MainPageViewModel_Login;
                 break;
             case "Microsoft.Xaml.Interactions.Core.DataTriggerBehavior.Actions":
                 userType = (global::WindowsApp2.WindowsApp2_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.Xaml.Interactions.Core.DataTriggerBehavior");
                 xamlMember = new global::WindowsApp2.WindowsApp2_XamlTypeInfo.XamlMember(this, "Actions", "Microsoft.Xaml.Interactivity.ActionCollection");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_132_DataTriggerBehavior_Actions;
+                xamlMember.Getter = get_136_DataTriggerBehavior_Actions;
                 xamlMember.SetIsReadOnly();
                 break;
             case "Microsoft.Xaml.Interactions.Core.DataTriggerBehavior.Binding":
                 userType = (global::WindowsApp2.WindowsApp2_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.Xaml.Interactions.Core.DataTriggerBehavior");
                 xamlMember = new global::WindowsApp2.WindowsApp2_XamlTypeInfo.XamlMember(this, "Binding", "Object");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_133_DataTriggerBehavior_Binding;
-                xamlMember.Setter = set_133_DataTriggerBehavior_Binding;
+                xamlMember.Getter = get_137_DataTriggerBehavior_Binding;
+                xamlMember.Setter = set_137_DataTriggerBehavior_Binding;
                 break;
             case "Microsoft.Xaml.Interactions.Core.DataTriggerBehavior.ComparisonCondition":
                 userType = (global::WindowsApp2.WindowsApp2_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.Xaml.Interactions.Core.DataTriggerBehavior");
                 xamlMember = new global::WindowsApp2.WindowsApp2_XamlTypeInfo.XamlMember(this, "ComparisonCondition", "Microsoft.Xaml.Interactions.Core.ComparisonConditionType");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_134_DataTriggerBehavior_ComparisonCondition;
-                xamlMember.Setter = set_134_DataTriggerBehavior_ComparisonCondition;
+                xamlMember.Getter = get_138_DataTriggerBehavior_ComparisonCondition;
+                xamlMember.Setter = set_138_DataTriggerBehavior_ComparisonCondition;
                 break;
             case "Microsoft.Xaml.Interactions.Core.DataTriggerBehavior.Value":
                 userType = (global::WindowsApp2.WindowsApp2_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.Xaml.Interactions.Core.DataTriggerBehavior");
                 xamlMember = new global::WindowsApp2.WindowsApp2_XamlTypeInfo.XamlMember(this, "Value", "Object");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_135_DataTriggerBehavior_Value;
-                xamlMember.Setter = set_135_DataTriggerBehavior_Value;
+                xamlMember.Getter = get_139_DataTriggerBehavior_Value;
+                xamlMember.Setter = set_139_DataTriggerBehavior_Value;
                 break;
             case "Microsoft.Xaml.Interactions.Core.CallMethodAction.MethodName":
                 userType = (global::WindowsApp2.WindowsApp2_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.Xaml.Interactions.Core.CallMethodAction");
                 xamlMember = new global::WindowsApp2.WindowsApp2_XamlTypeInfo.XamlMember(this, "MethodName", "String");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_136_CallMethodAction_MethodName;
-                xamlMember.Setter = set_136_CallMethodAction_MethodName;
+                xamlMember.Getter = get_140_CallMethodAction_MethodName;
+                xamlMember.Setter = set_140_CallMethodAction_MethodName;
                 break;
             case "Microsoft.Xaml.Interactions.Core.CallMethodAction.TargetObject":
                 userType = (global::WindowsApp2.WindowsApp2_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.Xaml.Interactions.Core.CallMethodAction");
                 xamlMember = new global::WindowsApp2.WindowsApp2_XamlTypeInfo.XamlMember(this, "TargetObject", "Object");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_137_CallMethodAction_TargetObject;
-                xamlMember.Setter = set_137_CallMethodAction_TargetObject;
+                xamlMember.Getter = get_141_CallMethodAction_TargetObject;
+                xamlMember.Setter = set_141_CallMethodAction_TargetObject;
                 break;
             case "Template10.Behaviors.KeyBehavior.Actions":
                 userType = (global::WindowsApp2.WindowsApp2_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Template10.Behaviors.KeyBehavior");
                 xamlMember = new global::WindowsApp2.WindowsApp2_XamlTypeInfo.XamlMember(this, "Actions", "Microsoft.Xaml.Interactivity.ActionCollection");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_138_KeyBehavior_Actions;
+                xamlMember.Getter = get_142_KeyBehavior_Actions;
                 xamlMember.SetIsReadOnly();
                 break;
             case "Template10.Behaviors.KeyBehavior.Key":
                 userType = (global::WindowsApp2.WindowsApp2_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Template10.Behaviors.KeyBehavior");
                 xamlMember = new global::WindowsApp2.WindowsApp2_XamlTypeInfo.XamlMember(this, "Key", "Windows.System.VirtualKey");
-                xamlMember.Getter = get_139_KeyBehavior_Key;
-                xamlMember.Setter = set_139_KeyBehavior_Key;
+                xamlMember.Getter = get_143_KeyBehavior_Key;
+                xamlMember.Setter = set_143_KeyBehavior_Key;
                 break;
             case "Template10.Behaviors.KeyBehavior.AssociatedObject":
                 userType = (global::WindowsApp2.WindowsApp2_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Template10.Behaviors.KeyBehavior");
                 xamlMember = new global::WindowsApp2.WindowsApp2_XamlTypeInfo.XamlMember(this, "AssociatedObject", "Windows.UI.Xaml.DependencyObject");
-                xamlMember.Getter = get_140_KeyBehavior_AssociatedObject;
+                xamlMember.Getter = get_144_KeyBehavior_AssociatedObject;
                 xamlMember.SetIsReadOnly();
                 break;
             case "Template10.Behaviors.KeyBehavior.AndControl":
                 userType = (global::WindowsApp2.WindowsApp2_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Template10.Behaviors.KeyBehavior");
                 xamlMember = new global::WindowsApp2.WindowsApp2_XamlTypeInfo.XamlMember(this, "AndControl", "Boolean");
-                xamlMember.Getter = get_141_KeyBehavior_AndControl;
-                xamlMember.Setter = set_141_KeyBehavior_AndControl;
+                xamlMember.Getter = get_145_KeyBehavior_AndControl;
+                xamlMember.Setter = set_145_KeyBehavior_AndControl;
                 break;
             case "Template10.Behaviors.KeyBehavior.AndAlt":
                 userType = (global::WindowsApp2.WindowsApp2_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Template10.Behaviors.KeyBehavior");
                 xamlMember = new global::WindowsApp2.WindowsApp2_XamlTypeInfo.XamlMember(this, "AndAlt", "Boolean");
-                xamlMember.Getter = get_142_KeyBehavior_AndAlt;
-                xamlMember.Setter = set_142_KeyBehavior_AndAlt;
+                xamlMember.Getter = get_146_KeyBehavior_AndAlt;
+                xamlMember.Setter = set_146_KeyBehavior_AndAlt;
                 break;
             case "Template10.Behaviors.KeyBehavior.AndShift":
                 userType = (global::WindowsApp2.WindowsApp2_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Template10.Behaviors.KeyBehavior");
                 xamlMember = new global::WindowsApp2.WindowsApp2_XamlTypeInfo.XamlMember(this, "AndShift", "Boolean");
-                xamlMember.Getter = get_143_KeyBehavior_AndShift;
-                xamlMember.Setter = set_143_KeyBehavior_AndShift;
+                xamlMember.Getter = get_147_KeyBehavior_AndShift;
+                xamlMember.Setter = set_147_KeyBehavior_AndShift;
                 break;
             case "Template10.Behaviors.KeyBehavior.Event":
                 userType = (global::WindowsApp2.WindowsApp2_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Template10.Behaviors.KeyBehavior");
                 xamlMember = new global::WindowsApp2.WindowsApp2_XamlTypeInfo.XamlMember(this, "Event", "Template10.Behaviors.KeyBehavior.Kinds");
-                xamlMember.Getter = get_144_KeyBehavior_Event;
-                xamlMember.Setter = set_144_KeyBehavior_Event;
+                xamlMember.Getter = get_148_KeyBehavior_Event;
+                xamlMember.Setter = set_148_KeyBehavior_Event;
                 break;
             case "Template10.Behaviors.FocusAction.TargetObject":
                 userType = (global::WindowsApp2.WindowsApp2_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Template10.Behaviors.FocusAction");
                 xamlMember = new global::WindowsApp2.WindowsApp2_XamlTypeInfo.XamlMember(this, "TargetObject", "Windows.UI.Xaml.Controls.Control");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_145_FocusAction_TargetObject;
-                xamlMember.Setter = set_145_FocusAction_TargetObject;
+                xamlMember.Getter = get_149_FocusAction_TargetObject;
+                xamlMember.Setter = set_149_FocusAction_TargetObject;
                 break;
             case "WindowsApp2.ViewModels.SettingsPageViewModel.SettingsPartViewModel":
                 userType = (global::WindowsApp2.WindowsApp2_XamlTypeInfo.XamlUserType)GetXamlTypeByName("WindowsApp2.ViewModels.SettingsPageViewModel");
                 xamlMember = new global::WindowsApp2.WindowsApp2_XamlTypeInfo.XamlMember(this, "SettingsPartViewModel", "WindowsApp2.ViewModels.SettingsPartViewModel");
-                xamlMember.Getter = get_146_SettingsPageViewModel_SettingsPartViewModel;
+                xamlMember.Getter = get_150_SettingsPageViewModel_SettingsPartViewModel;
                 xamlMember.SetIsReadOnly();
                 break;
             case "WindowsApp2.ViewModels.SettingsPageViewModel.AboutPartViewModel":
                 userType = (global::WindowsApp2.WindowsApp2_XamlTypeInfo.XamlUserType)GetXamlTypeByName("WindowsApp2.ViewModels.SettingsPageViewModel");
                 xamlMember = new global::WindowsApp2.WindowsApp2_XamlTypeInfo.XamlMember(this, "AboutPartViewModel", "WindowsApp2.ViewModels.AboutPartViewModel");
-                xamlMember.Getter = get_147_SettingsPageViewModel_AboutPartViewModel;
+                xamlMember.Getter = get_151_SettingsPageViewModel_AboutPartViewModel;
                 xamlMember.SetIsReadOnly();
                 break;
             case "Template10.Converters.ValueWhenConverter.When":
                 userType = (global::WindowsApp2.WindowsApp2_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Template10.Converters.ValueWhenConverter");
                 xamlMember = new global::WindowsApp2.WindowsApp2_XamlTypeInfo.XamlMember(this, "When", "Object");
-                xamlMember.Getter = get_148_ValueWhenConverter_When;
-                xamlMember.Setter = set_148_ValueWhenConverter_When;
+                xamlMember.Getter = get_152_ValueWhenConverter_When;
+                xamlMember.Setter = set_152_ValueWhenConverter_When;
                 break;
             case "Template10.Converters.ValueWhenConverter.Value":
                 userType = (global::WindowsApp2.WindowsApp2_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Template10.Converters.ValueWhenConverter");
                 xamlMember = new global::WindowsApp2.WindowsApp2_XamlTypeInfo.XamlMember(this, "Value", "Object");
-                xamlMember.Getter = get_149_ValueWhenConverter_Value;
-                xamlMember.Setter = set_149_ValueWhenConverter_Value;
+                xamlMember.Getter = get_153_ValueWhenConverter_Value;
+                xamlMember.Setter = set_153_ValueWhenConverter_Value;
                 break;
             case "Template10.Converters.ValueWhenConverter.Otherwise":
                 userType = (global::WindowsApp2.WindowsApp2_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Template10.Converters.ValueWhenConverter");
                 xamlMember = new global::WindowsApp2.WindowsApp2_XamlTypeInfo.XamlMember(this, "Otherwise", "Object");
-                xamlMember.Getter = get_150_ValueWhenConverter_Otherwise;
-                xamlMember.Setter = set_150_ValueWhenConverter_Otherwise;
+                xamlMember.Getter = get_154_ValueWhenConverter_Otherwise;
+                xamlMember.Setter = set_154_ValueWhenConverter_Otherwise;
                 break;
             case "Template10.Converters.ValueWhenConverter.OtherwiseValueBack":
                 userType = (global::WindowsApp2.WindowsApp2_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Template10.Converters.ValueWhenConverter");
                 xamlMember = new global::WindowsApp2.WindowsApp2_XamlTypeInfo.XamlMember(this, "OtherwiseValueBack", "Object");
-                xamlMember.Getter = get_151_ValueWhenConverter_OtherwiseValueBack;
-                xamlMember.Setter = set_151_ValueWhenConverter_OtherwiseValueBack;
+                xamlMember.Getter = get_155_ValueWhenConverter_OtherwiseValueBack;
+                xamlMember.Setter = set_155_ValueWhenConverter_OtherwiseValueBack;
                 break;
             case "Template10.Converters.ValueWhenConverter.Debug":
                 userType = (global::WindowsApp2.WindowsApp2_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Template10.Converters.ValueWhenConverter");
                 xamlMember = new global::WindowsApp2.WindowsApp2_XamlTypeInfo.XamlMember(this, "Debug", "Boolean");
-                xamlMember.Getter = get_152_ValueWhenConverter_Debug;
-                xamlMember.Setter = set_152_ValueWhenConverter_Debug;
+                xamlMember.Getter = get_156_ValueWhenConverter_Debug;
+                xamlMember.Setter = set_156_ValueWhenConverter_Debug;
                 break;
             case "Template10.Behaviors.MessageDialogAction.Title":
                 userType = (global::WindowsApp2.WindowsApp2_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Template10.Behaviors.MessageDialogAction");
                 xamlMember = new global::WindowsApp2.WindowsApp2_XamlTypeInfo.XamlMember(this, "Title", "String");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_153_MessageDialogAction_Title;
-                xamlMember.Setter = set_153_MessageDialogAction_Title;
+                xamlMember.Getter = get_157_MessageDialogAction_Title;
+                xamlMember.Setter = set_157_MessageDialogAction_Title;
                 break;
             case "Template10.Behaviors.MessageDialogAction.Content":
                 userType = (global::WindowsApp2.WindowsApp2_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Template10.Behaviors.MessageDialogAction");
                 xamlMember = new global::WindowsApp2.WindowsApp2_XamlTypeInfo.XamlMember(this, "Content", "String");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_154_MessageDialogAction_Content;
-                xamlMember.Setter = set_154_MessageDialogAction_Content;
+                xamlMember.Getter = get_158_MessageDialogAction_Content;
+                xamlMember.Setter = set_158_MessageDialogAction_Content;
                 break;
             case "Template10.Behaviors.MessageDialogAction.OkText":
                 userType = (global::WindowsApp2.WindowsApp2_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Template10.Behaviors.MessageDialogAction");
                 xamlMember = new global::WindowsApp2.WindowsApp2_XamlTypeInfo.XamlMember(this, "OkText", "String");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_155_MessageDialogAction_OkText;
-                xamlMember.Setter = set_155_MessageDialogAction_OkText;
+                xamlMember.Getter = get_159_MessageDialogAction_OkText;
+                xamlMember.Setter = set_159_MessageDialogAction_OkText;
                 break;
             }
             return xamlMember;

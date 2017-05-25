@@ -18,7 +18,7 @@
     <RootPropertyPathName Name="AddSummoner" />
     <RootPropertyPathName Name="RefreshSummoner" />
     <RootPropertyPathName Name="Summoner" />
-    <RootPropertyPathName Name="MostPlayedChampionImage" />
+    <RootPropertyPathName Name="ImageSource" />
     <RootPropertyPathName Name="MostPlayedChampion" />
     <RootPropertyPathName Name="TournamentCode" />
     <RootPropertyPathName Name="Enrolled" />
@@ -32,6 +32,7 @@
     <RootPropertyPathName Name="SummonerIcon" />
     <RootPropertyPathName Name="TryRegister" />
     <RootPropertyPathName Name="LoginButtonsVisibility" />
+    <RootPropertyPathName Name="isInternetConnected" />
     <RootPropertyPathName Name="Password" />
     <RootPropertyPathName Name="Length" />
     <RootPropertyPathName Name="Text" />

@@ -16,25 +16,25 @@
     <PackageRegistrationPath>
     </PackageRegistrationPath>
     <RemoveNonLayoutFiles>true</RemoveNonLayoutFiles>
-    <RegisteredManifestChecksum>0B090B6A6194F3E6CF6F842B928128F0C545DC78374C68B76FFD93421B9D44BC</RegisteredManifestChecksum>
-    <RegisteredPackageMoniker>80dcd2a2-d4b4-490e-88fc-e81121a2e14a_1.0.0.0_x86__7npqabcqw1kgm</RegisteredPackageMoniker>
+    <RegisteredManifestChecksum>672D72C1768F71C5C4E4C207616DAE16375DD070F66655EA6A824404259C1EFA</RegisteredManifestChecksum>
+    <RegisteredPackageMoniker>80dcd2a2-d4b4-490e-88fc-e81121a2e14a_1.0.1.0_x86__7npqabcqw1kgm</RegisteredPackageMoniker>
     <RegisteredUserModeAppID>80dcd2a2-d4b4-490e-88fc-e81121a2e14a_7npqabcqw1kgm!App</RegisteredUserModeAppID>
     <RegisteredPackageID>80dcd2a2-d4b4-490e-88fc-e81121a2e14a</RegisteredPackageID>
     <RegisteredPackagePublisher>CN=Adam</RegisteredPackagePublisher>
-    <RegisteredVersion>1.0.0.0</RegisteredVersion>
+    <RegisteredVersion>1.0.1.0</RegisteredVersion>
     <JitOptimizationSuppressed>True</JitOptimizationSuppressed>
   </PropertyGroup>
   <ItemGroup>
     <AppXManifest Include="F:\TournamentApp\WindowsApp2\bin\x86\Debug\Core\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2017-05-25T04:46:04.318</Modified>
+      <Modified>2017-05-25T16:20:33.488</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="F:\TournamentApp\WindowsApp2\bin\x86\Debug\WindowsApp2.exe">
       <PackagePath>entrypoint\WindowsApp2.exe</PackagePath>
-      <Modified>2017-05-25T04:46:03.728</Modified>
+      <Modified>2017-05-25T16:20:30.344</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="E:\Users\Marci\.nuget\packages\Microsoft.CSharp\4.0.1\lib\netcore50\Microsoft.CSharp.dll">
       <PackagePath>Microsoft.CSharp.dll</PackagePath>
@@ -111,6 +111,10 @@
     <AppxPackagedFile Include="E:\Users\Marci\.nuget\packages\Newtonsoft.Json\9.0.1\lib\portable-net45+wp80+win8+wpa81\Newtonsoft.Json.dll">
       <PackagePath>Newtonsoft.Json.dll</PackagePath>
       <Modified>2016-06-13T21:06:14.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="E:\Users\Marci\.nuget\packages\NotificationsExtensions.Win10\14332.0.2\lib\uap10.0\NotificationsExtensions.Win10.dll">
+      <PackagePath>NotificationsExtensions.Win10.dll</PackagePath>
+      <Modified>2016-07-05T12:08:02.000</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="E:\Users\Marci\.nuget\packages\RiotSharp\2.5.5\lib\portable45-net45+win8+wpa81\RiotSharp.dll">
       <PackagePath>RiotSharp.dll</PackagePath>
@@ -612,11 +616,11 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="F:\TournamentApp\WindowsApp2\Properties\Default.rd.xml">
       <PackagePath>Properties\Default.rd.xml</PackagePath>
-      <Modified>2017-04-18T19:22:58.000</Modified>
+      <Modified>2017-05-25T05:18:19.364</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="F:\TournamentApp\WindowsApp2\bin\x86\Debug\WindowsApp2.xr.xml">
       <PackagePath>WindowsApp2.xr.xml</PackagePath>
-      <Modified>2017-05-25T03:10:12.993</Modified>
+      <Modified>2017-05-25T16:16:33.834</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="E:\Program Files %28x86%29\Windows Kits\10\UnionMetadata\Windows.winmd">
       <PackagePath>WinMetadata\Windows.winmd</PackagePath>
@@ -657,11 +661,11 @@
     <AppxPackagedFile Include="F:\TournamentApp\WindowsApp2\bin\x86\Debug\resources.pri">
       <PackagePath>resources.pri</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2017-05-25T04:43:46.852</Modified>
+      <Modified>2017-05-25T16:20:32.742</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="F:\TournamentApp\WindowsApp2\bin\x86\Debug\Core\WindowsApp2.exe">
       <PackagePath>WindowsApp2.exe</PackagePath>
-      <Modified>2017-05-25T04:46:04.316</Modified>
+      <Modified>2017-05-25T16:20:33.481</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>
