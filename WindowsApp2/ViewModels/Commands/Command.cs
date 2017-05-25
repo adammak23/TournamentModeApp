@@ -9,7 +9,13 @@ namespace WindowsApp2.ViewModels.Commands
 {
     public class Command : ICommand
     {
+        private Action<string> omg;
         private Action _action;
+
+        public Command(Action<string> omg)
+        {
+            this.omg = omg;
+        }
 
         public Command(Action action)
         {

@@ -15,6 +15,7 @@ using Windows.UI.Xaml.Controls;
 using System.ComponentModel;//new
 using System.Diagnostics;
 using System.Windows.Input;
+using Windows.UI.Notifications;
 
 namespace WindowsApp2.ViewModels
 {
@@ -22,8 +23,8 @@ namespace WindowsApp2.ViewModels
     {
         private static readonly HttpClient client = new HttpClient();
         public ICommand TryLogin { get; set; }
-        public TryLogout TryLogout { get; set; }
-        public TryRegister TryRegister { get; set; }
+        public ICommand TryLogout { get; set; }
+        public ICommand TryRegister { get; set; }
         private string errorText;
         public string ErrorText
         {
@@ -57,11 +58,11 @@ namespace WindowsApp2.ViewModels
 
         public MainPageViewModel()
         {
-            //ProfileButtonVisibility = "Collapsed";
+
             Login = "";
             this.TryLogin = new Command(AccessTheWebAsync);
-            this.TryLogout = new TryLogout(this);
-            this.TryRegister = new TryRegister(this);
+            this.TryLogout = new Command(LogOut);
+            this.TryRegister = new Command(Register);
             this.LoginTextBox = new TextBox();
 
         }
@@ -109,7 +110,7 @@ namespace WindowsApp2.ViewModels
         public void GotoAbout() =>
             NavigationService.Navigate(typeof(Views.SettingsPage), 2);
 
-        public async void LogOut(Page grid)
+        public async void LogOut()
         {
 
             ProgressBar = true;
@@ -172,7 +173,7 @@ namespace WindowsApp2.ViewModels
             }
             catch (HttpRequestException e) { errorText = "httpRequestException" /*e.StackTrace*/; }
         }
-        public async void Register(Page grid)
+        public async void Register()
         {
 
             ErrorText = "Wait...";
@@ -212,7 +213,6 @@ namespace WindowsApp2.ViewModels
             }
             catch (HttpRequestException e) { ErrorText = "HttpRequestException" /*e.StackTrace*/; }
         }
-
 
     }
 }

@@ -10,46 +10,46 @@ using System.Windows.Input;
 using Template10.Mvvm;
 using WindowsApp2.ViewModels.Commands;
 using WindowsApp2.Models;
-
+using Windows.UI.Xaml.Controls;
 
 namespace WindowsApp2.ViewModels
 {
     class TournamentViewModel : ViewModelBase, INotifyPropertyChanged
     {
         public ICommand GetTournaments { get; set; }
-        private string errortext = "none";
-        public string ErrorText { get { return errortext; } set { errortext = value; RaisePropertyChanged("ErrorText"); } }
-        private string tournament;
-        public string Tournament { get { return tournament; } set { tournament = value; RaisePropertyChanged("Tournament"); } }
-        public static List<TournamentModel> turnieje = new List<TournamentModel>();
 
+        private string errortext = "";
+        public string ErrorText { get { return errortext; } set { errortext = value; RaisePropertyChanged("ErrorText"); } }
+        public static string Tournament;
+        public static List<TournamentModel> turnieje = new List<TournamentModel>() { new TournamentModel("1v1", "EUNE", 100, 1, "blindpick", "Elimination", "Howling Abyss"), new TournamentModel("3v3 Blindpick BO5", "EUNE", 100, 3, "blindpick", "Best of 5", "Twisted Treeline"), new TournamentModel("5v5 random elimination", "EUNE", 100, 5, "random", "Elimination", "Summoner's Rift")};
+        private static int SelectedIndex;
 
 
         public TournamentViewModel()
         {
-
-            this.GetTournaments = new ParameterCommand(Enroll,Tournament);
-
-            turnieje.Add(new TournamentModel("1v1", "EUNE", 100, 1, "blindpick", "Elimination", "Howling Abyss") { });
-            turnieje.Add(new TournamentModel("3v3 Blindpick BO5", "EUNE", 100, 3, "blindpick", "Best of 5", "Twisted Treeline") { });
-            turnieje.Add(new TournamentModel("5v5 random elimination", "EUNE", 100, 5, "random", "Elimination", "Summoner's Rift") { });
-
+            this.GetTournaments = new Command(Enroll);
         }
 
-        public async void Enroll(string Tournament)
+        public static int ItemClick(object sender, ItemClickEventArgs e)
         {
-            UserAccount.Enroll(this.Tournament);
+            TournamentModel item = (TournamentModel)e.ClickedItem;
+            SelectedIndex = turnieje.FindIndex(a => a.Name == item.Name);
+            Tournament = turnieje[SelectedIndex].Name;
+            return SelectedIndex;
+        }
+
+        public async void Enroll()
+        {
+            UserAccount.Enroll(Tournament);
             ErrorText = "Wait...";
 
             var values = new Dictionary<string, string>
                {
                   { "post_user", UserAccount.LoggedInUsername },
-                  { "post_tour", turnieje[0].Name }
+                  { "post_tour", turnieje[SelectedIndex].Name }
                };
 
             var content = new FormUrlEncodedContent(values);
-
-            Debug.WriteLine(Tournament);
 
             try
             {

@@ -72,10 +72,6 @@
                        RelativePanel.AlignLeftWithPanel="True"
                        RelativePanel.AlignRightWithPanel="True"
                        RelativePanel.Below="pageHeader">
-
-            <TextBlock x:Name="stateTextBox"
-                       Margin="359,128,-343,-112"
-                       Text="Current Visual State" />
             <TextBlock x:Name="Error1" Tag="{Binding ErrorTag, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, Source={StaticResource ViewModel2}}" Text="{Binding ErrorText, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, Source={StaticResource ViewModel2}}" Margin="194,34,-390,-119" FontSize="20" />
         </RelativePanel>
         <Grid Margin="10,53,-221,-188" x:Name="grid">
@@ -91,8 +87,7 @@
                     <!--  enable submit on enter key  -->
                     <Behaviors:KeyBehavior Key="Enter">
                         <Core:InvokeCommandAction 
-                            Command="{Binding TryLogin, Source={StaticResource ViewModel2}}"
-                            CommandParameter="{Binding ElementName=page}" />
+                            Command="{Binding TryLogin, Source={StaticResource ViewModel2}}"/>
                     </Behaviors:KeyBehavior>
                     <!--  focus on textbox when page loads  -->
                     <Core:EventTriggerBehavior>

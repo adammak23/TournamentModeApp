@@ -11,6 +11,7 @@ using Windows.UI.Xaml.Media.Imaging;
 using Windows.UI.Xaml.Navigation;
 using WindowsApp2.Models;
 using WindowsApp2.ViewModels.Commands;
+using System.Diagnostics;
 
 using RiotSharp;
 using RiotSharp.StatsEndpoint;
@@ -20,6 +21,10 @@ using System.Net.Http;
 using Windows.UI.Xaml;
 using System.ComponentModel;
 using Windows.UI.Xaml.Media;
+using System.Windows.Input;
+using RiotSharp.GameEndpoint;
+using Windows.UI.Notifications;
+using RiotSharp.ChampionEndpoint;
 
 namespace WindowsApp2.ViewModels
 {
@@ -27,8 +32,9 @@ namespace WindowsApp2.ViewModels
     [Windows.UI.Xaml.Data.Bindable]
     public class DetailPageViewModel : ViewModelBase, INotifyPropertyChanged
     {
-        public AddSummoner AddSummoner { get; set; }
-        public RefreshSummoner RefreshSummoner { get; set; }
+        public ICommand AddSummoner { get; set; }
+        public ICommand RefreshSummoner { get; set; }
+        //public ICommand checktournaments { get; set; }
 
         private string summonername;
         public string Summoner { get { return summonername; } set { summonername = value; RaisePropertyChanged("Summoner"); } }
@@ -51,6 +57,12 @@ namespace WindowsApp2.ViewModels
         private string summonericon = "none";
         public string SummonerIcon { get { return summonericon; } set { summonericon = value; RaisePropertyChanged("SummonerIcon"); } }
 
+        private string enrolled = "You are not enrolled.";
+        public string Enrolled { get { return enrolled; } set { enrolled = value; RaisePropertyChanged("Enrolled"); } }
+
+        private string tournamentcode = "";
+        public string TournamentCode { get { return tournamentcode; } set { tournamentcode = value; RaisePropertyChanged("TournamentCode"); } }
+
         private string soloqmedal = "http://static.lolskill.net/img/tiers/192/unranked.png";
         public string SoloQMedal { get { return soloqmedal; } set { soloqmedal = value; RaisePropertyChanged("SoloQMedal"); } }
 
@@ -60,31 +72,44 @@ namespace WindowsApp2.ViewModels
         private string ttmedal = "http://static.lolskill.net/img/tiers/192/unranked.png";
         public string TTMedal { get { return ttmedal; } set { ttmedal = value; RaisePropertyChanged("TTMedal"); } }
 
-
-
-
-
-        private string username = "Empty Username";
-        public string Username { get { return username; } set { username = value; RaisePropertyChanged("Username"); } }
-
-        
-
-        public DetailPageViewModel()
-        {
-            //Refresh in xaml
-            Username = UserAccount.LoggedInUsername;
-            AddSummoner = new AddSummoner(this);
-            RefreshSummoner = new RefreshSummoner(this);
-
-        }
         private string errorText;
         public string ErrorText
         {
             get { return errorText; }
             set { errorText = value; RaisePropertyChanged("ErrorText"); }
         }
+
+        private string username = "Empty Username";
+        public string Username { get { return username; } set { username = value; RaisePropertyChanged("Username"); } }
+
+        public string mostplayedchampion="";
+        public string MostPlayedChampion { get { return mostplayedchampion; } set { mostplayedchampion = value; RaisePropertyChanged("MostPlayedChampion"); } }
+        public string mostplayedchampionimage="";
+        public string MostPlayedChampionImage { get { return mostplayedchampionimage; } set { mostplayedchampionimage = value; RaisePropertyChanged("MostPlayedChampionImage"); } }
+
+        public List<Game> gry;
+        public List<int> listaId;
+
+
+
+        public DetailPageViewModel()
+        {
+            TileUpdateManager.CreateTileUpdaterForApplication().EnableNotificationQueue(true);
+            //Refresh
+            Username = UserAccount.LoggedInUsername;
+            Enrolled = "You are not enrolled.";
+
+            this.listaId = new List<int>();
+            if (UserAccount.EnrolledTournament!="") Enrolled = "Participant of: "+UserAccount.EnrolledTournament;
+            //this.checktournaments = new Command(CheckTournaments);
+            this.AddSummoner = new Command(AddingSummoner);
+            this.RefreshSummoner = new Command(CheckSummonerFromDatabase);
+            if (Enrolled != "You are not enrolled.") TournamentCode = "EUNE04383-4e59af6f-c21d-482a-8ad1-05e27b3b0f41";
+        }
+
         public string server = "eune";
-        RiotApi api = Api.GetApi(); 
+        RiotApi api = Api.GetApi();
+        StaticRiotApi StaticApi = Api.GetStaticApi();
 
         public List<League> liga;
         Summoner summoner;
@@ -101,9 +126,7 @@ namespace WindowsApp2.ViewModels
         public void ImageStrings()
         {
             SummonerIcon = "http://avatar.leagueoflegends.com/" + server + "/" + SummonerName + ".png";
-            //http://static.lolskill.net/img/champions/64/karma.png mini 64x64 https://opgg-static.akamaized.net/images/lol/champion/Morgana.png
-            //http://static.lolskill.net/img/tiers/192/goldIII.png lub https://opgg-static.akamaized.net/images/medals/gold_3.png
-            //http://opgg-static.akamaized.net/images/borders2/platinum.png
+            //https://opgg-static.akamaized.net/images/lol/champion/Morgana.png
         }
 
         /*
@@ -136,7 +159,7 @@ namespace WindowsApp2.ViewModels
             return epoch.AddMilliseconds(unixTime);
         }
 
-        public async void AddingSummoner(Page grid)
+        public async void AddingSummoner()
         {
 
             ErrorText = "Wait...";
@@ -185,9 +208,20 @@ namespace WindowsApp2.ViewModels
             try
             {
                 await Refresh();
+                notification();
                 SummonerName = UserAccount.GetSummoner();
                 summoner = api.GetSummoner(Region.eune, UserAccount.GetSummoner());
                 liga = summoner.GetLeagues();
+
+                gry = summoner.GetRecentGames();
+                foreach (Game game in gry)
+                {
+                    listaId.Add(game.ChampionId);
+                }
+                
+                int id = listaId.GroupBy(i => i).OrderByDescending(g => g.Count()).Take(1).Select(g => g.Key).First();
+                MostPlayedChampion = StaticApi.GetChampion(Region.eune, id).Name +" "+ StaticApi.GetChampion(Region.eune, id).Title;
+                MostPlayedChampionImage = "https://opgg-static.akamaized.net/images/lol/champion/" + StaticApi.GetChampion(Region.eune, id).Key + ".png";
 
             }
             catch (RiotSharpException ex)
@@ -195,7 +229,6 @@ namespace WindowsApp2.ViewModels
                 //Summoner doesnt exist or server error
             }
             catch (Newtonsoft.Json.JsonSerializationException exx) { /*when failed, cannot serialize/deserialize status.failed to string/int64/?*/}
-            //return liga;
         }
 
         public async Task GetLeagues()
@@ -232,6 +265,8 @@ namespace WindowsApp2.ViewModels
 
             ErrorText = "Wait...";
 
+            await CheckTournaments();
+
             var values = new Dictionary<string, string>
                {
                   { "post_user", UserAccount.LoggedInUsername },
@@ -259,7 +294,73 @@ namespace WindowsApp2.ViewModels
             }
             catch (HttpRequestException e) { ErrorText = e.StackTrace; }
         }
+        public async Task CheckTournaments()
+        {
+            ErrorText = "Sprawdzanie zapisanych turniejów...";
+            var values = new Dictionary<string, string>
+               {
+                  { "post_user", UserAccount.LoggedInUsername },
+               };
 
+            var content = new FormUrlEncodedContent(values);
+
+            try
+            {
+                HttpClient client = new HttpClient();
+
+                var response = await client.PostAsync("https://adammak2342.000webhostapp.com/CheckTournaments.php", content);
+                var responseString = await response.Content.ReadAsStringAsync();
+                UserAccount.Enroll(responseString);
+
+                if (UserAccount.EnrolledTournament == "") Enrolled = "You are not enrolled.";
+                if (UserAccount.EnrolledTournament != "") Enrolled = "Participant of: " + UserAccount.EnrolledTournament;
+                if (Enrolled == "You are not enrolled.") TournamentCode = "";
+                if (Enrolled != "You are not enrolled.") TournamentCode = "EUNE04383-4e59af6f-c21d-482a-8ad1-05e27b3b0f41";
+
+                ErrorText = "";
+
+            }
+            catch (HttpRequestException e) { ErrorText = e.StackTrace; }
+        }
+        private void notification()
+        {
+            ShowToastNotification("Nowa rotacja bohaterów", "ka¿dy wtorek", 2);
+        }
+        private void showRotation()
+        {
+            List<Champion> listachampow = api.GetChampions(Region.eune,true);
+            for (int i = 0; i <= listachampow.Count(); i++)
+             Debug.WriteLine(StaticApi.GetChampion(Region.eune, (int)listachampow[i].Id).Name);
+            //ShowToastNotification("Stan powietrza", selectedStation.HumanIndex, 10);
+            UpdateTile("Dzisiejsza rotacja: " );
+        }
+        private void ShowToastNotification(string title, string stringContent, int time)
+        {
+            var ToastNotifier = ToastNotificationManager.CreateToastNotifier();
+            var toastXml = ToastNotificationManager.GetTemplateContent(ToastTemplateType.ToastText04);
+            var toastNodeList = toastXml.GetElementsByTagName("text");
+            toastNodeList.Item(0).AppendChild(toastXml.CreateTextNode(title));
+            toastNodeList.Item(1).AppendChild(toastXml.CreateTextNode(stringContent));
+            var toastNode = toastXml.SelectSingleNode("/toast");
+            var audio = toastXml.CreateElement("audio");
+            audio.SetAttribute("src", "ms-winsoundevent:Notification.SMS");
+
+            var toast = new ToastNotification(toastXml);
+            toast.ExpirationTime = DateTime.Now.AddSeconds(time);
+            ToastNotifier.Show(toast);
+        }
+        public void UpdateTile(string infoString)
+        {
+            TileUpdateManager.CreateTileUpdaterForApplication().Clear();
+            var tileXml =
+                TileUpdateManager.GetTemplateContent(TileTemplateType.TileWide310x150Text01);
+
+            var tileAttributes = tileXml.GetElementsByTagName("text");
+            tileAttributes[0].AppendChild(tileXml.CreateTextNode(infoString));
+            var tileNotification = new TileNotification(tileXml);
+
+            TileUpdateManager.CreateTileUpdaterForApplication().Update(tileNotification);
+        }
     }
 }
 
